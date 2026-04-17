@@ -52,6 +52,27 @@ Click "close and apply" to apply the settings and close the dialog window. Right
 
 If no variables are selected in the dataset, the longitudinal plot will be plotted across all variables in the dataset (in the order, in which they appear in the dataset). If you want to plot only across a subset of variables, select those variables in the variable list (e.g., by holding CTRL or CMD down and select the respective variables) and then click "Plot Data -\> Plot longitudinal data".
 
-## Exercise
+## Exercises
 
-With the dual change score model (which you created using the wizard), ...
+-   Create a dual change score model using the wizard
+
+-   Simulate Data and plot the data (longitudinal plot)
+
+-   Change Parameters of the model, resimulate and plot
+
+-   What happens if the self-feedback (beta) is 1, 0, or -1? Why?
+
+-   If you set the self-feedback to zero, what are the effects of changing alpha? What if you set different alphas (rename them to alpha1, alpha2,... first) for different time points?
+
+-   By setting a form of constant positive change (alpha) and negative proportional change (beta), can you generate simulated learning curves that reach an asymptote?
+
+
+# Solution
+
+The self-feedback term beta implies a form of proportional growth if values are positive because change then depends on previous level. This by itself can reflect an exponential growth function. In combination with constant growth rates (alpha \> 0), negative proportional change can be used to model change that flattens after a while. Here is one possible solution:
+
+![](screenshots/onyx-screen-saturating-model.png)
+
+And these are some simulated trajectories from the model (N=100):
+
+![](screenshots/onyx-screen-saturating-plot.png)

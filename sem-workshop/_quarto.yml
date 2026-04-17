@@ -8,7 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - lgcm.qmd
+    - basics.qmd
     - modelfit.qmd
     - simulation.qmd
     - summary.qmd

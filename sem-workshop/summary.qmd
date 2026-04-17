@@ -1,3 +1,10 @@
-# Summary
+# The End
 
-In summary, this book has no content whatsoever.
+You have reached the end of the workshop. Well done!
+
+Please let us know whether the workshop was helpful. Let us know if you encountered any problems, if things were not clear, or if you just were happy with how things were. We are always happy about any form of constructive feedback to improve our workshops and our software.
+
+Feel free to get in touch with Andreas: <brandmaier@mpib-berlin.mpg.de>
+
+
+

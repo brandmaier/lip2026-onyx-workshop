@@ -83,3 +83,13 @@ For observed variables, you can select a fill-style that reflects the percentage
 ## Factor Model
 
 ![](screenshots/onyx-screen-academicmotivation-model.png)
+
+Model fit is $\chi^2=21.033$, RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.
+
+Applying Boker's R2 style, this yiels:
+
+![](screenshots/onyx-screen-academicmotivation-model-boker.png)
+
+![](screenshots/onyx-screen-academicmotivation-residuals.png)
+
+The large discrepancy in the correlation of enjoyment_of_learning and interest_in_subject may be an indication that these items also capture something different than the other items. In light of a theory (intrinsic vs academic motivation), this can be used to modify the factor model to include a residual correlation (which is akin to a second common source of variance) to the model. By adding another free parameter, model misfit in the present sample is reduced. Note that such model modifications after having seen the data should always be reported as exploratory.
