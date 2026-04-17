@@ -11,6 +11,8 @@ book:
     - basics.qmd
     - modelfit.qmd
     - simulation.qmd
+    - multigroup.qmd
+    - exercise-memory.qmd
     - summary.qmd
     - references.qmd
 

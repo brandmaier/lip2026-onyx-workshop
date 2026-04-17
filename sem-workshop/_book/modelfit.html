@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,7 +31,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./simulation.html" rel="next">
-<link href="./lgcm.html" rel="prev">
+<link href="./basics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -183,8 +149,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lgcm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LGCM</span></span></a>
+  <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,8 +167,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./multigroup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The End</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -222,8 +200,19 @@ window.Quarto = {
    
   <ul>
   <li><a href="#model-fit" id="toc-model-fit" class="nav-link active" data-scroll-target="#model-fit"><span class="header-section-number">3.1</span> Model Fit</a></li>
-  <li><a href="#model-fit-plots" id="toc-model-fit-plots" class="nav-link" data-scroll-target="#model-fit-plots"><span class="header-section-number">3.2</span> Model Fit Plots</a></li>
-  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code"><span class="header-section-number">3.3</span> Running Code</a></li>
+  <li><a href="#model-fit-1" id="toc-model-fit-1" class="nav-link" data-scroll-target="#model-fit-1"><span class="header-section-number">3.2</span> Model Fit</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">3.3</span> Residuals</a></li>
+  <li><a href="#raw-and-standarized-residuals" id="toc-raw-and-standarized-residuals" class="nav-link" data-scroll-target="#raw-and-standarized-residuals"><span class="header-section-number">3.4</span> Raw and Standarized Residuals</a></li>
+  <li><a href="#model-implied-and-observed-covariances" id="toc-model-implied-and-observed-covariances" class="nav-link" data-scroll-target="#model-implied-and-observed-covariances"><span class="header-section-number">3.5</span> Model-implied and observed covariances</a></li>
+  <li><a href="#model-fit-plots" id="toc-model-fit-plots" class="nav-link" data-scroll-target="#model-fit-plots"><span class="header-section-number">3.6</span> Model Fit Plots</a></li>
+  <li><a href="#residual-plots" id="toc-residual-plots" class="nav-link" data-scroll-target="#residual-plots"><span class="header-section-number">3.7</span> Residual Plots</a></li>
+  <li><a href="#model-fit-gauge" id="toc-model-fit-gauge" class="nav-link" data-scroll-target="#model-fit-gauge"><span class="header-section-number">3.8</span> Model Fit Gauge</a></li>
+  <li><a href="#visualizing-explained-variance" id="toc-visualizing-explained-variance" class="nav-link" data-scroll-target="#visualizing-explained-variance"><span class="header-section-number">3.9</span> Visualizing Explained Variance</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">3.10</span> <img src="screenshots/onyx-screen-academicmotivation-model-boker.png" class="img-fluid">Exercise</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">4</span> Solution</a>
+  <ul class="collapse">
+  <li><a href="#factor-model" id="toc-factor-model" class="nav-link" data-scroll-target="#factor-model"><span class="header-section-number">4.1</span> Factor Model</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -251,37 +240,81 @@ window.Quarto = {
 
 <section id="model-fit" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="model-fit"><span class="header-section-number">3.1</span> Model Fit</h2>
+<p>In SEM, the fit function to obtain maximum likelihood estimates under multivariate normality of the observations and assuming no missing data is:</p>
+<p><span class="math display">\[F_{\mathrm{ML}} = \log\lvert \boldsymbol{\Sigma}(\theta) \rvert
++ \mathrm{tr}\left( \mathbf{S}\, \boldsymbol{\Sigma}(\theta)^{-1} \right)
+- \log\lvert \mathbf{S} \rvert - p\]</span></p>
+<p>Assuming <span class="math inline">\(H_0\)</span> that there is no misfit is true, the following test statistic has an asymptotic <span class="math inline">\(\chi^2\)</span> distribution</p>
+<p><span class="math display">\[\chi^2 = (N - 1)\,F_{\mathrm{ML}}\]</span></p>
+</section>
+<section id="model-fit-1" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="model-fit-1"><span class="header-section-number">3.2</span> Model Fit</h2>
 <ul>
 <li><p><span class="math inline">\(\chi^2\)</span> is the fundamental model fit measure as discrepancy between model-implied (co)variances and means and observed (co)variances and means</p></li>
 <li><p>Significance test of close fit is usually not recommended as it has very high power; instead we usually favor effect-size-type metrics</p></li>
-<li><p>CFI: discrepancy between an independence model and the hypothesized model; Q: Is there enough information in the covariances such that the model is supported?</p></li>
-<li><p>RMSEA: discrepancy between the saturated model and the hypothesized model while acknowledging sample size and model complexity; Q: Are all those free parameters warranted?</p></li>
-<li></li>
+<li><p>CFI: discrepancy between an independence model and the hypothesized model; <em>CFI asks: How much better does my model fit compared to a model that assumes no relationships at all?</em></p></li>
+<li><p>RMSEA: estimates how much misfit per degree of freedom your model has in the population. <em>RMSEA asks: “Is the model achieving good fit without overusing parameters?</em></p></li>
 </ul>
 </section>
-<section id="model-fit-plots" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="model-fit-plots"><span class="header-section-number">3.2</span> Model Fit Plots</h2>
-<p>As of Onyx X, there are two new plotting features to obtain visual information about model fit.</p>
-<p><img src="images/clipboard-4286451747.png" class="img-fluid">uarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+<section id="residuals" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="residuals"><span class="header-section-number">3.3</span> Residuals</h2>
+<p>Residuals represent the difference between what the model predicts and what is actually observed in the data. More specifically, SEM works by reproducing the observed covariance (or correlation) matrix using a model-implied covariance matrix. Residuals are simply the element-wise differences between these two matrices. If the model fits well, these residuals should be small—ideally close to zero—because the model is successfully capturing the relationships among variables.</p>
+<p>Residuals are useful because they provide localized information about model misfit. Global fit indices like chi-square, CFI, or RMSEA tell you whether the model fits overall, but they don’t tell you where it fails. Residuals, in contrast, point to specific pairs of variables where the model does a poor job reproducing the observed relationship. For example, if two indicators have a large positive residual, it means their observed correlation is higher than what the model predicts, suggesting that something is missing, such as a residual correlation or an additional factor.</p>
 </section>
-<section id="running-code" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="running-code"><span class="header-section-number">3.3</span> Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<section id="raw-and-standarized-residuals" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="raw-and-standarized-residuals"><span class="header-section-number">3.4</span> Raw and Standarized Residuals</h2>
+<p>There are different types of residuals in SEM. Raw residuals are simple differences between observed and implied covariances, while standardized residuals scale these differences by their expected variability, making them easier to interpret across different variable pairs. Standardized residuals are often preferred because they help identify which discrepancies are unusually large relative to sampling variability.</p>
+<p>Importantly, residuals are not just diagnostic tools – they also guide model refinement. Large residuals can suggest theoretically meaningful modifications, such as allowing two indicators to correlate due to shared wording or content (e.g., shared method variance). However, they must be interpreted carefully: adding parameters purely to eliminate residuals can lead to overfitting and models that do not generalize well.</p>
+</section>
+<section id="model-implied-and-observed-covariances" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="model-implied-and-observed-covariances"><span class="header-section-number">3.5</span> Model-implied and observed covariances</h2>
+<p>A summary measure of the misfit in the residuals is the standardized root mean square residuals, which is:</p>
+<p><span class="math display">\[\mathrm{SRMR} = \sqrt{ \frac{2}{p(p+1)} \sum_{i \le j} \left( r_{ij} - \hat{r}_{ij} \right)^2 }\]</span> where</p>
+<p><span class="math inline">\(r_{ij}\)</span> are the observed correlations <span class="math inline">\(\hat{r_{ij}}\)</span> are the model-implied correlations</p>
+<p>The exact computation differs across programs. Some programs standardize such that the means are included and some don’t. Some programs standardize such that the diagonal elements are included and some don’t. Note that Onyx standardizes the observed covariance matrix and then the model-implied covariance matrix each with their own variances. Thus, Onyx SRMR does not include misfit in the means or the residual variances – just the covariances.</p>
+</section>
+<section id="model-fit-plots" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="model-fit-plots"><span class="header-section-number">3.6</span> Model Fit Plots</h2>
+<p>There are two new plotting features to obtain visual information about model fit. Right-click on a model and select “Plot model statistics”. Then choose “Plot Standardized Residuals”</p>
+<p><img src="screenshots/onyx-screen-modelplotmenu.png" class="img-fluid"></p>
+</section>
+<section id="residual-plots" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="residual-plots"><span class="header-section-number">3.7</span> Residual Plots</h2>
+<p>This opens the standardized residuals plot. This plot show standardized residuals that are slightly different than what is used to compute the SRMR. These standardized residuals are computed such that they also represent misfit in the diagonal of the matrix, that is, the residual variances. This is achieved by standardizing both model-implied covariances and observed covariances with the variances of the observed covariance matrix.</p>
+<p><img src="screenshots/onyx-screen-residuals.png" class="img-fluid"></p>
+</section>
+<section id="model-fit-gauge" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="model-fit-gauge"><span class="header-section-number">3.8</span> Model Fit Gauge</h2>
+<p>A further visualization of model misfit is the RMSEA gauge. This is a gauge that shows the RMSEA and shades some region of the RMSEA according to whether those ranges were proposed as ranges of acceptable or good fit.</p>
+<p><img src="screenshots/onyx-screen-modelfitgauge.png" class="img-fluid"></p>
+</section>
+<section id="visualizing-explained-variance" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="visualizing-explained-variance"><span class="header-section-number">3.9</span> Visualizing Explained Variance</h2>
+<p>For observed variables, you can select a fill-style that reflects the percentage of explained variance in a variable. Right-click on a variable or a selection of variables, click “Customize Variable”, then “Select Fill Style”, then “Bokers R2”. This applies a fill-style that fills the selected variable only up to the level that corresponds to the variance explained by other variables in the model. The unexplained part is not filled. This gives a good quick overview, for example in factor models, how well an item works. Here is an example in a factor model with five indicators:</p>
+</section>
+<section id="exercise" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="exercise"><span class="header-section-number">3.10</span> <img src="screenshots/onyx-screen-academicmotivation-model-boker.png" class="img-fluid">Exercise</h2>
+<ul>
+<li>Open the dataset “academicmotivation.csv” in Onyx</li>
+<li>This is a simulated dataset of a common factor of academic motivation that is measured with five indicators: persistence_on_tasks, time_spent_studying, curiosity_about_topics, interest_in_subject, and enjoyment_of_learning</li>
+<li>Fit a common factor model (just covariances; no means); apply Boker’s R2 style to the observed variables</li>
+<li>Inspect model fit, model-implied covariances, and residuals (using the plot)</li>
+<li>Given these statistics and the information that interest_in_subject and and enjoyment_of_learningtion tap more into intrinsic_motivation than the others, how could we modify the model?</li>
+</ul>
+</section>
+<section id="solution" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Solution</h1>
+<section id="factor-model" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="factor-model"><span class="header-section-number">4.1</span> Factor Model</h2>
+<p><img src="screenshots/onyx-screen-academicmotivation-model.png" class="img-fluid"></p>
+<p>Model fit is <span class="math inline">\(\chi^2=21.033\)</span>, RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.</p>
+<p>Applying Boker’s R2 style, this yiels:</p>
+<p><img src="screenshots/onyx-screen-academicmotivation-model-boker.png" class="img-fluid"></p>
+<p><img src="screenshots/onyx-screen-academicmotivation-residuals.png" class="img-fluid"></p>
+<p>The large discrepancy in the correlation of enjoyment_of_learning and interest_in_subject may be an indication that these items also capture something different than the other items. In light of a theory (intrinsic vs academic motivation), this can be used to modify the factor model to include a residual correlation (which is akin to a second common source of variance) to the model. By adding another free parameter, model misfit in the present sample is reduced. Note that such model modifications after having seen the data should always be reported as exploratory.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -704,8 +737,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lgcm.html" class="pagination-link" aria-label="LGCM">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LGCM</span></span>
+      <a href="./basics.html" class="pagination-link" aria-label="Basic Modeling">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

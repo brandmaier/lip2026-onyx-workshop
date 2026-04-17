@@ -1,0 +1,352 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Structural Equation Modeling with Onyx",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a self-paced workshop for Onyx, a graphical user-interface for structural equation modeling.\n![images/somemodels.png]\nOnyx’s interface is somewhat unusual as it presents the user with an empty desktop. All major interactions in Onyx are via context-menus or left- and right-mouseclicks that provide context-dependent shortcuts.\nThis workshop is work-in-progress and has several chapters targeted at readers that are familiar with Structural Equation Modeling and want to learn about how to best use Onyx in their scientific work.\nThere is no need to follow the order of the modules as they are presented. Pick a topic about which you would like to learn more. The topics contain some basic information, some demonstrations, and practical exercises for you to follow along.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html",
+    "href": "basics.html",
+    "title": "2  Basic Modeling",
+    "section": "",
+    "text": "2.1 Changing Visuals\nTo create a model, either right-click on the empty desktop and select “Create new Model -&gt; Create Empty Model” or double-click on the desktop. This creates an empty model view\nYou can now add variables, by either right-clicking on the empty view and selecting “Create Variable”. Then you can either add a latent variable (depicted as a circle), an observed variable (depicted as a rectangle), a constant variable (depicted as a triangle). Beyond standard RAM notation , you can also add a multiplication node that allows you to model latent interactions. As a short-cut, you can simply double-click on an empty space in the model, to create a latent variable or double-click while holding down the SHIFT-key to add an observed variable.\nTo add a path between two variables, press the right mouse button on a variable, hold it down while dragging the path on to the target variable, then release the mouse button. This creates a regression path with a value fixed to “1” between the variables. When you hold down SHIFT while doing so, you create a covariance path. Right-click the path and select “Free Parameter” if you want this path to be freely estimated.\nTry to add a latent and an observed variable and connect them with a path from the latent to the observed variable, and your model should look like this:\nOnyx has a variety of options to adjust the appearance of the graph. Right-click on a node and choose “Customize Variable” to explore various options to adjust font size, line colors, fill colors, etc. The same is possible if you choose “Customize Path” when you right-click on a path.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#renaming-parameters",
+    "href": "basics.html#renaming-parameters",
+    "title": "2  Basic Modeling",
+    "section": "2.2 Renaming Parameters",
+    "text": "2.2 Renaming Parameters\nIf you free a parameter on a path (representing either a variance, covariance, a regression, or a mean), you can change the name of the parameter by right-clicking on the path and then changing the “Path Name”. By default, these parameters are named based on the adjacent variables but you can choose your own name here.\n\nNote that Onyx has Unicode support, that is, you can directly use unicode characters such as letters from the greek alphabet. Thus, it would even be possible to use emojis as parameter labels even though I do not recommend that:\n\nOnyx further supports a very limited subset of LaTeX commands to render parameter labels. This pseudo LaTeX input is triggered by starting labels with a dollar sign. This pseudo input supports lowercase and uppercase greek letters, as well as subscript and superscripts. Here are some examples that are valid parameter names in Onyx:\n\n\n\nInput\nOutput\n\n\n\n\n\n\\(\\alpha\\)\n\n\n^2\n\\(\\beta^2\\)\n\n\n_{person}\n\\(\\gamma_{person}\\)\n\n\n^2_i\n\\(\\Omega^2_i\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#diagram-styles",
+    "href": "basics.html#diagram-styles",
+    "title": "2  Basic Modeling",
+    "section": "2.3 Diagram Styles",
+    "text": "2.3 Diagram Styles\nOnyx ships some pre-made styles for your graphs. Choose “Customize Model -&gt; Apply Diagram Style” and then choose from the available choices. Certainly, not all of them are useful for scientific communication but you may want to start with Modern or Modern/Lightblue. Further, you may want to choose “Keep Style on Edit”, which continues to automatically apply the chosen style to newly added variables or paths in the diagram (otherwise, they are added using the default style).\n\nHere are three examples of styles:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#path-styles",
+    "href": "basics.html#path-styles",
+    "title": "2  Basic Modeling",
+    "section": "2.4 Path Styles",
+    "text": "2.4 Path Styles\nBy default, Onyx shows path with a value fixed to one without any label. Paths that have a value fixed but different than one are shown with the value as label. Freely estimated parameters are shown with both their label and their value (e.g., “z = 2.87”). You can also choose different path styles by right-clicking on a model, then selecting “Customize Model -&gt; Change Path Style”. This opens the following window in which you can select among several alternative options. In particular, the option “Simplified” may be useful to create figures for manuscripts.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "basics.html#exercises",
+    "href": "basics.html#exercises",
+    "title": "2  Basic Modeling",
+    "section": "2.5 Exercises",
+    "text": "2.5 Exercises\n\nCreate a factor model with one latent factors, four observed variables, residual variances for each factor, a latent factor variance, and factor loadings; fix the first factor loading at “1” and let the others be freely estimated; also freely estimate all residual variances; rename the observed variables to “item1”, “item2”, …; rename the factor to “factor”, rename the factor loadings to lambda1, lambda2, … but use greek letters.\nApply diagram styles and make your own modifications\nExport the diagram as image file",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html",
+    "href": "modelfit.html",
+    "title": "3  Untitled",
+    "section": "",
+    "text": "3.1 Model Fit\nIn SEM, the fit function to obtain maximum likelihood estimates under multivariate normality of the observations and assuming no missing data is:\n\\[F_{\\mathrm{ML}} = \\log\\lvert \\boldsymbol{\\Sigma}(\\theta) \\rvert\n+ \\mathrm{tr}\\left( \\mathbf{S}\\, \\boldsymbol{\\Sigma}(\\theta)^{-1} \\right)\n- \\log\\lvert \\mathbf{S} \\rvert - p\\]\nAssuming \\(H_0\\) that there is no misfit is true, the following test statistic has an asymptotic \\(\\chi^2\\) distribution\n\\[\\chi^2 = (N - 1)\\,F_{\\mathrm{ML}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#model-fit-1",
+    "href": "modelfit.html#model-fit-1",
+    "title": "3  Untitled",
+    "section": "3.2 Model Fit",
+    "text": "3.2 Model Fit\n\n\\(\\chi^2\\) is the fundamental model fit measure as discrepancy between model-implied (co)variances and means and observed (co)variances and means\nSignificance test of close fit is usually not recommended as it has very high power; instead we usually favor effect-size-type metrics\nCFI: discrepancy between an independence model and the hypothesized model; CFI asks: How much better does my model fit compared to a model that assumes no relationships at all?\nRMSEA: estimates how much misfit per degree of freedom your model has in the population. RMSEA asks: “Is the model achieving good fit without overusing parameters?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#residuals",
+    "href": "modelfit.html#residuals",
+    "title": "3  Untitled",
+    "section": "3.3 Residuals",
+    "text": "3.3 Residuals\nResiduals represent the difference between what the model predicts and what is actually observed in the data. More specifically, SEM works by reproducing the observed covariance (or correlation) matrix using a model-implied covariance matrix. Residuals are simply the element-wise differences between these two matrices. If the model fits well, these residuals should be small—ideally close to zero—because the model is successfully capturing the relationships among variables.\nResiduals are useful because they provide localized information about model misfit. Global fit indices like chi-square, CFI, or RMSEA tell you whether the model fits overall, but they don’t tell you where it fails. Residuals, in contrast, point to specific pairs of variables where the model does a poor job reproducing the observed relationship. For example, if two indicators have a large positive residual, it means their observed correlation is higher than what the model predicts, suggesting that something is missing, such as a residual correlation or an additional factor.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#raw-and-standarized-residuals",
+    "href": "modelfit.html#raw-and-standarized-residuals",
+    "title": "3  Untitled",
+    "section": "3.4 Raw and Standarized Residuals",
+    "text": "3.4 Raw and Standarized Residuals\nThere are different types of residuals in SEM. Raw residuals are simple differences between observed and implied covariances, while standardized residuals scale these differences by their expected variability, making them easier to interpret across different variable pairs. Standardized residuals are often preferred because they help identify which discrepancies are unusually large relative to sampling variability.\nImportantly, residuals are not just diagnostic tools – they also guide model refinement. Large residuals can suggest theoretically meaningful modifications, such as allowing two indicators to correlate due to shared wording or content (e.g., shared method variance). However, they must be interpreted carefully: adding parameters purely to eliminate residuals can lead to overfitting and models that do not generalize well.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#model-implied-and-observed-covariances",
+    "href": "modelfit.html#model-implied-and-observed-covariances",
+    "title": "3  Untitled",
+    "section": "3.5 Model-implied and observed covariances",
+    "text": "3.5 Model-implied and observed covariances\nA summary measure of the misfit in the residuals is the standardized root mean square residuals, which is:\n\\[\\mathrm{SRMR} = \\sqrt{ \\frac{2}{p(p+1)} \\sum_{i \\le j} \\left( r_{ij} - \\hat{r}_{ij} \\right)^2 }\\] where\n\\(r_{ij}\\) are the observed correlations \\(\\hat{r_{ij}}\\) are the model-implied correlations\nThe exact computation differs across programs. Some programs standardize such that the means are included and some don’t. Some programs standardize such that the diagonal elements are included and some don’t. Note that Onyx standardizes the observed covariance matrix and then the model-implied covariance matrix each with their own variances. Thus, Onyx SRMR does not include misfit in the means or the residual variances – just the covariances.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#model-fit-plots",
+    "href": "modelfit.html#model-fit-plots",
+    "title": "3  Untitled",
+    "section": "3.6 Model Fit Plots",
+    "text": "3.6 Model Fit Plots\nThere are two new plotting features to obtain visual information about model fit. Right-click on a model and select “Plot model statistics”. Then choose “Plot Standardized Residuals”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#residual-plots",
+    "href": "modelfit.html#residual-plots",
+    "title": "3  Untitled",
+    "section": "3.7 Residual Plots",
+    "text": "3.7 Residual Plots\nThis opens the standardized residuals plot. This plot show standardized residuals that are slightly different than what is used to compute the SRMR. These standardized residuals are computed such that they also represent misfit in the diagonal of the matrix, that is, the residual variances. This is achieved by standardizing both model-implied covariances and observed covariances with the variances of the observed covariance matrix.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#model-fit-gauge",
+    "href": "modelfit.html#model-fit-gauge",
+    "title": "3  Untitled",
+    "section": "3.8 Model Fit Gauge",
+    "text": "3.8 Model Fit Gauge\nA further visualization of model misfit is the RMSEA gauge. This is a gauge that shows the RMSEA and shades some region of the RMSEA according to whether those ranges were proposed as ranges of acceptable or good fit.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#visualizing-explained-variance",
+    "href": "modelfit.html#visualizing-explained-variance",
+    "title": "3  Untitled",
+    "section": "3.9 Visualizing Explained Variance",
+    "text": "3.9 Visualizing Explained Variance\nFor observed variables, you can select a fill-style that reflects the percentage of explained variance in a variable. Right-click on a variable or a selection of variables, click “Customize Variable”, then “Select Fill Style”, then “Bokers R2”. This applies a fill-style that fills the selected variable only up to the level that corresponds to the variance explained by other variables in the model. The unexplained part is not filled. This gives a good quick overview, for example in factor models, how well an item works. Here is an example in a factor model with five indicators:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#exercise",
+    "href": "modelfit.html#exercise",
+    "title": "3  Untitled",
+    "section": "3.10 Exercise",
+    "text": "3.10 Exercise\n\nOpen the dataset “academicmotivation.csv” in Onyx\nThis is a simulated dataset of a common factor of academic motivation that is measured with five indicators: persistence_on_tasks, time_spent_studying, curiosity_about_topics, interest_in_subject, and enjoyment_of_learning\nFit a common factor model (just covariances; no means); apply Boker’s R2 style to the observed variables\nInspect model fit, model-implied covariances, and residuals (using the plot)\nGiven these statistics and the information that interest_in_subject and and enjoyment_of_learningtion tap more into intrinsic_motivation than the others, how could we modify the model?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "modelfit.html#factor-model",
+    "href": "modelfit.html#factor-model",
+    "title": "3  Untitled",
+    "section": "4.1 Factor Model",
+    "text": "4.1 Factor Model\n\nModel fit is \\(\\chi^2=21.033\\), RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.\nApplying Boker’s R2 style, this yiels:\n\n\nThe large discrepancy in the correlation of enjoyment_of_learning and interest_in_subject may be an indication that these items also capture something different than the other items. In light of a theory (intrinsic vs academic motivation), this can be used to modify the factor model to include a residual correlation (which is akin to a second common source of variance) to the model. By adding another free parameter, model misfit in the present sample is reduced. Note that such model modifications after having seen the data should always be reported as exploratory.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Untitled</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html",
+    "href": "simulation.html",
+    "title": "4  Simulate and Plot",
+    "section": "",
+    "text": "4.1 Simulation to Understand Model Parameters\nWe want to answer this question:\nIn a Dual Change Score Model, what effects do parameters have on the model-implied trajectories?\nSteps:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#simulation-to-understand-model-parameters",
+    "href": "simulation.html#simulation-to-understand-model-parameters",
+    "title": "4  Simulate and Plot",
+    "section": "",
+    "text": "Create a Dual Change Score Model\nSimulate Longitudinal Data\nPlot Longitudinal Data\nChange Model (Population) Parameters and Repeat from 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#dual-change-score-model",
+    "href": "simulation.html#dual-change-score-model",
+    "title": "4  Simulate and Plot",
+    "section": "4.2 Dual Change Score Model",
+    "text": "4.2 Dual Change Score Model\nUse the DCSM-Wizard to create a dual change score model. Keep all values at their defaults. This creates a model with five time points and the observed time points will be called x1, x2, …, x5.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#simulation",
+    "href": "simulation.html#simulation",
+    "title": "4  Simulate and Plot",
+    "section": "4.3 Simulation",
+    "text": "4.3 Simulation",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#plot",
+    "href": "simulation.html#plot",
+    "title": "4  Simulate and Plot",
+    "section": "4.4 Plot",
+    "text": "4.4 Plot\nNext, right-click on the simulated dataset, choose “Plot data” and select “Plot longitudinal data”.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#longitudinal-plot",
+    "href": "simulation.html#longitudinal-plot",
+    "title": "4  Simulate and Plot",
+    "section": "4.5 Longitudinal Plot",
+    "text": "4.5 Longitudinal Plot",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#customize-the-longitudinal-plot",
+    "href": "simulation.html#customize-the-longitudinal-plot",
+    "title": "4  Simulate and Plot",
+    "section": "4.6 Customize the Longitudinal Plot",
+    "text": "4.6 Customize the Longitudinal Plot\nRight-click on the longitudinal plot window. This will show some basic plot settings. Try out different ways to customize the plot. By default, the line color is selected as “COLORED_PER_OBSERVATION” such that each observation gets a different color. Alternatively, you can set the color to “USER DEFINED” and then pick a line color. You can also change the line thickness, and the axes labels\n\nClick “close and apply” to apply the settings and close the dialog window. Right-click again and choose “save PNG” to save the graph as image file.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#plot-subsets-of-variables",
+    "href": "simulation.html#plot-subsets-of-variables",
+    "title": "4  Simulate and Plot",
+    "section": "4.7 Plot subsets of variables",
+    "text": "4.7 Plot subsets of variables\nIf no variables are selected in the dataset, the longitudinal plot will be plotted across all variables in the dataset (in the order, in which they appear in the dataset). If you want to plot only across a subset of variables, select those variables in the variable list (e.g., by holding CTRL or CMD down and select the respective variables) and then click “Plot Data -&gt; Plot longitudinal data”.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "simulation.html#exercises",
+    "href": "simulation.html#exercises",
+    "title": "4  Simulate and Plot",
+    "section": "4.8 Exercises",
+    "text": "4.8 Exercises\n\nCreate a dual change score model using the wizard\nSimulate Data and plot the data (longitudinal plot)\nChange Parameters of the model, resimulate and plot\nWhat happens if the self-feedback (beta) is 1, 0, or -1? Why?\nIf you set the self-feedback to zero, what are the effects of changing alpha? What if you set different alphas (rename them to alpha1, alpha2,… first) for different time points?\nBy setting a form of constant positive change (alpha) and negative proportional change (beta), can you generate simulated learning curves that reach an asymptote?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
+    "objectID": "multigroup.html",
+    "href": "multigroup.html",
+    "title": "5  Multi-Group Models",
+    "section": "",
+    "text": "6 Latent Means\nOnyx support multi-group models, in which we use a grouping variable that encodes group membership between individuals. Onyx has its own approach to multigroup modeling which works with filters on observed variables that filter out subsets of observations that should be modeled by a given observed variable.\nBy right-clicking on an observed variable, you can select “Add Grouping” to add a filter to one or more selected observed variables.\nThen, a little diamond grouping indicator appears on that variable. The value inside the diamond reflects the group membership. To change group membership, right-click the diamong and change the “Group” value:\nLatent Mean Differences\nThe diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset.\nModels of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs.\nFigure 1 shows a path diagram representing one possibility to set up a latent mean difference model when there are multiple, noisy measurements of the same underlying latent construct. This model is a MIMIC (multiple-indicators multiple-causes, hancock2001effect?) model, in which we estimate a measurement model of a latent trait \\(\\eta\\) across two groups that are encoded via a dummy group indicator. The latent trait is measured through multiple observed indicators (here, \\(x1\\) to \\(x3\\)) with indicator-specific residual variance terms, which allows to separate error variance from true-score variance. If correctly specified, this approach allows us to obtain more precise estimates of the latent trait purged of measurement error and unreliability (DeShon 1998). In this specific instance, the regression path from the dummy-coded group indicator to the latent variable directly represents a standardized mean difference because the scale of the latent variable was fixed to have a variance of one. Note that the MIMIC model assumes that measurement invariance holds, that is, the factor loadings, item intercepts, and item residual variances are assumed to be the same across groups.\nA more flexible model specification is also possible; using a multiple-group factor model, we can estimate the same factor model in each group separately and empirically test whether measurement invariance holds; then, we can continue to test whether there is a difference in latent factor means across groups. This is also known as the SMM [structured means modeling; (hancock2001effect?)] approach:\nNote that all parameters with the same name have identity constraints; in particular, this means that parameters with the same name are identical across groups. In the path diagram shown above, all parameters are identical across groups. This implements a very strong assumption of measurement invariance across groups and identity of magnitude of variance (= individual differences at the latent level) across groups. Again, this restricted version of the SMM model is identical to the above dummy-coded MIMIC approach. However, the SMM allows to also freely estimate parameters between groups and perform tests of whether some of the restrictions are supported by the data or not.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Multi-Group Models</span>"
+    ]
+  },
+  {
+    "objectID": "multigroup.html#exercises",
+    "href": "multigroup.html#exercises",
+    "title": "5  Multi-Group Models",
+    "section": "6.1 Exercises",
+    "text": "6.1 Exercises\n\nLoad the dataset “factor_model_memory.csv”\nUse the “Latent Means Model” wizard to create both the SMM and the MIMIC approach model to estimate models of latent mean differences\nFreely estimate the latent variance in the second group of the SMM approach\nCopy the SMM model and freely estimate the factor loadings across groups; run a likelihood ratio test between the models as a test of measurement invariance\n\n\n\n\n\nDeShon, Richard P. 1998. “A Cautionary Note on Measurement Error Corrections in Structural Equation Models.” Psychological Methods 3 (4): 412–23.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Multi-Group Models</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-memory.html",
+    "href": "exercise-memory.html",
+    "title": "6  Exercise: Multiple determinants of lifespan memory differences",
+    "section": "",
+    "text": "6.1 Theory #1 (Berry et al.)\nIn this exercise, we will reproduce results reported by (Henson et al. 2016). In their study, they speculate on different theories of memory. Here, we use SEM to test different measurement models representing the different theories of memory. Items are 9 memory scores (3 valences and 3 tests, fully crossed). The tests tap into associative memory, item memory, and visual priming. Valences are positive, neutral, negative. The data is based on the reported covariances of the item d’ values across the nine tests.\nAlternative theories for memory discussed are:\nA single factor drives memory performance across all tests and valences.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-memory.html#theory-2-squire",
+    "href": "exercise-memory.html#theory-2-squire",
+    "title": "6  Exercise: Multiple determinants of lifespan memory differences",
+    "section": "6.2 Theory #2 (Squire)",
+    "text": "6.2 Theory #2 (Squire)\nTwo components drive memory performance, namely declarative (explicit) memory underlying associate and item memory, plus a procedural (implicit) system underlying priming",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-memory.html#theory-3-gardiner-et-al.-yonelinas",
+    "href": "exercise-memory.html#theory-3-gardiner-et-al.-yonelinas",
+    "title": "6  Exercise: Multiple determinants of lifespan memory differences",
+    "section": "6.3 Theory #3 (Gardiner et al., Yonelinas)",
+    "text": "6.3 Theory #3 (Gardiner et al., Yonelinas)\nAn alternative two-component model assumes a recollection factor underlies associate memory, and a fluency factor underlies item memory and priming\n(optional variant: item memory is driven by both recollection and fluency)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-memory.html#theory-4",
+    "href": "exercise-memory.html#theory-4",
+    "title": "6  Exercise: Multiple determinants of lifespan memory differences",
+    "section": "6.4 Theory #4",
+    "text": "6.4 Theory #4\nA three-component model predicts that each test is best described by an individual underlying component.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "7  The End",
+    "section": "",
+    "text": "You have reached the end of the workshop. Well done!\nPlease let us know whether the workshop was helpful. Let us know if you encountered any problems, if things were not clear, or if you just were happy with how things were. We are always happy about any form of constructive feedback to improve our workshops and our software.\nFeel free to get in touch with Andreas: brandmaier@mpib-berlin.mpg.de",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The End</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "DeShon, Richard P. 1998. “A Cautionary Note on Measurement Error\nCorrections in Structural Equation Models.” Psychological\nMethods 3 (4): 412–23.\n\n\nHenson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina\nEmery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. “Multiple\nDeterminants of Lifespan Memory Differences.” Scientific\nReports 6 (1): 32527.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

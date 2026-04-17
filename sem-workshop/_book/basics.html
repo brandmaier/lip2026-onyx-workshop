@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Structural Equation Modeling with Onyx</title>
+<title>2&nbsp; Basic Modeling – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="prev">
+<link href="./modelfit.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -87,6 +69,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -99,7 +110,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -138,7 +149,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basics.html" class="sidebar-item-text sidebar-link">
+  <a href="./basics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></span></a>
   </div>
 </li>
@@ -174,7 +185,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -183,15 +194,25 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#changing-visuals" id="toc-changing-visuals" class="nav-link active" data-scroll-target="#changing-visuals"><span class="header-section-number">2.1</span> Changing Visuals</a></li>
+  <li><a href="#renaming-parameters" id="toc-renaming-parameters" class="nav-link" data-scroll-target="#renaming-parameters"><span class="header-section-number">2.2</span> Renaming Parameters</a></li>
+  <li><a href="#diagram-styles" id="toc-diagram-styles" class="nav-link" data-scroll-target="#diagram-styles"><span class="header-section-number">2.3</span> Diagram Styles</a></li>
+  <li><a href="#path-styles" id="toc-path-styles" class="nav-link" data-scroll-target="#path-styles"><span class="header-section-number">2.4</span> Path Styles</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.5</span> Exercises</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></h1>
 </div>
 
 
@@ -208,21 +229,77 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-deshon1998cautionary" class="csl-entry" role="listitem">
-DeShon, Richard P. 1998. <span>“A Cautionary Note on Measurement Error
-Corrections in Structural Equation Models.”</span> <em>Psychological
-Methods</em> 3 (4): 412–23.
-</div>
-<div id="ref-henson2016multiple" class="csl-entry" role="listitem">
-Henson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina
-Emery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. <span>“Multiple
-Determinants of Lifespan Memory Differences.”</span> <em>Scientific
-Reports</em> 6 (1): 32527.
-</div>
-</div>
+<p>To create a model, either right-click on the empty desktop and select “Create new Model -&gt; Create Empty Model” or double-click on the desktop. This creates an empty model view</p>
+<p><img src="screenshots/onyx-screen-emptymodel.png" class="img-fluid"></p>
+<p>You can now add variables, by either right-clicking on the empty view and selecting “Create Variable”. Then you can either add a latent variable (depicted as a circle), an observed variable (depicted as a rectangle), a constant variable (depicted as a triangle). Beyond standard RAM notation , you can also add a multiplication node that allows you to model latent interactions. As a short-cut, you can simply double-click on an empty space in the model, to create a latent variable or double-click while holding down the SHIFT-key to add an observed variable.</p>
+<p>To add a path between two variables, press the right mouse button on a variable, hold it down while dragging the path on to the target variable, then release the mouse button. This creates a regression path with a value fixed to “1” between the variables. When you hold down SHIFT while doing so, you create a covariance path. Right-click the path and select “Free Parameter” if you want this path to be freely estimated.</p>
+<p><img src="screenshots/onyx-screen-freeparameter.png" class="img-fluid"></p>
+<p>Try to add a latent and an observed variable and connect them with a path from the latent to the observed variable, and your model should look like this:</p>
+<p><img src="screenshots/onyx-screen-simplemodel.png" class="img-fluid"></p>
+<section id="changing-visuals" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="changing-visuals"><span class="header-section-number">2.1</span> Changing Visuals</h2>
+<p>Onyx has a variety of options to adjust the appearance of the graph. Right-click on a node and choose “Customize Variable” to explore various options to adjust font size, line colors, fill colors, etc. The same is possible if you choose “Customize Path” when you right-click on a path.</p>
+</section>
+<section id="renaming-parameters" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="renaming-parameters"><span class="header-section-number">2.2</span> Renaming Parameters</h2>
+<p>If you free a parameter on a path (representing either a variance, covariance, a regression, or a mean), you can change the name of the parameter by right-clicking on the path and then changing the “Path Name”. By default, these parameters are named based on the adjacent variables but you can choose your own name here.</p>
+<p><img src="screenshots/onyx-screen-nameandstartingvalue.png" class="img-fluid"></p>
+<p>Note that Onyx has Unicode support, that is, you can directly use unicode characters such as letters from the greek alphabet. Thus, it would even be possible to use emojis as parameter labels even though I do not recommend that:</p>
+<p><img src="screenshots/onyx-screen-unicode.png" class="img-fluid"></p>
+<p>Onyx further supports a very limited subset of LaTeX commands to render parameter labels. This pseudo LaTeX input is triggered by starting labels with a dollar sign. This pseudo input supports lowercase and uppercase greek letters, as well as subscript and superscripts. Here are some examples that are valid parameter names in Onyx:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\alpha\)</span></td>
+</tr>
+<tr class="even">
+<td>^2</td>
+<td><span class="math inline">\(\beta^2\)</span></td>
+</tr>
+<tr class="odd">
+<td>_{person}</td>
+<td><span class="math inline">\(\gamma_{person}\)</span></td>
+</tr>
+<tr class="even">
+<td>^2_i</td>
+<td><span class="math inline">\(\Omega^2_i\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diagram-styles" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="diagram-styles"><span class="header-section-number">2.3</span> Diagram Styles</h2>
+<p>Onyx ships some pre-made styles for your graphs. Choose “Customize Model -&gt; Apply Diagram Style” and then choose from the available choices. Certainly, not all of them are useful for scientific communication but you may want to start with Modern or Modern/Lightblue. Further, you may want to choose “Keep Style on Edit”, which continues to automatically apply the chosen style to newly added variables or paths in the diagram (otherwise, they are added using the default style).</p>
+<p><img src="screenshots/onyx-screen-diagramstyle.png" class="img-fluid"></p>
+<p>Here are three examples of styles:</p>
+<p><img src="screenshots/onyx-screen-styles.png" class="img-fluid"></p>
+</section>
+<section id="path-styles" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="path-styles"><span class="header-section-number">2.4</span> Path Styles</h2>
+<p>By default, Onyx shows path with a value fixed to one without any label. Paths that have a value fixed but different than one are shown with the value as label. Freely estimated parameters are shown with both their label and their value (e.g., “z = 2.87”). You can also choose different path styles by right-clicking on a model, then selecting “Customize Model -&gt; Change Path Style”. This opens the following window in which you can select among several alternative options. In particular, the option “Simplified” may be useful to create figures for manuscripts.</p>
+<p><img src="screenshots/onyx-screen-changepathstyle.png" class="img-fluid"></p>
+</section>
+<section id="exercises" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.5</span> Exercises</h2>
+<ul>
+<li>Create a factor model with one latent factors, four observed variables, residual variances for each factor, a latent factor variance, and factor loadings; fix the first factor loading at “1” and let the others be freely estimated; also freely estimate all residual variances; rename the observed variables to “item1”, “item2”, …; rename the factor to “factor”, rename the factor loadings to lambda1, lambda2, … but use greek letters.</li>
+<li>Apply diagram styles and make your own modifications</li>
+<li>Export the diagram as image file</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -644,11 +721,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link" aria-label="The End">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The End</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./modelfit.html" class="pagination-link" aria-label="Untitled">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Untitled</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

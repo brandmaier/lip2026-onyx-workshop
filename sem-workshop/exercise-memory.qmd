@@ -1,0 +1,44 @@
+---
+bibliography: references.bib
+---
+
+## Exercise: Multiple determinants of lifespan memory differences
+
+In this exercise, we will reproduce results reported by [@henson2016multiple]. In their study, they speculate on different theories of memory. Here, we use SEM to test different measurement models representing the different theories of memory. Items are 9 memory scores (3 valences and 3 tests, fully crossed). The tests tap into associative memory, item memory, and visual priming. Valences are positive, neutral, negative. The data is based on the reported covariances of the item d' values across the nine tests. 
+
+Alternative theories for memory discussed are:
+
+## Theory #1 (Berry et al.)
+
+A single factor drives memory performance across all tests and valences.
+
+## Theory #2 (Squire)
+
+Two components drive memory performance, namely declarative (explicit) memory underlying associate and item memory, plus a procedural (implicit) system underlying priming
+
+## Theory #3 (Gardiner et al., Yonelinas)
+
+An alternative two-component model assumes a recollection factor underlies associate memory, and a fluency factor underlies item memory and priming
+
+(optional variant: item memory is driven by both recollection and fluency)
+
+## Theory #4
+
+A three-component model predicts that each test is best described by an individual underlying component.
+
+# Exercises
+
+Exercise:
+
+1\) Set up models representing the alternative theories, fit the models with the provided data (camcan.data) as described above and discuss the results.
+
+2\) Inspect parameter estimates (e.g., check for problems like negative variances) and model fit statistics
+
+3\) What model fits best?
+
+4\) How could your final model incorporate predictors of behavior, e.g. grey matter volume estimates of some ROIs?
+
+# Solution
+
+![](screenshots/onyx-result-memory-theory1.png)
+![](screenshots/onyx-result-memory-theory4.png)
