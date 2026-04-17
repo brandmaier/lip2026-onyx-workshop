@@ -1,0 +1,11 @@
+# Introduction
+
+This is a self-paced workshop for Onyx, a graphical user-interface for structural equation modeling.
+
+Onyx's interface is somewhat unusual as it presents the user with an empty desktop.
+All major interactions in Onyx are via context-menus or left- and right-mouseclicks 
+that provide context-dependent shortcuts.
+
+This workshop is work-in-progress and has several chapters targeted at readers that are familiar with Structural Equation Modeling and want to learn about how to best use Onyx in their scientific work.
+
+There is no need to follow the order of the modules as they are presented. Pick a topic about which you would like to learn more. The topics contain some basic information, some demonstrations, and practical exercises for you to follow along.

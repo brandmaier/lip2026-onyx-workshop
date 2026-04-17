@@ -1,0 +1,38 @@
+project:
+  type: book
+
+book:
+  title: "Structural Equation Modeling with Onyx"
+  author: "Andreas Brandmaier"
+  date: "16.4.2026"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - lgcm.qmd
+    - modelfit.qmd
+    - simulation.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+website: 
+  title: X
+  navbar: 
+    left: 
+      - href: index.qmd
+      - text: Home
+      - about.qmd
+
+format:
+  html:
+    toc: true
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+#  outputdir: _site
+
+
+
