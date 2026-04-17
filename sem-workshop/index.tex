@@ -1,0 +1,1088 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Structural Equation Modeling with Onyx},
+  pdfauthor={Andreas Brandmaier},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Structural Equation Modeling with Onyx}
+\author{Andreas Brandmaier}
+\date{Invalid Date}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{Preface}
+
+This is a self-paced workshop for Onyx, a graphical user-interface for
+structural equation modeling.
+
+!{[}images/somemodels.png{]}
+
+We assume that you already familiar with the basics of Structural
+Equation Modeling.
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+Onyx's interface is somewhat unusual as it presents the user with an
+empty desktop. All major interactions in Onyx are via context-menus or
+left- and right-mouseclicks that provide context-dependent shortcuts.
+
+This workshop is work-in-progress and has several chapters targeted at
+readers that are familiar with Structural Equation Modeling and want to
+learn about how to best use Onyx in their scientific work.
+
+There is no need to follow the order of the modules as they are
+presented. Pick a topic about which you would like to learn more. The
+topics contain some basic information, some demonstrations, and
+practical exercises for you to follow along.
+
+\bookmarksetup{startatroot}
+
+\chapter{Basic Modeling}\label{basic-modeling}
+
+To create a model, either right-click on the empty desktop and select
+``Create new Model -\textgreater{} Create Empty Model'' or double-click
+on the desktop. This creates an empty model view
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-emptymodel.png}}
+
+You can now add variables, by either right-clicking on the empty view
+and selecting ``Create Variable''. Then you can either add a latent
+variable (depicted as a circle), an observed variable (depicted as a
+rectangle), a constant variable (depicted as a triangle). Beyond
+standard RAM notation , you can also add a multiplication node that
+allows you to model latent interactions. As a short-cut, you can simply
+double-click on an empty space in the model, to create a latent variable
+or double-click while holding down the SHIFT-key to add an observed
+variable.
+
+To add a path between two variables, press the right mouse button on a
+variable, hold it down while dragging the path on to the target
+variable, then release the mouse button. This creates a regression path
+with a value fixed to ``1'' between the variables. When you hold down
+SHIFT while doing so, you create a covariance path. Right-click the path
+and select ``Free Parameter'' if you want this path to be freely
+estimated.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-freeparameter.png}}
+
+Try to add a latent and an observed variable and connect them with a
+path from the latent to the observed variable, and your model should
+look like this:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-simplemodel.png}}
+
+\section{Changing Visuals}\label{changing-visuals}
+
+Onyx has a variety of options to adjust the appearance of the graph.
+Right-click on a node and choose ``Customize Variable'' to explore
+various options to adjust font size, line colors, fill colors, etc. The
+same is possible if you choose ``Customize Path'' when you right-click
+on a path.
+
+\section{Renaming Parameters}\label{renaming-parameters}
+
+If you free a parameter on a path (representing either a variance,
+covariance, a regression, or a mean), you can change the name of the
+parameter by right-clicking on the path and then changing the ``Path
+Name''. By default, these parameters are named based on the adjacent
+variables but you can choose your own name here.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-nameandstartingvalue.png}}
+
+Note that Onyx has Unicode support, that is, you can directly use
+unicode characters such as letters from the greek alphabet. Thus, it
+would even be possible to use emojis as parameter labels even though I
+do not recommend that:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-unicode.png}}
+
+Onyx further supports a very limited subset of LaTeX commands to render
+parameter labels. This pseudo LaTeX input is triggered by starting
+labels with a dollar sign. This pseudo input supports lowercase and
+uppercase greek letters, as well as subscript and superscripts. Here are
+some examples that are valid parameter names in Onyx:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Input & Output \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\alpha & \(\alpha\) \\
+\beta\^{}2 & \(\beta^2\) \\
+\gamma\_\{person\} & \(\gamma_{person}\) \\
+\Omega\^{}2\_i & \(\Omega^2_i\) \\
+& \\
+\end{longtable}
+
+\section{Diagram Styles}\label{diagram-styles}
+
+Onyx ships some pre-made styles for your graphs. Choose ``Customize
+Model -\textgreater{} Apply Diagram Style'' and then choose from the
+available choices. Certainly, not all of them are useful for scientific
+communication but you may want to start with Modern or Modern/Lightblue.
+Further, you may want to choose ``Keep Style on Edit'', which continues
+to automatically apply the chosen style to newly added variables or
+paths in the diagram (otherwise, they are added using the default
+style).
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-diagramstyle.png}}
+
+Here are three examples of styles:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-styles.png}}
+
+\section{Path Styles}\label{path-styles}
+
+By default, Onyx shows path with a value fixed to one without any label.
+Paths that have a value fixed but different than one are shown with the
+value as label. Freely estimated parameters are shown with both their
+label and their value (e.g., ``z = 2.87''). You can also choose
+different path styles by right-clicking on a model, then selecting
+``Customize Model -\textgreater{} Change Path Style''. This opens the
+following window in which you can select among several alternative
+options. In particular, the option ``Simplified'' may be useful to
+create figures for manuscripts.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-changepathstyle.png}}
+
+\section{Exercises}\label{exercises}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a factor model with one latent factors, four observed
+  variables, residual variances for each factor, a latent factor
+  variance, and factor loadings; fix the first factor loading at ``1''
+  and let the others be freely estimated; also freely estimate all
+  residual variances; rename the observed variables to ``item1'',
+  ``item2'', \ldots; rename the factor to ``factor'', rename the factor
+  loadings to lambda1, lambda2, \ldots{} but use greek letters.
+\item
+  Apply diagram styles and make your own modifications
+\item
+  Export the diagram as image file
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Untitled}\label{untitled}
+
+\section{Model Fit}\label{model-fit}
+
+In SEM, the fit function to obtain maximum likelihood estimates under
+multivariate normality of the observations and assuming no missing data
+is:
+
+\[F_{\mathrm{ML}} = \log\lvert \boldsymbol{\Sigma}(\theta) \rvert 
++ \mathrm{tr}\left( \mathbf{S}\, \boldsymbol{\Sigma}(\theta)^{-1} \right) 
+- \log\lvert \mathbf{S} \rvert - p\]
+
+Assuming \(H_0\) that there is no misfit is true, the following test
+statistic has an asymptotic \(\chi^2\) distribution
+
+\[\chi^2 = (N - 1)\,F_{\mathrm{ML}}\]
+
+\section{Model Fit}\label{model-fit-1}
+
+\begin{itemize}
+\item
+  \(\chi^2\) is the fundamental model fit measure as discrepancy between
+  model-implied (co)variances and means and observed (co)variances and
+  means
+\item
+  Significance test of close fit is usually not recommended as it has
+  very high power; instead we usually favor effect-size-type metrics
+\item
+  CFI: discrepancy between an independence model and the hypothesized
+  model; \emph{CFI asks: How much better does my model fit compared to a
+  model that assumes no relationships at all?}
+\item
+  RMSEA: estimates how much misfit per degree of freedom your model has
+  in the population. \emph{RMSEA asks: ``Is the model achieving good fit
+  without overusing parameters?}
+\end{itemize}
+
+\section{Residuals}\label{residuals}
+
+Residuals represent the difference between what the model predicts and
+what is actually observed in the data. More specifically, SEM works by
+reproducing the observed covariance (or correlation) matrix using a
+model-implied covariance matrix. Residuals are simply the element-wise
+differences between these two matrices. If the model fits well, these
+residuals should be small---ideally close to zero---because the model is
+successfully capturing the relationships among variables.
+
+Residuals are useful because they provide localized information about
+model misfit. Global fit indices like chi-square, CFI, or RMSEA tell you
+whether the model fits overall, but they don't tell you where it fails.
+Residuals, in contrast, point to specific pairs of variables where the
+model does a poor job reproducing the observed relationship. For
+example, if two indicators have a large positive residual, it means
+their observed correlation is higher than what the model predicts,
+suggesting that something is missing, such as a residual correlation or
+an additional factor.
+
+\section{Raw and Standarized
+Residuals}\label{raw-and-standarized-residuals}
+
+There are different types of residuals in SEM. Raw residuals are simple
+differences between observed and implied covariances, while standardized
+residuals scale these differences by their expected variability, making
+them easier to interpret across different variable pairs. Standardized
+residuals are often preferred because they help identify which
+discrepancies are unusually large relative to sampling variability.
+
+Importantly, residuals are not just diagnostic tools -- they also guide
+model refinement. Large residuals can suggest theoretically meaningful
+modifications, such as allowing two indicators to correlate due to
+shared wording or content (e.g., shared method variance). However, they
+must be interpreted carefully: adding parameters purely to eliminate
+residuals can lead to overfitting and models that do not generalize
+well.
+
+\section{Model-implied and observed
+covariances}\label{model-implied-and-observed-covariances}
+
+A summary measure of the misfit in the residuals is the standardized
+root mean square residuals, which is:
+
+\[\mathrm{SRMR} = \sqrt{ \frac{2}{p(p+1)} \sum_{i \le j} \left( r_{ij} - \hat{r}_{ij} \right)^2 }\]
+where
+
+\(r_{ij}\) are the observed correlations \(\hat{r_{ij}}\) are the
+model-implied correlations
+
+The exact computation differs across programs. Some programs standardize
+such that the means are included and some don't. Some programs
+standardize such that the diagonal elements are included and some don't.
+Note that Onyx standardizes the observed covariance matrix and then the
+model-implied covariance matrix each with their own variances. Thus,
+Onyx SRMR does not include misfit in the means or the residual variances
+-- just the covariances.
+
+\section{Model Fit Plots}\label{model-fit-plots}
+
+There are two new plotting features to obtain visual information about
+model fit. Right-click on a model and select ``Plot model statistics''.
+Then choose ``Plot Standardized Residuals''
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-modelplotmenu.png}}
+
+\section{Residual Plots}\label{residual-plots}
+
+This opens the standardized residuals plot. This plot show standardized
+residuals that are slightly different than what is used to compute the
+SRMR. These standardized residuals are computed such that they also
+represent misfit in the diagonal of the matrix, that is, the residual
+variances. This is achieved by standardizing both model-implied
+covariances and observed covariances with the variances of the observed
+covariance matrix.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-residuals.png}}
+
+\section{Model Fit Gauge}\label{model-fit-gauge}
+
+A further visualization of model misfit is the RMSEA gauge. This is a
+gauge that shows the RMSEA and shades some region of the RMSEA according
+to whether those ranges were proposed as ranges of acceptable or good
+fit.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-modelfitgauge.png}}
+
+\section{Visualizing Explained
+Variance}\label{visualizing-explained-variance}
+
+For observed variables, you can select a fill-style that reflects the
+percentage of explained variance in a variable. Right-click on a
+variable or a selection of variables, click ``Customize Variable'', then
+``Select Fill Style'', then ``Bokers R2''. This applies a fill-style
+that fills the selected variable only up to the level that corresponds
+to the variance explained by other variables in the model. The
+unexplained part is not filled. This gives a good quick overview, for
+example in factor models, how well an item works. Here is an example in
+a factor model with five indicators:
+
+\section[Exercise]{\texorpdfstring{\protect\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-academicmotivation-model-boker.png}}Exercise}{Exercise}}\label{exercise}
+
+\begin{itemize}
+\tightlist
+\item
+  Open the dataset ``academicmotivation.csv'' in Onyx
+\item
+  This is a simulated dataset of a common factor of academic motivation
+  that is measured with five indicators: persistence\_on\_tasks,
+  time\_spent\_studying, curiosity\_about\_topics,
+  interest\_in\_subject, and enjoyment\_of\_learning
+\item
+  Fit a common factor model (just covariances; no means); apply Boker's
+  R2 style to the observed variables
+\item
+  Inspect model fit, model-implied covariances, and residuals (using the
+  plot)
+\item
+  Given these statistics and the information that interest\_in\_subject
+  and and enjoyment\_of\_learningtion tap more into
+  intrinsic\_motivation than the others, how could we modify the model?
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Solution}\label{solution}
+
+\section{Factor Model}\label{factor-model}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-academicmotivation-model.png}}
+
+Model fit is \(\chi^2=21.033\), RMSEA=0.106, CFI=0.106, SRMR=0.055.
+RMSEA and CFI are outside regions that are usually deemed acceptable.
+
+Applying Boker's R2 style, this yiels:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-academicmotivation-model-boker.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-academicmotivation-residuals.png}}
+
+The large discrepancy in the correlation of enjoyment\_of\_learning and
+interest\_in\_subject may be an indication that these items also capture
+something different than the other items. In light of a theory
+(intrinsic vs academic motivation), this can be used to modify the
+factor model to include a residual correlation (which is akin to a
+second common source of variance) to the model. By adding another free
+parameter, model misfit in the present sample is reduced. Note that such
+model modifications after having seen the data should always be reported
+as exploratory.
+
+\bookmarksetup{startatroot}
+
+\chapter{Simulate and Plot}\label{simulate-and-plot}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toprule=.15mm, bottomrule=.15mm, colframe=quarto-callout-color-frame, left=2mm, arc=.35mm, leftrule=.75mm, breakable, colback=white, rightrule=.15mm]
+
+Goal: Learn about simulation and plotting of data
+
+\end{tcolorbox}
+
+\section{Simulation to Understand Model
+Parameters}\label{simulation-to-understand-model-parameters}
+
+We want to answer this question:
+
+In a Dual Change Score Model, what effects do parameters have on the
+model-implied trajectories?
+
+Steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create a Dual Change Score Model
+\item
+  Simulate Longitudinal Data
+\item
+  Plot Longitudinal Data
+\item
+  Change Model (Population) Parameters and Repeat from 2
+\end{enumerate}
+
+\section{Dual Change Score Model}\label{dual-change-score-model}
+
+Use the DCSM-Wizard to create a dual change score model. Keep all values
+at their defaults. This creates a model with five time points and the
+observed time points will be called x1, x2, \ldots, x5.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-wizard-dcsm.png}}
+
+\section{Simulation}\label{simulation}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-modelplotmenu.png}}
+
+\section{Plot}\label{plot}
+
+Next, right-click on the simulated dataset, choose ``Plot data'' and
+select ``Plot longitudinal data''.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-dataplotmenu.png}}
+
+\section{Longitudinal Plot}\label{longitudinal-plot}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-plotlongitudinal.png}}
+
+\section{Customize the Longitudinal
+Plot}\label{customize-the-longitudinal-plot}
+
+Right-click on the longitudinal plot window. This will show some basic
+plot settings. Try out different ways to customize the plot. By default,
+the line color is selected as ``COLORED\_PER\_OBSERVATION'' such that
+each observation gets a different color. Alternatively, you can set the
+color to ``USER DEFINED'' and then pick a line color. You can also
+change the line thickness, and the axes labels
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-longitudinalplot-settings.png}}
+
+Click ``close and apply'' to apply the settings and close the dialog
+window. Right-click again and choose ``save PNG'' to save the graph as
+image file.
+
+\section{Plot subsets of variables}\label{plot-subsets-of-variables}
+
+If no variables are selected in the dataset, the longitudinal plot will
+be plotted across all variables in the dataset (in the order, in which
+they appear in the dataset). If you want to plot only across a subset of
+variables, select those variables in the variable list (e.g., by holding
+CTRL or CMD down and select the respective variables) and then click
+``Plot Data -\textgreater{} Plot longitudinal data''.
+
+\section{Exercises}\label{exercises-1}
+
+\begin{itemize}
+\item
+  Create a dual change score model using the wizard
+\item
+  Simulate Data and plot the data (longitudinal plot)
+\item
+  Change Parameters of the model, resimulate and plot
+\item
+  What happens if the self-feedback (beta) is 1, 0, or -1? Why?
+\item
+  If you set the self-feedback to zero, what are the effects of changing
+  alpha? What if you set different alphas (rename them to alpha1,
+  alpha2,\ldots{} first) for different time points?
+\item
+  By setting a form of constant positive change (alpha) and negative
+  proportional change (beta), can you generate simulated learning curves
+  that reach an asymptote?
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Solution}\label{solution-1}
+
+The self-feedback term beta implies a form of proportional growth if
+values are positive because change then depends on previous level. This
+by itself can reflect an exponential growth function. In combination
+with constant growth rates (alpha \textgreater{} 0), negative
+proportional change can be used to model change that flattens after a
+while. Here is one possible solution:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-saturating-model.png}}
+
+And these are some simulated trajectories from the model (N=100):
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-saturating-plot.png}}
+
+\bookmarksetup{startatroot}
+
+\chapter{Multi-Group Models}\label{multi-group-models}
+
+Onyx support multi-group models, in which we use a grouping variable
+that encodes group membership between individuals. Onyx has its own
+approach to multigroup modeling which works with filters on observed
+variables that filter out subsets of observations that should be modeled
+by a given observed variable.
+
+By right-clicking on an observed variable, you can select ``Add
+Grouping'' to add a filter to one or more selected observed variables.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-addgrouping.png}}
+
+Then, a little diamond grouping indicator appears on that variable. The
+value inside the diamond reflects the group membership. To change group
+membership, right-click the diamong and change the ``Group'' value:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-setgroup.png}}Latent
+Mean Differences
+
+The diamonds are variable containers, that is, you can drag a
+discrete-valued grouping variable from a dataset on to the diamond. As
+long as the diamond is not filled (white fill color), it is not
+connected. Once it is connected, it becomes filled (black color), that
+is, it is now associated with a grouping variable in the dataset.
+
+\bookmarksetup{startatroot}
+
+\chapter{Latent Means}\label{latent-means}
+
+Models of latent mean differences are like the classical t-test or ANOVA
+but estimated on latent constructs.
+
+Figure 1 shows a path diagram representing one possibility to set up a
+latent mean difference model when there are multiple, noisy measurements
+of the same underlying latent construct. This model is a MIMIC
+(multiple-indicators multiple-causes, \textbf{hancock2001effect?})
+model, in which we estimate a measurement model of a latent trait
+\(\eta\) across two groups that are encoded via a dummy group indicator.
+The latent trait is measured through multiple observed indicators (here,
+\(x1\) to \(x3\)) with indicator-specific residual variance terms, which
+allows to separate error variance from true-score variance. If correctly
+specified, this approach allows us to obtain more precise estimates of
+the latent trait purged of measurement error and unreliability (DeShon
+1998). In this specific instance, the regression path from the
+dummy-coded group indicator to the latent variable directly represents a
+standardized mean difference because the scale of the latent variable
+was fixed to have a variance of one. Note that the MIMIC model assumes
+that measurement invariance holds, that is, the factor loadings, item
+intercepts, and item residual variances are assumed to be the same
+across groups.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-multigroup-mimic-result.png}}
+
+A more flexible model specification is also possible; using a
+multiple-group factor model, we can estimate the same factor model in
+each group separately and empirically test whether measurement
+invariance holds; then, we can continue to test whether there is a
+difference in latent factor means across groups. This is also known as
+the SMM {[}structured means modeling; (\textbf{hancock2001effect?}){]}
+approach:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-muligroup-smm-results.png}}
+
+Note that all parameters with the same name have identity constraints;
+in particular, this means that parameters with the same name are
+identical across groups. In the path diagram shown above, all parameters
+are identical across groups. This implements a very strong assumption of
+measurement invariance across groups and identity of magnitude of
+variance (= individual differences at the latent level) across groups.
+Again, this restricted version of the SMM model is identical to the
+above dummy-coded MIMIC approach. However, the SMM allows to also freely
+estimate parameters between groups and perform tests of whether some of
+the restrictions are supported by the data or not.
+
+\section{Exercises}\label{exercises-2}
+
+\begin{itemize}
+\item
+  Load the dataset ``factor\_model\_memory.csv''
+\item
+  Use the ``Latent Means Model'' wizard to create both the SMM and the
+  MIMIC approach model to estimate models of latent mean differences
+\item
+  Freely estimate the latent variance in the second group of the SMM
+  approach
+\item
+  Copy the SMM model and freely estimate the factor loadings across
+  groups; run a likelihood ratio test between the models as a test of
+  measurement invariance
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Exercises}\label{exercises-3}
+
+In the following chapters, you will find exercises to practice your Onyx
+and modeling skills.
+
+\bookmarksetup{startatroot}
+
+\chapter{Exercise: Multiple determinants of lifespan memory
+differences}\label{exercise-multiple-determinants-of-lifespan-memory-differences}
+
+In this exercise, we will reproduce results reported by (Henson et al.
+2016). In their study, they speculate on different theories of memory.
+Here, we use SEM to test different measurement models representing the
+different theories of memory. Items are 9 memory scores (3 valences and
+3 tests, fully crossed). The tests tap into associative memory, item
+memory, and visual priming. Valences are positive, neutral, negative.
+The data is based on the reported covariances of the item d' values
+across the nine tests. Henson et al. (2016) write in their introduction:
+
+\begin{quote}
+Human memory is often claimed to consist of different systems, supported
+by distinct brain
+regions\textsuperscript{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/\#b1}{1}},\textsuperscript{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/\#b2}{2}},\textsuperscript{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/\#b3}{3}}.
+However, the precise fractionation of these memory systems is a matter
+of continuing
+debate\textsuperscript{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/\#b4}{4}},\textsuperscript{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/\#b5}{5}}.~
+\end{quote}
+
+In the following, they list a couple of different theories that
+postulate different structural models underlying the observed variances
+and covariances.
+
+\section{Theories}\label{theories}
+
+Alternative theories for memory discussed are:
+
+\begin{itemize}
+\tightlist
+\item
+  Theory \#1 (Berry et al.)
+\end{itemize}
+
+A single factor drives memory performance across all tests and valences.
+
+\begin{itemize}
+\tightlist
+\item
+  Theory \#2 (Squire)
+\end{itemize}
+
+Two components drive memory performance, namely declarative (explicit)
+memory underlying associate and item memory, plus a procedural
+(implicit) system underlying priming.
+
+\begin{itemize}
+\tightlist
+\item
+  Theory \#3 (Gardiner et al., Yonelinas)
+\end{itemize}
+
+An alternative two-component model assumes a recollection factor
+underlies associate memory, and a fluency factor underlies item memory
+and priming.
+
+(optional variant: item memory is driven by both recollection and
+fluency)
+
+\begin{itemize}
+\tightlist
+\item
+  Theory \#4
+\end{itemize}
+
+A three-component model predicts that each test is best described by an
+individual underlying component.
+
+\section{Fast Model Creation}\label{fast-model-creation}
+
+The data are provided in the file \texttt{camcan.data}, which contains
+the variances and covariances across the nine indicators measured in
+N=305 persons.
+
+Note that the fastest way to start modeling is to load the data, select
+all variables in the loaded dataset and drag them onto the empty model
+panel. This way, all observed variables are created in the model,
+together with each a free parameter representing their variance, and
+they are directly linked to the dataset (for model fitting). Maximum
+likelihood-estimation directly starts and the values represent the
+maximum-likelihood estimates of the variances of each variable.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-camcan-drag.png}}
+
+In order, to create a common factor, double-click on an empty space in
+the model view. A latent variable (shown as a circle) appears. Change
+the default name to ``Memory''. Now add the factor loadings. These are
+directed paths from the latent factor to each observed variable and make
+them freely estimated variables. Feel free to use the layout and graph
+settings to customize the appearance. Note that a factor model needs an
+identification constraint to identify the latent scale. To implement
+this, either fix the latent variance to one or fix one of the loadings
+to one. In the first case, the latent scale is identified such that it
+has unit variance; in the second case, it is identified to have the same
+unit of measurement as the item with the unit factor loading. Your graph
+should look somewhat like this:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-result-memory-theory1.png}}
+
+Let us inspect the explained variance in each item. You can do this
+visually by giving the observed variables a fill color and then select
+``Customize Variable -\textgreater{} Select Fill Style -\textgreater{}
+Bokers R2'' and each observed variable will be filled according to the
+level of explained variance. Or, you hover the mouse over a single,
+unselected observed variable. A popup window will appear, in which you
+can read off the \(R^2\) value as estimate of explained variance. Using
+either way, we can already see that the priming variables are not well
+explained by the common factor. Further, we find these goodness-of-fit
+values:
+
+\begin{verbatim}
+RMSEA (classic)               : 0.288 
+SRMR (covariances only)       : 0.142
+CFI (to independent model)    : 0.73
+\end{verbatim}
+
+What other models could explain these data better?
+
+\bookmarksetup{startatroot}
+
+\chapter{Exercises}\label{exercises-4}
+
+Exercise:
+
+1) Set up models representing the alternative theories, fit the models
+with the provided data (camcan.data) as described above and discuss the
+results.
+
+2) Inspect parameter estimates (e.g., check for problems like negative
+variances) and model fit statistics
+
+3) What model fits best?
+
+4) How could your final model incorporate predictors of behavior,
+e.g.~grey matter volume estimates of some ROIs?
+
+\bookmarksetup{startatroot}
+
+\chapter{Solution}\label{solution-2}
+
+This is the common factor model (Theory 1):
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-result-memory-theory1.png}}
+
+This is explicit and implicit memory (Theory 2):
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-result-memory-theory2.png}}
+
+This is the recollection and fluency factor (Theory 3):
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-result-memory-theory3.png}}
+And finally a model of three different factors:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-result-memory-theory4.png}}
+
+How would a model look like, which has a brain variable, which we would
+like to use to predict behavior with?
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-camcam-brainmodel.png}}
+
+\bookmarksetup{startatroot}
+
+\chapter{Age-related differences in in fluid intelligence and
+multitasking and their correlations with gray-matter and white-matter
+volume}\label{age-related-differences-in-in-fluid-intelligence-and-multitasking-and-their-correlations-with-gray-matter-and-white-matter-volume}
+
+In this exercise, we will reproduce an analysis of . From their study:
+
+\begin{quote}
+We focus on four neural properties selected based on the current
+literature---(see Methods), two involving grey matter volume (GMV;
+Brodmann Area 10 (BA10) and the Multiple Demand (MD) System), and two
+involving WMI (the Forceps Minor (FM) and the Anterior Thalamic
+Radiations (ATR)). Fitting a series of structural equation models, we
+show that multitasking and fluid intelligence are distinct cognitive
+abilities that show diverging age-related differences.
+\end{quote}
+
+In their study, they assessed two behavioral performance measures. From
+their study:
+
+\begin{quote}
+We assess fluid intelligence using the Cattell Culture Fair Test,
+consisting of pencil-and-paper subtests that yield four summary scores
+(series completions, odd-one-out, matrices and topology) used in further
+modelling. {[}\ldots{]} This consisted of four subtests yielding a sum
+score each. In contrast to the Cattell test of fluid intelligence, the
+Hotel test simulates a hotel work environment and measures the ability
+to distribute performance across multiple tasks, which we will refer to
+from here on as multitasking.
+\end{quote}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/kievit-paper-tasks.png}}
+
+\begin{quote}
+Ageing is characterized by declines on a variety of cognitive measures.
+These declines are often attributed to a general, unitary underlying
+cause, such as a reduction in executive function owing to atrophy of the
+prefrontal cortex. However, age-related changes are likely
+multifactorial, and the relationship between neural changes and
+cognitive measures is not well-understood. Here we address this in a
+large (N=567), population-based sample drawn from the Cambridge Centre
+for Ageing and Neuroscience (Cam-CAN) data. We relate fluid intelligence
+and multitasking to multiple brain measures, including grey matter in
+various prefrontal regions and white matter integrity connecting those
+regions.
+\end{quote}
+
+Our final goal is to reproduce their final SEM to explain individual
+differences in the two cognitive facets using the four brain measures of
+interest:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/kievit-mimic-model.png}}
+
+\bookmarksetup{startatroot}
+
+\chapter{Exercise}\label{exercise-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Load the dataset ``ncomms.dat'', which contains the variances and
+  covariances as reported by (\textbf{kie?}).
+\item
+  Create a measurement model for cognition using only the behavioral
+  variables. What model fits better? A model with a single performance
+  factor across all six tests? Or two correlated latent factors, one
+  fluid intelligence factor for the Cattel items and one multitasking
+  factor for the Hotel test items?
+\item
+  Create a measurement model for the brain? Does a single factor across
+  gray matter volume and white matter volume represent the observed data
+  well? If not, is it possible to represent the data using two
+  correlated factors? A gray matter volume factor with two indicators
+  and a white matter factor with two indicators? If not, what else can
+  we do?
+\item
+  Fuse both models in one model and use whatever items or factors you
+  chose in your measurement models, such that the brain variables
+  predict behavior. Freely estimate those parameters. What can we learn?
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{Solution}\label{solution-3}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-cognition-model1.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-cognition-model2.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-cognition-model1-behavior.png}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-cognition-fullmodel.png}}
+
+\bookmarksetup{startatroot}
+
+\chapter{The End}\label{the-end}
+
+You have reached the end of the workshop. Well done!
+
+Please let us know whether the workshop was helpful. Let us know if you
+encountered any problems, if things were not clear, or if you just were
+happy with how things were. We are always happy about any form of
+constructive feedback to improve our workshops and our software.
+
+Feel free to get in touch with Andreas:
+\href{mailto:brandmaier@mpib-berlin.mpg.de}{\nolinkurl{brandmaier@mpib-berlin.mpg.de}}
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-deshon1998cautionary}
+DeShon, Richard P. 1998. {``A Cautionary Note on Measurement Error
+Corrections in Structural Equation Models.''} \emph{Psychological
+Methods} 3 (4): 412--23.
+
+\bibitem[\citeproctext]{ref-henson2016multiple}
+Henson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina
+Emery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. {``Multiple
+Determinants of Lifespan Memory Differences.''} \emph{Scientific
+Reports} 6 (1): 32527.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

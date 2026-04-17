@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Simulate and Plot – Structural Equation Modeling with Onyx</title>
+<title>6&nbsp; Exercises – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./multigroup.html" rel="next">
-<link href="./modelfit.html" rel="prev">
+<link href="./exercise-memory.html" rel="next">
+<link href="./multigroup.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercises.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercises</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simulation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></span></a>
   </div>
 </li>
@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="./exercises.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
   </div>
 </li>
@@ -177,29 +177,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#simulation-to-understand-model-parameters" id="toc-simulation-to-understand-model-parameters" class="nav-link active" data-scroll-target="#simulation-to-understand-model-parameters"><span class="header-section-number">4.1</span> Simulation to Understand Model Parameters</a></li>
-  <li><a href="#dual-change-score-model" id="toc-dual-change-score-model" class="nav-link" data-scroll-target="#dual-change-score-model"><span class="header-section-number">4.2</span> Dual Change Score Model</a></li>
-  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation"><span class="header-section-number">4.3</span> Simulation</a></li>
-  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot"><span class="header-section-number">4.4</span> Plot</a></li>
-  <li><a href="#longitudinal-plot" id="toc-longitudinal-plot" class="nav-link" data-scroll-target="#longitudinal-plot"><span class="header-section-number">4.5</span> Longitudinal Plot</a></li>
-  <li><a href="#customize-the-longitudinal-plot" id="toc-customize-the-longitudinal-plot" class="nav-link" data-scroll-target="#customize-the-longitudinal-plot"><span class="header-section-number">4.6</span> Customize the Longitudinal Plot</a></li>
-  <li><a href="#plot-subsets-of-variables" id="toc-plot-subsets-of-variables" class="nav-link" data-scroll-target="#plot-subsets-of-variables"><span class="header-section-number">4.7</span> Plot subsets of variables</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.8</span> Exercises</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">5</span> Solution</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercises</span></h1>
 </div>
 
 
@@ -216,76 +202,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Goal: Learn about simulation and plotting of data</p>
-</div>
-</div>
-</div>
-<section id="simulation-to-understand-model-parameters" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="simulation-to-understand-model-parameters"><span class="header-section-number">4.1</span> Simulation to Understand Model Parameters</h2>
-<p>We want to answer this question:</p>
-<p>In a Dual Change Score Model, what effects do parameters have on the model-implied trajectories?</p>
-<p>Steps:</p>
-<ol type="1">
-<li><p>Create a Dual Change Score Model</p></li>
-<li><p>Simulate Longitudinal Data</p></li>
-<li><p>Plot Longitudinal Data</p></li>
-<li><p>Change Model (Population) Parameters and Repeat from 2</p></li>
-</ol>
-</section>
-<section id="dual-change-score-model" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="dual-change-score-model"><span class="header-section-number">4.2</span> Dual Change Score Model</h2>
-<p>Use the DCSM-Wizard to create a dual change score model. Keep all values at their defaults. This creates a model with five time points and the observed time points will be called x1, x2, …, x5.</p>
-<p><img src="screenshots/onyx-screen-wizard-dcsm.png" class="img-fluid"></p>
-</section>
-<section id="simulation" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="simulation"><span class="header-section-number">4.3</span> Simulation</h2>
-<p><img src="screenshots/onyx-screen-modelplotmenu.png" class="img-fluid"></p>
-</section>
-<section id="plot" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="plot"><span class="header-section-number">4.4</span> Plot</h2>
-<p>Next, right-click on the simulated dataset, choose “Plot data” and select “Plot longitudinal data”.</p>
-<p><img src="screenshots/onyx-screen-dataplotmenu.png" class="img-fluid"></p>
-</section>
-<section id="longitudinal-plot" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="longitudinal-plot"><span class="header-section-number">4.5</span> Longitudinal Plot</h2>
-<p><img src="screenshots/onyx-screen-plotlongitudinal.png" class="img-fluid"></p>
-</section>
-<section id="customize-the-longitudinal-plot" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="customize-the-longitudinal-plot"><span class="header-section-number">4.6</span> Customize the Longitudinal Plot</h2>
-<p>Right-click on the longitudinal plot window. This will show some basic plot settings. Try out different ways to customize the plot. By default, the line color is selected as “COLORED_PER_OBSERVATION” such that each observation gets a different color. Alternatively, you can set the color to “USER DEFINED” and then pick a line color. You can also change the line thickness, and the axes labels</p>
-<p><img src="screenshots/onyx-screen-longitudinalplot-settings.png" class="img-fluid"></p>
-<p>Click “close and apply” to apply the settings and close the dialog window. Right-click again and choose “save PNG” to save the graph as image file.</p>
-</section>
-<section id="plot-subsets-of-variables" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="plot-subsets-of-variables"><span class="header-section-number">4.7</span> Plot subsets of variables</h2>
-<p>If no variables are selected in the dataset, the longitudinal plot will be plotted across all variables in the dataset (in the order, in which they appear in the dataset). If you want to plot only across a subset of variables, select those variables in the variable list (e.g., by holding CTRL or CMD down and select the respective variables) and then click “Plot Data -&gt; Plot longitudinal data”.</p>
-</section>
-<section id="exercises" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.8</span> Exercises</h2>
-<ul>
-<li><p>Create a dual change score model using the wizard</p></li>
-<li><p>Simulate Data and plot the data (longitudinal plot)</p></li>
-<li><p>Change Parameters of the model, resimulate and plot</p></li>
-<li><p>What happens if the self-feedback (beta) is 1, 0, or -1? Why?</p></li>
-<li><p>If you set the self-feedback to zero, what are the effects of changing alpha? What if you set different alphas (rename them to alpha1, alpha2,… first) for different time points?</p></li>
-<li><p>By setting a form of constant positive change (alpha) and negative proportional change (beta), can you generate simulated learning curves that reach an asymptote?</p></li>
-</ul>
-</section>
-<section id="solution" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Solution</h1>
-<p>The self-feedback term beta implies a form of proportional growth if values are positive because change then depends on previous level. This by itself can reflect an exponential growth function. In combination with constant growth rates (alpha &gt; 0), negative proportional change can be used to model change that flattens after a while. Here is one possible solution:</p>
-<p><img src="screenshots/onyx-screen-saturating-model.png" class="img-fluid"></p>
-<p>And these are some simulated trajectories from the model (N=100):</p>
-<p><img src="screenshots/onyx-screen-saturating-plot.png" class="img-fluid"></p>
+<p>In the following chapters, you will find exercises to practice your Onyx and modeling skills.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -707,13 +626,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./modelfit.html" class="pagination-link" aria-label="Untitled">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Untitled</span></span>
+      <a href="./multigroup.html" class="pagination-link" aria-label="Multi-Group Models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./multigroup.html" class="pagination-link" aria-label="Multi-Group Models">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exercise-memory.html" class="pagination-link" aria-label="Exercise: Multiple determinants of lifespan memory differences">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

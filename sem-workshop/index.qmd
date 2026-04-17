@@ -1,5 +1,7 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This is a self-paced workshop for Onyx, a graphical user-interface for structural equation modeling.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+\![images/somemodels.png\]
+
+We assume that you already familiar with the basics of Structural Equation Modeling. 

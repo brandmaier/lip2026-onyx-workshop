@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Exercise: Multiple determinants of lifespan memory differences – Structural Equation Modeling with Onyx</title>
+<title>7&nbsp; Exercise: Multiple determinants of lifespan memory differences – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./multigroup.html" rel="prev">
+<link href="./exercise-braincognition.html" rel="next">
+<link href="./exercises.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -89,6 +89,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -101,7 +130,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise-memory.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise-memory.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,14 +193,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./exercise-memory.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The End</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The End</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -190,12 +231,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#theory-1-berry-et-al." id="toc-theory-1-berry-et-al." class="nav-link active" data-scroll-target="#theory-1-berry-et-al."><span class="header-section-number">6.1</span> Theory #1 (Berry et al.)</a></li>
-  <li><a href="#theory-2-squire" id="toc-theory-2-squire" class="nav-link" data-scroll-target="#theory-2-squire"><span class="header-section-number">6.2</span> Theory #2 (Squire)</a></li>
-  <li><a href="#theory-3-gardiner-et-al.-yonelinas" id="toc-theory-3-gardiner-et-al.-yonelinas" class="nav-link" data-scroll-target="#theory-3-gardiner-et-al.-yonelinas"><span class="header-section-number">6.3</span> Theory #3 (Gardiner et al., Yonelinas)</a></li>
-  <li><a href="#theory-4" id="toc-theory-4" class="nav-link" data-scroll-target="#theory-4"><span class="header-section-number">6.4</span> Theory #4</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7</span> Exercises</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">8</span> Solution</a></li>
+  <li><a href="#theories" id="toc-theories" class="nav-link active" data-scroll-target="#theories"><span class="header-section-number">7.1</span> Theories</a></li>
+  <li><a href="#fast-model-creation" id="toc-fast-model-creation" class="nav-link" data-scroll-target="#fast-model-creation"><span class="header-section-number">7.2</span> Fast Model Creation</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">8</span> Exercises</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">9</span> Solution</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +243,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></h1>
 </div>
 
 
@@ -221,39 +260,67 @@ div.csl-indent {
 </header>
 
 
-<p>In this exercise, we will reproduce results reported by <span class="citation" data-cites="henson2016multiple">(<a href="references.html#ref-henson2016multiple" role="doc-biblioref">Henson et al. 2016</a>)</span>. In their study, they speculate on different theories of memory. Here, we use SEM to test different measurement models representing the different theories of memory. Items are 9 memory scores (3 valences and 3 tests, fully crossed). The tests tap into associative memory, item memory, and visual priming. Valences are positive, neutral, negative. The data is based on the reported covariances of the item d’ values across the nine tests.</p>
+<p>In this exercise, we will reproduce results reported by <span class="citation" data-cites="henson2016multiple">(<a href="#ref-henson2016multiple" role="doc-biblioref">Henson et al. 2016</a>)</span>. In their study, they speculate on different theories of memory. Here, we use SEM to test different measurement models representing the different theories of memory. Items are 9 memory scores (3 valences and 3 tests, fully crossed). The tests tap into associative memory, item memory, and visual priming. Valences are positive, neutral, negative. The data is based on the reported covariances of the item d’ values across the nine tests. <span class="citation" data-cites="henson2016multiple">Henson et al. (<a href="#ref-henson2016multiple" role="doc-biblioref">2016</a>)</span> write in their introduction:</p>
+<blockquote class="blockquote">
+<p>Human memory is often claimed to consist of different systems, supported by distinct brain regions<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/#b1">1</a></sup>,<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/#b2">2</a></sup>,<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/#b3">3</a></sup>. However, the precise fractionation of these memory systems is a matter of continuing debate<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/#b4">4</a></sup>,<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5013267/#b5">5</a></sup>.&nbsp;</p>
+</blockquote>
+<p>In the following, they list a couple of different theories that postulate different structural models underlying the observed variances and covariances.</p>
+<section id="theories" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="theories"><span class="header-section-number">7.1</span> Theories</h2>
 <p>Alternative theories for memory discussed are:</p>
-<section id="theory-1-berry-et-al." class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="theory-1-berry-et-al."><span class="header-section-number">6.1</span> Theory #1 (Berry et al.)</h2>
+<ul>
+<li>Theory #1 (Berry et al.)</li>
+</ul>
 <p>A single factor drives memory performance across all tests and valences.</p>
-</section>
-<section id="theory-2-squire" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="theory-2-squire"><span class="header-section-number">6.2</span> Theory #2 (Squire)</h2>
-<p>Two components drive memory performance, namely declarative (explicit) memory underlying associate and item memory, plus a procedural (implicit) system underlying priming</p>
-</section>
-<section id="theory-3-gardiner-et-al.-yonelinas" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="theory-3-gardiner-et-al.-yonelinas"><span class="header-section-number">6.3</span> Theory #3 (Gardiner et al., Yonelinas)</h2>
-<p>An alternative two-component model assumes a recollection factor underlies associate memory, and a fluency factor underlies item memory and priming</p>
+<ul>
+<li>Theory #2 (Squire)</li>
+</ul>
+<p>Two components drive memory performance, namely declarative (explicit) memory underlying associate and item memory, plus a procedural (implicit) system underlying priming.</p>
+<ul>
+<li>Theory #3 (Gardiner et al., Yonelinas)</li>
+</ul>
+<p>An alternative two-component model assumes a recollection factor underlies associate memory, and a fluency factor underlies item memory and priming.</p>
 <p>(optional variant: item memory is driven by both recollection and fluency)</p>
-</section>
-<section id="theory-4" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="theory-4"><span class="header-section-number">6.4</span> Theory #4</h2>
+<ul>
+<li>Theory #4</li>
+</ul>
 <p>A three-component model predicts that each test is best described by an individual underlying component.</p>
 </section>
-<section id="exercises" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Exercises</h1>
+<section id="fast-model-creation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="fast-model-creation"><span class="header-section-number">7.2</span> Fast Model Creation</h2>
+<p>The data are provided in the file <code>camcan.data</code>, which contains the variances and covariances across the nine indicators measured in N=305 persons.</p>
+<p>Note that the fastest way to start modeling is to load the data, select all variables in the loaded dataset and drag them onto the empty model panel. This way, all observed variables are created in the model, together with each a free parameter representing their variance, and they are directly linked to the dataset (for model fitting). Maximum likelihood-estimation directly starts and the values represent the maximum-likelihood estimates of the variances of each variable.</p>
+<p><img src="screenshots/onyx-screen-camcan-drag.png" class="img-fluid"></p>
+<p>In order, to create a common factor, double-click on an empty space in the model view. A latent variable (shown as a circle) appears. Change the default name to “Memory”. Now add the factor loadings. These are directed paths from the latent factor to each observed variable and make them freely estimated variables. Feel free to use the layout and graph settings to customize the appearance. Note that a factor model needs an identification constraint to identify the latent scale. To implement this, either fix the latent variance to one or fix one of the loadings to one. In the first case, the latent scale is identified such that it has unit variance; in the second case, it is identified to have the same unit of measurement as the item with the unit factor loading. Your graph should look somewhat like this:</p>
+<p><img src="screenshots/onyx-result-memory-theory1.png" class="img-fluid"></p>
+<p>Let us inspect the explained variance in each item. You can do this visually by giving the observed variables a fill color and then select “Customize Variable -&gt; Select Fill Style -&gt; Bokers R2” and each observed variable will be filled according to the level of explained variance. Or, you hover the mouse over a single, unselected observed variable. A popup window will appear, in which you can read off the <span class="math inline">\(R^2\)</span> value as estimate of explained variance. Using either way, we can already see that the priming variables are not well explained by the common factor. Further, we find these goodness-of-fit values:</p>
+<pre><code>RMSEA (classic)               : 0.288 
+SRMR (covariances only)       : 0.142
+CFI (to independent model)    : 0.73</code></pre>
+<p>What other models could explain these data better?</p>
+</section>
+<section id="exercises" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Exercises</h1>
 <p>Exercise:</p>
-<p>1) Set up models representing the alternative theories as described above and discuss the results.</p>
+<p>1) Set up models representing the alternative theories, fit the models with the provided data (camcan.data) as described above and discuss the results.</p>
 <p>2) Inspect parameter estimates (e.g., check for problems like negative variances) and model fit statistics</p>
 <p>3) What model fits best?</p>
 <p>4) How could your final model incorporate predictors of behavior, e.g.&nbsp;grey matter volume estimates of some ROIs?</p>
 </section>
-<section id="solution" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Solution</h1>
-<p><img src="screenshots/onyx-result-memory-theory1.png" class="img-fluid"> <img src="screenshots/onyx-result-memory-theory4.png" class="img-fluid"></p>
+<section id="solution" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Solution</h1>
+<p>This is the common factor model (Theory 1):</p>
+<p><img src="screenshots/onyx-result-memory-theory1.png" class="img-fluid"></p>
+<p>This is explicit and implicit memory (Theory 2):</p>
+<p><img src="screenshots/onyx-result-memory-theory2.png" class="img-fluid"></p>
+<p>This is the recollection and fluency factor (Theory 3):</p>
+<p><img src="screenshots/onyx-result-memory-theory3.png" class="img-fluid"> And finally a model of three different factors:</p>
+<p><img src="screenshots/onyx-result-memory-theory4.png" class="img-fluid"></p>
+<p>How would a model look like, which has a brain variable, which we would like to use to predict behavior with?</p>
+<p><img src="screenshots/onyx-camcam-brainmodel.png" class="img-fluid"></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-henson2016multiple" class="csl-entry" role="listitem">
 Henson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina Emery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. <span>“Multiple Determinants of Lifespan Memory Differences.”</span> <em>Scientific Reports</em> 6 (1): 32527.
 </div>
@@ -680,13 +747,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./multigroup.html" class="pagination-link" aria-label="Multi-Group Models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span>
+      <a href="./exercises.html" class="pagination-link" aria-label="Exercises">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercises</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="The End">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The End</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exercise-braincognition.html" class="pagination-link" aria-label="Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

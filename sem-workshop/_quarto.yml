@@ -12,7 +12,9 @@ book:
     - modelfit.qmd
     - simulation.qmd
     - multigroup.qmd
+    - exercises.qmd
     - exercise-memory.qmd
+    - exercise-braincognition.qmd
     - summary.qmd
     - references.qmd
 
