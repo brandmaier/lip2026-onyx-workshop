@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume – Structural Equation Modeling with Onyx</title>
+<title>7&nbsp; export – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./exercise-memory.html" rel="prev">
+<link href="./simulation.html" rel="next">
+<link href="./factorscores.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise-braincognition.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./export.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">export</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./export.html" class="sidebar-item-text sidebar-link">
+  <a href="./export.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">export</span></span></a>
   </div>
 </li>
@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
   </div>
 </li>
@@ -200,8 +200,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise"><span class="header-section-number">12</span> Exercise</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">13</span> Solution</a></li>
+  <li><a href="#syntax-export" id="toc-syntax-export" class="nav-link active" data-scroll-target="#syntax-export"><span class="header-section-number">7.1</span> Syntax Export</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">7.2</span> Exercise</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">7.3</span> Solution</a></li>
   </ul>
 </nav>
     </div>
@@ -210,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">export</span></h1>
 </div>
 
 
@@ -227,37 +228,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this exercise, we will reproduce an analysis of . From their study:</p>
-<blockquote class="blockquote">
-<p>We focus on four neural properties selected based on the current literature—(see Methods), two involving grey matter volume (GMV; Brodmann Area 10 (BA10) and the Multiple Demand (MD) System), and two involving WMI (the Forceps Minor (FM) and the Anterior Thalamic Radiations (ATR)). Fitting a series of structural equation models, we show that multitasking and fluid intelligence are distinct cognitive abilities that show diverging age-related differences.</p>
-</blockquote>
-<p>In their study, they assessed two behavioral performance measures. From their study:</p>
-<blockquote class="blockquote">
-<p>We assess fluid intelligence using the Cattell Culture Fair Test, consisting of pencil-and-paper subtests that yield four summary scores (series completions, odd-one-out, matrices and topology) used in further modelling. […] This consisted of four subtests yielding a sum score each. In contrast to the Cattell test of fluid intelligence, the Hotel test simulates a hotel work environment and measures the ability to distribute performance across multiple tasks, which we will refer to from here on as multitasking.</p>
-</blockquote>
-<p><img src="screenshots/kievit-paper-tasks.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Ageing is characterized by declines on a variety of cognitive measures. These declines are often attributed to a general, unitary underlying cause, such as a reduction in executive function owing to atrophy of the prefrontal cortex. However, age-related changes are likely multifactorial, and the relationship between neural changes and cognitive measures is not well-understood. Here we address this in a large (N=567), population-based sample drawn from the Cambridge Centre for Ageing and Neuroscience (Cam-CAN) data. We relate fluid intelligence and multitasking to multiple brain measures, including grey matter in various prefrontal regions and white matter integrity connecting those regions.</p>
-</blockquote>
-<p>Our final goal is to reproduce their final SEM to explain individual differences in the two cognitive facets using the four brain measures of interest:</p>
-<p><img src="screenshots/kievit-mimic-model.png" class="img-fluid"></p>
-<section id="exercise" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Exercise</h1>
-<ol type="1">
-<li>Load the dataset “ncomms.dat”, which contains the variances and covariances as reported by <span class="citation" data-cites="kie">(<a href="#ref-kie" role="doc-biblioref"><strong>kie?</strong></a>)</span>.</li>
-<li>Create a measurement model for cognition using only the behavioral variables. What model fits better? A model with a single performance factor across all six tests? Or two correlated latent factors, one fluid intelligence factor for the Cattel items and one multitasking factor for the Hotel test items?</li>
-<li>Create a measurement model for the brain? Does a single factor across gray matter volume and white matter volume represent the observed data well? If not, is it possible to represent the data using two correlated factors? A gray matter volume factor with two indicators and a white matter factor with two indicators? If not, what else can we do?</li>
-<li>Fuse both models in one model and use whatever items or factors you chose in your measurement models, such that the brain variables predict behavior. Freely estimate those parameters. What can we learn?</li>
-<li>Discuss the results (e.g., directionality and size of the effects)</li>
-<li>Test whether the effect of FM-&gt;MT and ATR-&gt;MT is different.</li>
-</ol>
+<section id="syntax-export" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="syntax-export"><span class="header-section-number">7.1</span> Syntax Export</h2>
+<p>Onyx supports exports of models to syntax specifications of other languages. This way, Onyx can be used for graphical model specification and other programs can then be used if their more advanced features are needed for estimating models (e.g., other estimators or non-normally distributed variables, etc.). To view model syntax, right-click a model and choose “Show Script” and select a syntax of your choice. Importantly, this includes the widely used R packages OpenMx and lavaan but also commercial software such as Mplus:</p>
+<p><img src="screenshots/onyx-screen-showscript.png" class="img-fluid"></p>
+<p>Importantly, the model syntax view remains linked to the model, that is, if the model graph is changed (e.g., by adding or removing variables or paths in the path diagram), the model syntax is updated. Onyx highlights newly added code parts in yellow.</p>
 </section>
-<section id="solution" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Solution</h1>
-<p><img src="screenshots/onyx-cognition-model1.png" class="img-fluid"></p>
-<p><img src="screenshots/onyx-cognition-model2.png" class="img-fluid"></p>
-<p><img src="screenshots/onyx-cognition-model1-behavior.png" class="img-fluid"></p>
-<p><img src="screenshots/onyx-cognition-fullmodel.png" class="img-fluid"></p>
+<section id="exercise" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">7.2</span> Exercise</h2>
+<ul>
+<li><p>Create a linear latent growth curve model using the linear latent growth curve model wizard (right-click the desktop, select “Create new model -&gt; Create new LGCM”</p></li>
+<li><p>Load the data “lgcm_simulated.csv” and obtain parameter estimates; inspect model fit</p></li>
+<li><p>Open the model syntax view for lavaan</p></li>
+<li><p>If you are familiar with lavaan and R: Copy the lavaan code to an R session; adapt the code to load the data file; estimate the model in lavaan; compare the results between Onyx and lavaan</p></li>
+</ul>
+</section>
+<section id="solution" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="solution"><span class="header-section-number">7.3</span> Solution</h2>
+<p><img src="screenshots/onyx-screen-lgcm.png" class="img-fluid"></p>
+<pre><code>
+#
+# This model specification was automatically generated by Onyx
+#
+library(lavaan);
+modelData &lt;- read.table(DATAFILENAME, header = TRUE) ;
+ model&lt;-"
+   ! regressions 
+   icept=~1.0*x1
+   icept=~1.0*x2
+   slope=~1.0*x2
+   icept=~1.0*x3
+   slope=~2.0*x3
+   icept=~1.0*x4
+   slope=~3.0*x4
+   icept=~1.0*x5
+   slope=~4.0*x5
+   ! residuals, variances and covariances
+   x1 ~~ e*x1
+   x2 ~~ e*x2
+   x3 ~~ e*x3
+   x4 ~~ e2*x4
+   x5 ~~ e*x5
+   icept ~~ sigma_i*icept
+   slope ~~ sigma_s*slope
+   icept ~~ COV_icept_slope*slope
+   ! means
+   icept ~ const__icept*1
+   slope ~ const__slope*1
+   x1 ~ 0.0*1
+   x2 ~ 0.0*1
+   x3 ~ 0.0*1
+   x4 ~ 0.0*1
+   x5 ~ 0.0*1
+"
+result&lt;-lavaan(model, data=modelData, fixed.x=FALSE, missing="FIML")
+summary(result, fit.measures=TRUE)</code></pre>
 
 
 </section>
@@ -682,13 +707,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./exercise-memory.html" class="pagination-link" aria-label="Exercise: Multiple determinants of lifespan memory differences">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span>
+      <a href="./factorscores.html" class="pagination-link" aria-label="Factor Scores">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Scores</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="The End">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The End</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./simulation.html" class="pagination-link" aria-label="Simulate and Plot">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

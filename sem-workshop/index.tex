@@ -40,6 +40,13 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+  
+\fi
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
@@ -233,6 +240,10 @@ structural equation modeling.
 We assume that you already familiar with the basics of Structural
 Equation Modeling.
 
+The workshop has some introductory chapters that cover basic workflow
+elements in Onyx, such as basics of model specification, evaluating
+model fit, or specifying multiple group models.
+
 \bookmarksetup{startatroot}
 
 \chapter{Introduction}\label{introduction}
@@ -382,7 +393,7 @@ create figures for manuscripts.
 
 \bookmarksetup{startatroot}
 
-\chapter{Untitled}\label{untitled}
+\chapter{Goodness of Fit}\label{goodness-of-fit}
 
 \section{Model Fit}\label{model-fit}
 
@@ -571,9 +582,417 @@ as exploratory.
 
 \bookmarksetup{startatroot}
 
+\chapter{Multi-Group Models}\label{multi-group-models}
+
+Multi-group models in Structural Equation Modeling (SEM) are an
+extension of standard SEM techniques that allow researchers to test
+whether relationships between variables are consistent or different
+across two or more groups. In the context of Psychology, these groups
+might represent categories such as gender, age cohorts, cultural
+backgrounds, or clinical vs.~non-clinical populations. By estimating the
+same model simultaneously in multiple groups, researchers can formally
+assess measurement invariance (whether constructs are interpreted
+similarly across groups) and structural invariance (whether the
+relationships between constructs differ). This is especially valuable
+because it ensures that observed group differences reflect true
+psychological distinctions rather than artifacts of measurement bias.
+Overall, multi-group SEM provides a rigorous framework for comparing
+theoretical models across populations, strengthening the validity and
+generalizability of psychological findings.
+
+\section{Multi-group models in Onyx}\label{multi-group-models-in-onyx}
+
+Onyx support multi-group models, in which we use a grouping variable
+that encodes group membership between individuals. Onyx has its own
+approach to multigroup modeling which works with filters on observed
+variables that filter out subsets of observations that should be modeled
+by a given observed variable.
+
+By right-clicking on an observed variable, you can select ``Add
+Grouping'' to add a filter to one or more selected observed variables.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-addgrouping.png}}
+
+Then, a little diamond grouping indicator appears on that variable. The
+value inside the diamond reflects the group membership. To change group
+membership, right-click the diamong and change the ``Group'' value:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-setgroup.png}}Latent
+Mean Differences
+
+The diamonds are variable containers, that is, you can drag a
+discrete-valued grouping variable from a dataset on to the diamond. As
+long as the diamond is not filled (white fill color), it is not
+connected. Once it is connected, it becomes filled (black color), that
+is, it is now associated with a grouping variable in the dataset.
+
+\bookmarksetup{startatroot}
+
+\chapter{Applied Example: Latent
+Means}\label{applied-example-latent-means}
+
+Models of latent mean differences are like the classical t-test or ANOVA
+but estimated on latent constructs.
+
+Figure 1 shows a path diagram representing one possibility to set up a
+latent mean difference model when there are multiple, noisy measurements
+of the same underlying latent construct. This model is a MIMIC
+(multiple-indicators multiple-causes, \textbf{hancock2001effect?})
+model, in which we estimate a measurement model of a latent trait
+\(\eta\) across two groups that are encoded via a dummy group indicator.
+The latent trait is measured through multiple observed indicators (here,
+\(x1\) to \(x3\)) with indicator-specific residual variance terms, which
+allows to separate error variance from true-score variance. If correctly
+specified, this approach allows us to obtain more precise estimates of
+the latent trait purged of measurement error and unreliability (DeShon
+1998). In this specific instance, the regression path from the
+dummy-coded group indicator to the latent variable directly represents a
+standardized mean difference because the scale of the latent variable
+was fixed to have a variance of one. Note that the MIMIC model assumes
+that measurement invariance holds, that is, the factor loadings, item
+intercepts, and item residual variances are assumed to be the same
+across groups.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-multigroup-mimic-result.png}}
+
+A more flexible model specification is also possible; using a
+multiple-group factor model, we can estimate the same factor model in
+each group separately and empirically test whether measurement
+invariance holds; then, we can continue to test whether there is a
+difference in latent factor means across groups. This is also known as
+the SMM {[}structured means modeling; (\textbf{hancock2001effect?}){]}
+approach:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-muligroup-smm-results.png}}
+
+Note that all parameters with the same name have identity constraints;
+in particular, this means that parameters with the same name are
+identical across groups. In the path diagram shown above, all parameters
+are identical across groups. This implements a very strong assumption of
+measurement invariance across groups and identity of magnitude of
+variance (= individual differences at the latent level) across groups.
+Again, this restricted version of the SMM model is identical to the
+above dummy-coded MIMIC approach. However, the SMM allows to also freely
+estimate parameters between groups and perform tests of whether some of
+the restrictions are supported by the data or not.
+
+\section{Exercises}\label{exercises-1}
+
+\begin{itemize}
+\item
+  Load the dataset ``factor\_model\_memory.csv''
+\item
+  Use the ``Latent Means Model'' wizard to create both the SMM and the
+  MIMIC approach model to estimate models of latent mean differences
+\item
+  Freely estimate the latent variance in the second group of the SMM
+  approach
+\item
+  Copy the SMM model and freely estimate the factor loadings across
+  groups; run a likelihood ratio test between the models as a test of
+  measurement invariance
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Model Comparison}\label{model-comparison}
+
+\section{Model Comparison}\label{model-comparison-1}
+
+Model comparison in Structural Equation Modeling is a central technique
+for evaluating how well different theoretical specifications fit the
+observed data. In \ul{Psychology}, researchers often compare
+\textbf{nested models}, where one model is a constrained version of
+another (e.g., fixing certain parameters to zero or imposing equality
+constraints). This nesting allows for the use of \textbf{likelihood
+ratio tests (LRTs)}, which formally assess whether the more complex
+model provides a significantly better fit than the simpler one. By
+examining changes in model fit (typically via differences in chi-square
+statistics for nested models) researchers can determine whether added
+parameters meaningfully improve explanatory power or whether a more
+parsimonious model is sufficient. This approach is particularly useful
+for testing theoretical assumptions, such as whether specific pathways
+are necessary or whether constraints (e.g., equal effects across groups
+or time points, measurement invariance, additional predictors) are
+justified, thereby supporting more precise and theory-driven
+conclusions.
+
+\section{Model Comparison using
+Chi-Square-Tests}\label{model-comparison-using-chi-square-tests}
+
+Onyx supports model comparison for nested models based on the chi-square
+test. To compare two models, you can add a model comparison of two
+models that is represented as an edge between two models (similar to a
+path between two variables). The model comparison is created analogously
+to creating a path between two variables. Press the right mouse button
+on an empty space of one model, the mouse pointer onto the second model,
+and release the mouse button. A model comparison edge will appear
+between the two models:
+
+\section{Holzinger Swineford}\label{holzinger-swineford}
+
+From the description provided in the lavaan package:
+
+\begin{quote}
+The classic Holzinger and Swineford (1939) dataset consists of mental
+ability test scores of seventh- and eighth-grade children from two
+different schools (Pasteur and Grant-White). In the original dataset
+(available in the \texttt{MBESS} package), there are scores for 26
+tests. However, a smaller subset with 9 variables is more widely used in
+the literature (for example in Joreskog's 1969 paper, which also uses
+the 145 subjects from the Grant-White school only).
+\end{quote}
+
+The commonly used factor model for these 9 variables consists of three
+latent variables each measured by three indicators:
+
+\begin{itemize}
+\item
+  a \emph{visual} factor measured by three variables: \texttt{x1},
+  \texttt{x2} and \texttt{x3}
+\item
+  a \emph{textual} factor measured by three variables: \texttt{x4},
+  \texttt{x5} and \texttt{x6}
+\item
+  a \emph{speed} factor measured by three variables: \texttt{x7},
+  \texttt{x8} and \texttt{x9}
+\end{itemize}
+
+\section{Exercise}\label{exercise-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Load the dataset \texttt{HolzingerSwineford1939.csv}
+\item
+  Create a latent factor model with the first six observed variables (x1
+  to x6); allow a correlation of the two latent factors; name the model
+  ``VisualTextual''
+\item
+  Make a copy of the model (``edit -\textgreater{} clone model'') and
+  rename it to ``VisualTextualIndependent''
+\item
+  Modify the model ``VisualTextualIndependent'' by removing the
+  correlation between the two latent factors
+\item
+  Use a likelihood ratio test to compare the two models. Which model is
+  favored? Is there evidence for a correlation of the textual and visual
+  factor?
+\item
+  Obtain latent variable factor scores and plot them in a scatterplot
+\end{enumerate}
+
+\section{Solution}\label{solution-1}
+
+First, we load the dataset, we select variables x1 to x6 (e.g., by
+selecting x1, holding down the SHIFT key and then selecting x6 in the
+variable list of the dataset view). Next, we create two latent factors
+and draw the factor loadings. Last, we fix the latent variances to one
+and estimate all factor loadings freely; alternatively, we could fix one
+factor loading to one and estimate the latent variances freely. However,
+by fixing the latent variances to one, we can directly interpret the
+latent covariance as correlation. The path diagram should look like
+this:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-holzinger-twofactors-correlation.png}}
+
+Next, we clone the model (using Edit -\textgreater{} Clone Model) and
+rename the cloned model. Then we right-click the covariance in the
+cloned model and select ``Delete Path''. Then, create a model
+comparisong edge between the two models. Hover the mouse over the filled
+circle of the model comparison edge and the result of the model
+comparison appears:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-holzinger-twofactors-modelcomparison.png}}
+
+Here, we obtained a test statistic of 35.58 for the likelihood ratio
+test with one degree-of-freedom (because a single parameter was removed,
+ie., set to zero). The p value is \textless0.001 and thus, the model
+with the extra parameter (ie., the covariance) significantly fits better
+than the model without the covariance.
+
+\bookmarksetup{startatroot}
+
+\chapter{Factor Scores}\label{factor-scores}
+
+Factor score estimation is a post-estimation step in SEM that involves
+deriving individual-level scores on latent variables from the fitted
+model. Ideally, any kind of inference should be made using the SEM
+instead on estimated individual-level scores because the estimation
+introduces estimation error. For example, if one is interested in the
+correlation of two latent factors, this correlation should be modeled
+and model-based estimates should be used for the inference. Common
+approaches include regression (or ``Thurstone'') scoring, Bartlett
+scoring, and empirical Bayes methods, each trading-off bias and
+efficiency. Importantly, factor scores are not uniquely
+determined---they depend on the chosen estimation method and model
+specification---so they should be interpreted as approximations rather
+than exact measurements of the latent constructs. In applied work,
+factor scores are often used for secondary analyses, such as predicting
+outcomes or classifying individuals, but their uncertainty and potential
+indeterminacy should always be taken into account.
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-holzinger-factorscores-plotmenu.png}}
+
+\section{Factor-score estimation in
+Onyx}\label{factor-score-estimation-in-onyx}
+
+\section{Holzinger Swineford}\label{holzinger-swineford-1}
+
+From the description provided in the lavaan package:
+
+\begin{quote}
+The classic Holzinger and Swineford (1939) dataset consists of mental
+ability test scores of seventh- and eighth-grade children from two
+different schools (Pasteur and Grant-White). In the original dataset
+(available in the MBESS package), there are scores for 26 tests.
+However, a smaller subset with 9 variables is more widely used in the
+literature (for example in Joreskog's 1969 paper, which also uses the
+145 subjects from the Grant-White school only).
+\end{quote}
+
+The commonly used factor model for these 9 variables consists of three
+latent variables each measured by three indicators:
+
+\begin{itemize}
+\item
+  a visual factor measured by three variables: x1, x2 and x3
+\item
+  a textual factor measured by three variables: x4, x5 and x6
+\item
+  a speed factor measured by three variables: x7, x8 and x9
+\end{itemize}
+
+\section{Exercise}\label{exercise-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Load the dataset \texttt{HolzingerSwineford1939.csv}
+\item
+  Create a latent factor model with the first six observed variables (x1
+  to x6); allow a correlation of the two latent factors; name the model
+  ``VisualTextual''
+\item
+  Obtain factor scores of the two latent variables
+\item
+  Plot a scatter plot of the estimated factor scores from the visual and
+  textual factor. What do you see? How does this relate to the latent
+  correlation between the two factors?
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{Solution}\label{solution-2}
+
+First, create the latent factor model. It should look like this:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-holzinger-twofactors-correlation2.png .png}}
+Next, obtain the factor score estimates -- this opens a new dataset
+including the estimated scores as new variables; the names correspond to
+the names of the latent factors. Then right-click on an empty space in
+the dataset view, select plot and then scatterplot:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-holzinger-factorscores-plotmenu.png}}
+
+This creates a scatterplot:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-holzinger-factorscoresplot.png}}
+
+Here, we can see a positive correlation of medium size. This corresponds
+to the latent factor score correlation in the model. Note, however, that
+the model-based correlation is a better estimate (less biased and more
+precise) than estimating a correlation on the estimated factor scores.
+
+\bookmarksetup{startatroot}
+
+\chapter{export}\label{export}
+
+\section{Syntax Export}\label{syntax-export}
+
+Onyx supports exports of models to syntax specifications of other
+languages. This way, Onyx can be used for graphical model specification
+and other programs can then be used if their more advanced features are
+needed for estimating models (e.g., other estimators or non-normally
+distributed variables, etc.). To view model syntax, right-click a model
+and choose ``Show Script'' and select a syntax of your choice.
+Importantly, this includes the widely used R packages OpenMx and lavaan
+but also commercial software such as Mplus:
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-showscript.png}}
+
+Importantly, the model syntax view remains linked to the model, that is,
+if the model graph is changed (e.g., by adding or removing variables or
+paths in the path diagram), the model syntax is updated. Onyx highlights
+newly added code parts in yellow.
+
+\section{Exercise}\label{exercise-3}
+
+\begin{itemize}
+\item
+  Create a linear latent growth curve model using the linear latent
+  growth curve model wizard (right-click the desktop, select ``Create
+  new model -\textgreater{} Create new LGCM''
+\item
+  Load the data ``lgcm\_simulated.csv'' and obtain parameter estimates;
+  inspect model fit
+\item
+  Open the model syntax view for lavaan
+\item
+  If you are familiar with lavaan and R: Copy the lavaan code to an R
+  session; adapt the code to load the data file; estimate the model in
+  lavaan; compare the results between Onyx and lavaan
+\end{itemize}
+
+\section{Solution}\label{solution-3}
+
+\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-lgcm.png}}
+
+\begin{verbatim}
+
+#
+# This model specification was automatically generated by Onyx
+#
+library(lavaan);
+modelData <- read.table(DATAFILENAME, header = TRUE) ;
+ model<-"
+   ! regressions 
+   icept=~1.0*x1
+   icept=~1.0*x2
+   slope=~1.0*x2
+   icept=~1.0*x3
+   slope=~2.0*x3
+   icept=~1.0*x4
+   slope=~3.0*x4
+   icept=~1.0*x5
+   slope=~4.0*x5
+   ! residuals, variances and covariances
+   x1 ~~ e*x1
+   x2 ~~ e*x2
+   x3 ~~ e*x3
+   x4 ~~ e2*x4
+   x5 ~~ e*x5
+   icept ~~ sigma_i*icept
+   slope ~~ sigma_s*slope
+   icept ~~ COV_icept_slope*slope
+   ! means
+   icept ~ const__icept*1
+   slope ~ const__slope*1
+   x1 ~ 0.0*1
+   x2 ~ 0.0*1
+   x3 ~ 0.0*1
+   x4 ~ 0.0*1
+   x5 ~ 0.0*1
+"
+result<-lavaan(model, data=modelData, fixed.x=FALSE, missing="FIML")
+summary(result, fit.measures=TRUE)
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
 \chapter{Simulate and Plot}\label{simulate-and-plot}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, toprule=.15mm, bottomrule=.15mm, colframe=quarto-callout-color-frame, left=2mm, arc=.35mm, leftrule=.75mm, breakable, colback=white, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colframe=quarto-callout-color-frame, opacityback=0, bottomrule=.15mm, leftrule=.75mm, arc=.35mm, breakable, rightrule=.15mm, toprule=.15mm, colback=white]
 
 Goal: Learn about simulation and plotting of data
 
@@ -649,7 +1068,7 @@ variables, select those variables in the variable list (e.g., by holding
 CTRL or CMD down and select the respective variables) and then click
 ``Plot Data -\textgreater{} Plot longitudinal data''.
 
-\section{Exercises}\label{exercises-1}
+\section{Exercises}\label{exercises-2}
 
 \begin{itemize}
 \item
@@ -672,7 +1091,7 @@ CTRL or CMD down and select the respective variables) and then click
 
 \bookmarksetup{startatroot}
 
-\chapter{Solution}\label{solution-1}
+\chapter{Solution}\label{solution-4}
 
 The self-feedback term beta implies a form of proportional growth if
 values are positive because change then depends on previous level. This
@@ -686,100 +1105,6 @@ while. Here is one possible solution:
 And these are some simulated trajectories from the model (N=100):
 
 \pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-saturating-plot.png}}
-
-\bookmarksetup{startatroot}
-
-\chapter{Multi-Group Models}\label{multi-group-models}
-
-Onyx support multi-group models, in which we use a grouping variable
-that encodes group membership between individuals. Onyx has its own
-approach to multigroup modeling which works with filters on observed
-variables that filter out subsets of observations that should be modeled
-by a given observed variable.
-
-By right-clicking on an observed variable, you can select ``Add
-Grouping'' to add a filter to one or more selected observed variables.
-
-\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-addgrouping.png}}
-
-Then, a little diamond grouping indicator appears on that variable. The
-value inside the diamond reflects the group membership. To change group
-membership, right-click the diamong and change the ``Group'' value:
-
-\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-setgroup.png}}Latent
-Mean Differences
-
-The diamonds are variable containers, that is, you can drag a
-discrete-valued grouping variable from a dataset on to the diamond. As
-long as the diamond is not filled (white fill color), it is not
-connected. Once it is connected, it becomes filled (black color), that
-is, it is now associated with a grouping variable in the dataset.
-
-\bookmarksetup{startatroot}
-
-\chapter{Latent Means}\label{latent-means}
-
-Models of latent mean differences are like the classical t-test or ANOVA
-but estimated on latent constructs.
-
-Figure 1 shows a path diagram representing one possibility to set up a
-latent mean difference model when there are multiple, noisy measurements
-of the same underlying latent construct. This model is a MIMIC
-(multiple-indicators multiple-causes, \textbf{hancock2001effect?})
-model, in which we estimate a measurement model of a latent trait
-\(\eta\) across two groups that are encoded via a dummy group indicator.
-The latent trait is measured through multiple observed indicators (here,
-\(x1\) to \(x3\)) with indicator-specific residual variance terms, which
-allows to separate error variance from true-score variance. If correctly
-specified, this approach allows us to obtain more precise estimates of
-the latent trait purged of measurement error and unreliability (DeShon
-1998). In this specific instance, the regression path from the
-dummy-coded group indicator to the latent variable directly represents a
-standardized mean difference because the scale of the latent variable
-was fixed to have a variance of one. Note that the MIMIC model assumes
-that measurement invariance holds, that is, the factor loadings, item
-intercepts, and item residual variances are assumed to be the same
-across groups.
-
-\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-multigroup-mimic-result.png}}
-
-A more flexible model specification is also possible; using a
-multiple-group factor model, we can estimate the same factor model in
-each group separately and empirically test whether measurement
-invariance holds; then, we can continue to test whether there is a
-difference in latent factor means across groups. This is also known as
-the SMM {[}structured means modeling; (\textbf{hancock2001effect?}){]}
-approach:
-
-\pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-screen-muligroup-smm-results.png}}
-
-Note that all parameters with the same name have identity constraints;
-in particular, this means that parameters with the same name are
-identical across groups. In the path diagram shown above, all parameters
-are identical across groups. This implements a very strong assumption of
-measurement invariance across groups and identity of magnitude of
-variance (= individual differences at the latent level) across groups.
-Again, this restricted version of the SMM model is identical to the
-above dummy-coded MIMIC approach. However, the SMM allows to also freely
-estimate parameters between groups and perform tests of whether some of
-the restrictions are supported by the data or not.
-
-\section{Exercises}\label{exercises-2}
-
-\begin{itemize}
-\item
-  Load the dataset ``factor\_model\_memory.csv''
-\item
-  Use the ``Latent Means Model'' wizard to create both the SMM and the
-  MIMIC approach model to estimate models of latent mean differences
-\item
-  Freely estimate the latent variance in the second group of the SMM
-  approach
-\item
-  Copy the SMM model and freely estimate the factor loadings across
-  groups; run a likelihood ratio test between the models as a test of
-  measurement invariance
-\end{itemize}
 
 \bookmarksetup{startatroot}
 
@@ -929,7 +1254,7 @@ e.g.~grey matter volume estimates of some ROIs?
 
 \bookmarksetup{startatroot}
 
-\chapter{Solution}\label{solution-2}
+\chapter{Solution}\label{solution-5}
 
 This is the common factor model (Theory 1):
 
@@ -1007,7 +1332,7 @@ interest:
 
 \bookmarksetup{startatroot}
 
-\chapter{Exercise}\label{exercise-1}
+\chapter{Exercise}\label{exercise-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1032,11 +1357,16 @@ interest:
   Fuse both models in one model and use whatever items or factors you
   chose in your measurement models, such that the brain variables
   predict behavior. Freely estimate those parameters. What can we learn?
+\item
+  Discuss the results (e.g., directionality and size of the effects)
+\item
+  Test whether the effect of FM-\textgreater MT and ATR-\textgreater MT
+  is different.
 \end{enumerate}
 
 \bookmarksetup{startatroot}
 
-\chapter{Solution}\label{solution-3}
+\chapter{Solution}\label{solution-6}
 
 \pandocbounded{\includegraphics[keepaspectratio]{screenshots/onyx-cognition-model1.png}}
 

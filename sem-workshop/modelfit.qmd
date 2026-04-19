@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Goodness of Fit"
 format: html
 editor: visual
 ---

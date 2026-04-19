@@ -1,5 +1,9 @@
 # Multi-Group Models
 
+Multi-group models in Structural Equation Modeling (SEM) are an extension of standard SEM techniques that allow researchers to test whether relationships between variables are consistent or different across two or more groups. In the context of Psychology, these groups might represent categories such as gender, age cohorts, cultural backgrounds, or clinical vs. non-clinical populations. By estimating the same model simultaneously in multiple groups, researchers can formally assess measurement invariance (whether constructs are interpreted similarly across groups) and structural invariance (whether the relationships between constructs differ). This is especially valuable because it ensures that observed group differences reflect true psychological distinctions rather than artifacts of measurement bias. Overall, multi-group SEM provides a rigorous framework for comparing theoretical models across populations, strengthening the validity and generalizability of psychological findings.
+
+## Multi-group models in Onyx
+
 Onyx support multi-group models, in which we use a grouping variable that encodes group membership between individuals. Onyx has its own approach to multigroup modeling which works with filters on observed variables that filter out subsets of observations that should be modeled by a given observed variable.
 
 By right-clicking on an observed variable, you can select "Add Grouping" to add a filter to one or more selected observed variables.
@@ -13,7 +17,7 @@ Then, a little diamond grouping indicator appears on that variable. The value in
 The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. 
 As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset.
  
-# Latent Means
+# Applied Example: Latent Means
 
 Models of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs.
 

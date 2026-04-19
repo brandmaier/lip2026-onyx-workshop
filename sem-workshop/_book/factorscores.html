@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume – Structural Equation Modeling with Onyx</title>
+<title>6&nbsp; Factor Scores – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./exercise-memory.html" rel="prev">
+<link href="./export.html" rel="next">
+<link href="./modelcomparison.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise-braincognition.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./factorscores.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Scores</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./factorscores.html" class="sidebar-item-text sidebar-link">
+  <a href="./factorscores.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Scores</span></span></a>
   </div>
 </li>
@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
   </div>
 </li>
@@ -200,8 +200,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise"><span class="header-section-number">12</span> Exercise</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">13</span> Solution</a></li>
+  <li><a href="#factor-score-estimation-in-onyx" id="toc-factor-score-estimation-in-onyx" class="nav-link active" data-scroll-target="#factor-score-estimation-in-onyx"><span class="header-section-number">6.1</span> Factor-score estimation in Onyx</a></li>
+  <li><a href="#holzinger-swineford" id="toc-holzinger-swineford" class="nav-link" data-scroll-target="#holzinger-swineford"><span class="header-section-number">6.2</span> Holzinger Swineford</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">6.3</span> Exercise</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">7</span> Solution</a></li>
   </ul>
 </nav>
     </div>
@@ -210,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Scores</span></h1>
 </div>
 
 
@@ -227,37 +229,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this exercise, we will reproduce an analysis of . From their study:</p>
+<p>Factor score estimation is a post-estimation step in SEM that involves deriving individual-level scores on latent variables from the fitted model. Ideally, any kind of inference should be made using the SEM instead on estimated individual-level scores because the estimation introduces estimation error. For example, if one is interested in the correlation of two latent factors, this correlation should be modeled and model-based estimates should be used for the inference. Common approaches include regression (or “Thurstone”) scoring, Bartlett scoring, and empirical Bayes methods, each trading-off bias and efficiency. Importantly, factor scores are not uniquely determined—they depend on the chosen estimation method and model specification—so they should be interpreted as approximations rather than exact measurements of the latent constructs. In applied work, factor scores are often used for secondary analyses, such as predicting outcomes or classifying individuals, but their uncertainty and potential indeterminacy should always be taken into account.</p>
+<p><img src="screenshots/onyx-screen-holzinger-factorscores-plotmenu.png" class="img-fluid"></p>
+<section id="factor-score-estimation-in-onyx" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="factor-score-estimation-in-onyx"><span class="header-section-number">6.1</span> Factor-score estimation in Onyx</h2>
+</section>
+<section id="holzinger-swineford" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="holzinger-swineford"><span class="header-section-number">6.2</span> Holzinger Swineford</h2>
+<p>From the description provided in the lavaan package:</p>
 <blockquote class="blockquote">
-<p>We focus on four neural properties selected based on the current literature—(see Methods), two involving grey matter volume (GMV; Brodmann Area 10 (BA10) and the Multiple Demand (MD) System), and two involving WMI (the Forceps Minor (FM) and the Anterior Thalamic Radiations (ATR)). Fitting a series of structural equation models, we show that multitasking and fluid intelligence are distinct cognitive abilities that show diverging age-related differences.</p>
+<p>The classic Holzinger and Swineford (1939) dataset consists of mental ability test scores of seventh- and eighth-grade children from two different schools (Pasteur and Grant-White). In the original dataset (available in the MBESS package), there are scores for 26 tests. However, a smaller subset with 9 variables is more widely used in the literature (for example in Joreskog’s 1969 paper, which also uses the 145 subjects from the Grant-White school only).</p>
 </blockquote>
-<p>In their study, they assessed two behavioral performance measures. From their study:</p>
-<blockquote class="blockquote">
-<p>We assess fluid intelligence using the Cattell Culture Fair Test, consisting of pencil-and-paper subtests that yield four summary scores (series completions, odd-one-out, matrices and topology) used in further modelling. […] This consisted of four subtests yielding a sum score each. In contrast to the Cattell test of fluid intelligence, the Hotel test simulates a hotel work environment and measures the ability to distribute performance across multiple tasks, which we will refer to from here on as multitasking.</p>
-</blockquote>
-<p><img src="screenshots/kievit-paper-tasks.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Ageing is characterized by declines on a variety of cognitive measures. These declines are often attributed to a general, unitary underlying cause, such as a reduction in executive function owing to atrophy of the prefrontal cortex. However, age-related changes are likely multifactorial, and the relationship between neural changes and cognitive measures is not well-understood. Here we address this in a large (N=567), population-based sample drawn from the Cambridge Centre for Ageing and Neuroscience (Cam-CAN) data. We relate fluid intelligence and multitasking to multiple brain measures, including grey matter in various prefrontal regions and white matter integrity connecting those regions.</p>
-</blockquote>
-<p>Our final goal is to reproduce their final SEM to explain individual differences in the two cognitive facets using the four brain measures of interest:</p>
-<p><img src="screenshots/kievit-mimic-model.png" class="img-fluid"></p>
-<section id="exercise" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Exercise</h1>
+<p>The commonly used factor model for these 9 variables consists of three latent variables each measured by three indicators:</p>
+<ul>
+<li><p>a visual factor measured by three variables: x1, x2 and x3</p></li>
+<li><p>a textual factor measured by three variables: x4, x5 and x6</p></li>
+<li><p>a speed factor measured by three variables: x7, x8 and x9</p></li>
+</ul>
+</section>
+<section id="exercise" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="exercise"><span class="header-section-number">6.3</span> Exercise</h2>
 <ol type="1">
-<li>Load the dataset “ncomms.dat”, which contains the variances and covariances as reported by <span class="citation" data-cites="kie">(<a href="#ref-kie" role="doc-biblioref"><strong>kie?</strong></a>)</span>.</li>
-<li>Create a measurement model for cognition using only the behavioral variables. What model fits better? A model with a single performance factor across all six tests? Or two correlated latent factors, one fluid intelligence factor for the Cattel items and one multitasking factor for the Hotel test items?</li>
-<li>Create a measurement model for the brain? Does a single factor across gray matter volume and white matter volume represent the observed data well? If not, is it possible to represent the data using two correlated factors? A gray matter volume factor with two indicators and a white matter factor with two indicators? If not, what else can we do?</li>
-<li>Fuse both models in one model and use whatever items or factors you chose in your measurement models, such that the brain variables predict behavior. Freely estimate those parameters. What can we learn?</li>
-<li>Discuss the results (e.g., directionality and size of the effects)</li>
-<li>Test whether the effect of FM-&gt;MT and ATR-&gt;MT is different.</li>
+<li><p>Load the dataset <code>HolzingerSwineford1939.csv</code></p></li>
+<li><p>Create a latent factor model with the first six observed variables (x1 to x6); allow a correlation of the two latent factors; name the model “VisualTextual”</p></li>
+<li><p>Obtain factor scores of the two latent variables</p></li>
+<li><p>Plot a scatter plot of the estimated factor scores from the visual and textual factor. What do you see? How does this relate to the latent correlation between the two factors?</p></li>
 </ol>
 </section>
-<section id="solution" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Solution</h1>
-<p><img src="screenshots/onyx-cognition-model1.png" class="img-fluid"></p>
-<p><img src="screenshots/onyx-cognition-model2.png" class="img-fluid"></p>
-<p><img src="screenshots/onyx-cognition-model1-behavior.png" class="img-fluid"></p>
-<p><img src="screenshots/onyx-cognition-fullmodel.png" class="img-fluid"></p>
+<section id="solution" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Solution</h1>
+<p>First, create the latent factor model. It should look like this:</p>
+<p><img src="screenshots/onyx-screen-holzinger-twofactors-correlation2.png .png" class="img-fluid"> Next, obtain the factor score estimates – this opens a new dataset including the estimated scores as new variables; the names correspond to the names of the latent factors. Then right-click on an empty space in the dataset view, select plot and then scatterplot:</p>
+<p><img src="screenshots/onyx-screen-holzinger-factorscores-plotmenu.png" class="img-fluid"></p>
+<p>This creates a scatterplot:</p>
+<p><img src="screenshots/onyx-screen-holzinger-factorscoresplot.png" class="img-fluid"></p>
+<p>Here, we can see a positive correlation of medium size. This corresponds to the latent factor score correlation in the model. Note, however, that the model-based correlation is a better estimate (less biased and more precise) than estimating a correlation on the estimated factor scores.</p>
 
 
 </section>
@@ -682,13 +688,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./exercise-memory.html" class="pagination-link" aria-label="Exercise: Multiple determinants of lifespan memory differences">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span>
+      <a href="./modelcomparison.html" class="pagination-link" aria-label="Model Comparison">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model Comparison</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="The End">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The End</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./export.html" class="pagination-link" aria-label="export">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">export</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

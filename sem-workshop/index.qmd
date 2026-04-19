@@ -4,4 +4,6 @@ This is a self-paced workshop for Onyx, a graphical user-interface for structura
 
 \![images/somemodels.png\]
 
-We assume that you already familiar with the basics of Structural Equation Modeling. 
+We assume that you already familiar with the basics of Structural Equation Modeling.
+
+The workshop has some introductory chapters that cover basic workflow elements in Onyx, such as basics of model specification, evaluating model fit, or specifying multiple group models.

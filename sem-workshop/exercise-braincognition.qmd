@@ -67,6 +67,9 @@ interest:
     chose in your measurement models, such that the brain variables
     predict behavior. Freely estimate those parameters. What can we
     learn?
+5.  Discuss the results (e.g., directionality and size of the effects)
+6.  Test whether the effect of FM->MT and ATR->MT is different.
+
 
 # Solution
 

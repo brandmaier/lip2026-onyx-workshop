@@ -10,8 +10,11 @@ book:
     - intro.qmd
     - basics.qmd
     - modelfit.qmd
-    - simulation.qmd
     - multigroup.qmd
+    - modelcomparison.qmd
+    - factorscores.qmd
+    - export.qmd
+    - simulation.qmd
     - exercises.qmd
     - exercise-memory.qmd
     - exercise-braincognition.qmd
