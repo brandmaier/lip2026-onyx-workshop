@@ -54,7 +54,7 @@ CFI (to independent model)    : 0.73
 
 What other models could explain these data better?
 
-# Exercises
+## Exercises
 
 Exercise:
 
@@ -66,7 +66,7 @@ Exercise:
 
 4\) How could your final model incorporate predictors of behavior, e.g. grey matter volume estimates of some ROIs?
 
-# Solution
+## Solution
 
 
 This is the common factor model (Theory 1):
@@ -85,11 +85,11 @@ And finally a model of three different factors:
 
 ![](screenshots/onyx-result-memory-theory4.png)
 
-## Model Comparison
+### Model Comparison
 
 For all models, inspect model fit (CFI, RMSEA, residuals) and also investigate the factor loading strengths as well as the explained variances across items. 
 
-## Extension to Brain Variables
+### Extension to Brain Variables
 
 How would a model look like, which has a brain variable, which we would like to use to predict behavior with?
 

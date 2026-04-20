@@ -10,7 +10,15 @@ Model comparison in Structural Equation Modeling is a central technique for eval
 
 ## Model Comparison using Chi-Square-Tests
 
-Onyx supports model comparison for nested models based on the chi-square test. To compare two models, you can add a model comparison of two models that is represented as an edge between two models (similar to a path between two variables). The model comparison is created analogously to creating a path between two variables. Press the right mouse button on an empty space of one model, the mouse pointer onto the second model, and release the mouse button. A model comparison edge will appear between the two models:
+Onyx supports model comparison for nested models based on the chi-square test. To compare two models, you can add a model comparison of two models that is represented as an edge between two models (similar to a path between two variables). The model comparison is created analogously to creating a path between two variables. Press the right mouse button on an empty space of one model, the mouse pointer onto the second model, and release the mouse button. A model comparison edge will appear between the two models – hovering the mouse over the circle will show a popup window with the results of the model comparison including the test statistics (-2 log likelihood ratio) and a p value:
+
+![](screenshots/onyx-screen-regression-comparison.png)
+
+In this example, we see a simple regression model (without means) on the left-hand side. The unstandarized regression coefficient is 0.08. The right-hand model is a clone of the left model with the regression coefficient fixed to 0.2; this corresponds to a null hypothesis that the true regression coefficient is 0.2. The p-value of the model comparison is not significant, thus we cannot reject the restricted null model. We did not find evidence that the true regression coefficient is different from 0.2.
+
+## Comparing Non-Nested Models
+
+Onyx performs a nesting test. If models are not nested, the likelihood ratio test is not applicable. In these instances, there are various heuristic approaches that are usually taken. By default, Onyx shows the difference in AIC values and shows which model is favored according to AIC. Other researchers prefer to compare CFI and RMSEA and choose the model which has better fit according to these criteria.
 
 ## Holzinger Swineford
 
@@ -48,6 +56,8 @@ First, we load the dataset, we select variables x1 to x6 (e.g., by selecting x1,
 
 Next, we clone the model (using Edit -\> Clone Model) and rename the cloned model. Then we right-click the covariance in the cloned model and select "Delete Path". Then, create a model comparisong edge between the two models. Hover the mouse over the filled circle of the model comparison edge and the result of the model comparison appears:
 
-![](screenshots/onyx-screen-holzinger-twofactors-modelcomparison.png)
+![![](images/clipboard-4071501077.png)](screenshots/onyx-screen-holzinger-twofactors-modelcomparison.png)
 
 Here, we obtained a test statistic of 35.58 for the likelihood ratio test with one degree-of-freedom (because a single parameter was removed, ie., set to zero). The p value is \<0.001 and thus, the model with the extra parameter (ie., the covariance) significantly fits better than the model without the covariance.
+
+

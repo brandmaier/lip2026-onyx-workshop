@@ -81,9 +81,8 @@ For observed variables, you can select a fill-style that reflects the percentage
 -   Inspect model fit, model-implied covariances, and residuals (using the plot)
 -   Given these statistics and the information that interest_in_subject and and enjoyment_of_learningtion tap more into intrinsic_motivation than the others, how could we modify the model?
 
-# Solution
+## Solution
 
-## Factor Model
 
 ![](screenshots/onyx-screen-academicmotivation-model.png)
 

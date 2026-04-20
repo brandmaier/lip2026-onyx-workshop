@@ -67,7 +67,7 @@ If no variables are selected in the dataset, the longitudinal plot will be plott
 -   By setting a form of constant positive change (alpha) and negative proportional change (beta), can you generate simulated learning curves that reach an asymptote?
 
 
-# Solution
+## Solution
 
 The self-feedback term beta implies a form of proportional growth if values are positive because change then depends on previous level. This by itself can reflect an exponential growth function. In combination with constant growth rates (alpha \> 0), negative proportional change can be used to model change that flattens after a while. Here is one possible solution:
 

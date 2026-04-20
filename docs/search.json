@@ -330,11 +330,11 @@
     ]
   },
   {
-    "objectID": "modelfit.html#factor-model",
-    "href": "modelfit.html#factor-model",
+    "objectID": "modelfit.html#solution",
+    "href": "modelfit.html#solution",
     "title": "5  Model Fitting",
-    "section": "6.1 Factor Model",
-    "text": "6.1 Factor Model\n\nModel fit is \\(\\chi^2=21.033\\), RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.\nApplying Boker’s R2 style, this yiels:\n\n\nThe large discrepancy in the correlation of enjoyment_of_learning and interest_in_subject may be an indication that these items also capture something different than the other items. In light of a theory (intrinsic vs academic motivation), this can be used to modify the factor model to include a residual correlation (which is akin to a second common source of variance) to the model. By adding another free parameter, model misfit in the present sample is reduced. Note that such model modifications after having seen the data should always be reported as exploratory.",
+    "section": "5.11 Solution",
+    "text": "5.11 Solution\n\nModel fit is \\(\\chi^2=21.033\\), RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.\nApplying Boker’s R2 style, this yiels:\n\n\nThe large discrepancy in the correlation of enjoyment_of_learning and interest_in_subject may be an indication that these items also capture something different than the other items. In light of a theory (intrinsic vs academic motivation), this can be used to modify the factor model to include a residual correlation (which is akin to a second common source of variance) to the model. By adding another free parameter, model misfit in the present sample is reduced. Note that such model modifications after having seen the data should always be reported as exploratory.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Model Fitting</span>"
     ]
@@ -370,6 +370,16 @@
     ]
   },
   {
+    "objectID": "multigroup.html#solution",
+    "href": "multigroup.html#solution",
+    "title": "6  Multi-Group Models",
+    "section": "7.2 Solution",
+    "text": "7.2 Solution\nTODO\n\n\n\n\nDeShon, Richard P. 1998. “A Cautionary Note on Measurement Error Corrections in Structural Equation Models.” Psychological Methods 3 (4): 412–23.\n\n\nHancock, Gregory R. 2001. “Effect Size, Power, and Sample Size Determination for Structured Means Modeling and MIMIC Approaches to Between-Groups Hypothesis Testing of Means on a Single Latent Construct.” Psychometrika 66 (3): 373–88.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Multi-Group Models</span>"
+    ]
+  },
+  {
     "objectID": "modelcomparison.html",
     "href": "modelcomparison.html",
     "title": "7  Model Comparison",
@@ -384,7 +394,17 @@
     "href": "modelcomparison.html#model-comparison-using-chi-square-tests",
     "title": "7  Model Comparison",
     "section": "7.2 Model Comparison using Chi-Square-Tests",
-    "text": "7.2 Model Comparison using Chi-Square-Tests\nOnyx supports model comparison for nested models based on the chi-square test. To compare two models, you can add a model comparison of two models that is represented as an edge between two models (similar to a path between two variables). The model comparison is created analogously to creating a path between two variables. Press the right mouse button on an empty space of one model, the mouse pointer onto the second model, and release the mouse button. A model comparison edge will appear between the two models:",
+    "text": "7.2 Model Comparison using Chi-Square-Tests\nOnyx supports model comparison for nested models based on the chi-square test. To compare two models, you can add a model comparison of two models that is represented as an edge between two models (similar to a path between two variables). The model comparison is created analogously to creating a path between two variables. Press the right mouse button on an empty space of one model, the mouse pointer onto the second model, and release the mouse button. A model comparison edge will appear between the two models – hovering the mouse over the circle will show a popup window with the results of the model comparison including the test statistics (-2 log likelihood ratio) and a p value:\n\nIn this example, we see a simple regression model (without means) on the left-hand side. The unstandarized regression coefficient is 0.08. The right-hand model is a clone of the left model with the regression coefficient fixed to 0.2; this corresponds to a null hypothesis that the true regression coefficient is 0.2. The p-value of the model comparison is not significant, thus we cannot reject the restricted null model. We did not find evidence that the true regression coefficient is different from 0.2.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Model Comparison</span>"
+    ]
+  },
+  {
+    "objectID": "modelcomparison.html#comparing-non-nested-models",
+    "href": "modelcomparison.html#comparing-non-nested-models",
+    "title": "7  Model Comparison",
+    "section": "7.3 Comparing Non-Nested Models",
+    "text": "7.3 Comparing Non-Nested Models\nOnyx performs a nesting test. If models are not nested, the likelihood ratio test is not applicable. In these instances, there are various heuristic approaches that are usually taken. By default, Onyx shows the difference in AIC values and shows which model is favored according to AIC. Other researchers prefer to compare CFI and RMSEA and choose the model which has better fit according to these criteria.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Model Comparison</span>"
     ]
@@ -393,8 +413,8 @@
     "objectID": "modelcomparison.html#holzinger-swineford",
     "href": "modelcomparison.html#holzinger-swineford",
     "title": "7  Model Comparison",
-    "section": "7.3 Holzinger Swineford",
-    "text": "7.3 Holzinger Swineford\nFrom the description provided in the lavaan package:\n\nThe classic Holzinger and Swineford (1939) dataset consists of mental ability test scores of seventh- and eighth-grade children from two different schools (Pasteur and Grant-White). In the original dataset (available in the MBESS package), there are scores for 26 tests. However, a smaller subset with 9 variables is more widely used in the literature (for example in Joreskog’s 1969 paper, which also uses the 145 subjects from the Grant-White school only).\n\nThe commonly used factor model for these 9 variables consists of three latent variables each measured by three indicators:\n\na visual factor measured by three variables: x1, x2 and x3\na textual factor measured by three variables: x4, x5 and x6\na speed factor measured by three variables: x7, x8 and x9",
+    "section": "7.4 Holzinger Swineford",
+    "text": "7.4 Holzinger Swineford\nFrom the description provided in the lavaan package:\n\nThe classic Holzinger and Swineford (1939) dataset consists of mental ability test scores of seventh- and eighth-grade children from two different schools (Pasteur and Grant-White). In the original dataset (available in the MBESS package), there are scores for 26 tests. However, a smaller subset with 9 variables is more widely used in the literature (for example in Joreskog’s 1969 paper, which also uses the 145 subjects from the Grant-White school only).\n\nThe commonly used factor model for these 9 variables consists of three latent variables each measured by three indicators:\n\na visual factor measured by three variables: x1, x2 and x3\na textual factor measured by three variables: x4, x5 and x6\na speed factor measured by three variables: x7, x8 and x9",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Model Comparison</span>"
     ]
@@ -403,8 +423,8 @@
     "objectID": "modelcomparison.html#exercise",
     "href": "modelcomparison.html#exercise",
     "title": "7  Model Comparison",
-    "section": "7.4 Exercise",
-    "text": "7.4 Exercise\n\nLoad the dataset HolzingerSwineford1939.csv\nCreate a latent factor model with the first six observed variables (x1 to x6); allow a correlation of the two latent factors; name the model “VisualTextual”\nMake a copy of the model (“edit -&gt; clone model”) and rename it to “VisualTextualIndependent”\nModify the model “VisualTextualIndependent” by removing the correlation between the two latent factors\nUse a likelihood ratio test to compare the two models. Which model is favored? Is there evidence for a correlation of the textual and visual factor?\nObtain latent variable factor scores and plot them in a scatterplot",
+    "section": "7.5 Exercise",
+    "text": "7.5 Exercise\n\nLoad the dataset HolzingerSwineford1939.csv\nCreate a latent factor model with the first six observed variables (x1 to x6); allow a correlation of the two latent factors; name the model “VisualTextual”\nMake a copy of the model (“edit -&gt; clone model”) and rename it to “VisualTextualIndependent”\nModify the model “VisualTextualIndependent” by removing the correlation between the two latent factors\nUse a likelihood ratio test to compare the two models. Which model is favored? Is there evidence for a correlation of the textual and visual factor?\nObtain latent variable factor scores and plot them in a scatterplot",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Model Comparison</span>"
     ]
@@ -413,8 +433,8 @@
     "objectID": "modelcomparison.html#solution",
     "href": "modelcomparison.html#solution",
     "title": "7  Model Comparison",
-    "section": "7.5 Solution",
-    "text": "7.5 Solution\nFirst, we load the dataset, we select variables x1 to x6 (e.g., by selecting x1, holding down the SHIFT key and then selecting x6 in the variable list of the dataset view). Next, we create two latent factors and draw the factor loadings. Last, we fix the latent variances to one and estimate all factor loadings freely; alternatively, we could fix one factor loading to one and estimate the latent variances freely. However, by fixing the latent variances to one, we can directly interpret the latent covariance as correlation. The path diagram should look like this:\n\nNext, we clone the model (using Edit -&gt; Clone Model) and rename the cloned model. Then we right-click the covariance in the cloned model and select “Delete Path”. Then, create a model comparisong edge between the two models. Hover the mouse over the filled circle of the model comparison edge and the result of the model comparison appears:\n\nHere, we obtained a test statistic of 35.58 for the likelihood ratio test with one degree-of-freedom (because a single parameter was removed, ie., set to zero). The p value is &lt;0.001 and thus, the model with the extra parameter (ie., the covariance) significantly fits better than the model without the covariance.",
+    "section": "7.6 Solution",
+    "text": "7.6 Solution\nFirst, we load the dataset, we select variables x1 to x6 (e.g., by selecting x1, holding down the SHIFT key and then selecting x6 in the variable list of the dataset view). Next, we create two latent factors and draw the factor loadings. Last, we fix the latent variances to one and estimate all factor loadings freely; alternatively, we could fix one factor loading to one and estimate the latent variances freely. However, by fixing the latent variances to one, we can directly interpret the latent covariance as correlation. The path diagram should look like this:\n\nNext, we clone the model (using Edit -&gt; Clone Model) and rename the cloned model. Then we right-click the covariance in the cloned model and select “Delete Path”. Then, create a model comparisong edge between the two models. Hover the mouse over the filled circle of the model comparison edge and the result of the model comparison appears:\n\n\n\n\n\n\nHere, we obtained a test statistic of 35.58 for the likelihood ratio test with one degree-of-freedom (because a single parameter was removed, ie., set to zero). The p value is &lt;0.001 and thus, the model with the extra parameter (ie., the covariance) significantly fits better than the model without the covariance.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Model Comparison</span>"
     ]
@@ -570,6 +590,16 @@
     ]
   },
   {
+    "objectID": "simulation.html#solution",
+    "href": "simulation.html#solution",
+    "title": "10  Simulate and Plot",
+    "section": "10.9 Solution",
+    "text": "10.9 Solution\nThe self-feedback term beta implies a form of proportional growth if values are positive because change then depends on previous level. This by itself can reflect an exponential growth function. In combination with constant growth rates (alpha &gt; 0), negative proportional change can be used to model change that flattens after a while. Here is one possible solution:\n\nAnd these are some simulated trajectories from the model (N=100):",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Simulate and Plot</span>"
+    ]
+  },
+  {
     "objectID": "exercises.html",
     "href": "exercises.html",
     "title": "11  Exercises",
@@ -610,21 +640,21 @@
     ]
   },
   {
-    "objectID": "exercise-memory.html#model-comparison",
-    "href": "exercise-memory.html#model-comparison",
+    "objectID": "exercise-memory.html#exercises",
+    "href": "exercise-memory.html#exercises",
     "title": "12  Exercise: Multiple determinants of lifespan memory differences",
-    "section": "14.1 Model Comparison",
-    "text": "14.1 Model Comparison\nFor all models, inspect model fit (CFI, RMSEA, residuals) and also investigate the factor loading strengths as well as the explained variances across items.",
+    "section": "12.3 Exercises",
+    "text": "12.3 Exercises\nExercise:\n1) Set up models representing the alternative theories, fit the models with the provided data (camcan.data) as described above and discuss the results.\n2) Inspect parameter estimates (e.g., check for problems like negative variances) and model fit statistics\n3) What model fits best?\n4) How could your final model incorporate predictors of behavior, e.g. grey matter volume estimates of some ROIs?",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
     ]
   },
   {
-    "objectID": "exercise-memory.html#extension-to-brain-variables",
-    "href": "exercise-memory.html#extension-to-brain-variables",
+    "objectID": "exercise-memory.html#solution",
+    "href": "exercise-memory.html#solution",
     "title": "12  Exercise: Multiple determinants of lifespan memory differences",
-    "section": "14.2 Extension to Brain Variables",
-    "text": "14.2 Extension to Brain Variables\nHow would a model look like, which has a brain variable, which we would like to use to predict behavior with?\n\n\n\n\n\nHenson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina Emery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. “Multiple Determinants of Lifespan Memory Differences.” Scientific Reports 6 (1): 32527.",
+    "section": "12.4 Solution",
+    "text": "12.4 Solution\nThis is the common factor model (Theory 1):\n\nThis is explicit and implicit memory (Theory 2):\n\nThis is the recollection and fluency factor (Theory 3):\n And finally a model of three different factors:\n\n\n12.4.1 Model Comparison\nFor all models, inspect model fit (CFI, RMSEA, residuals) and also investigate the factor loading strengths as well as the explained variances across items.\n\n\n12.4.2 Extension to Brain Variables\nHow would a model look like, which has a brain variable, which we would like to use to predict behavior with?\n\n\n\n\n\nHenson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina Emery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. “Multiple Determinants of Lifespan Memory Differences.” Scientific Reports 6 (1): 32527.",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
     ]
@@ -634,7 +664,17 @@
     "href": "exercise-braincognition.html",
     "title": "13  Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume",
     "section": "",
-    "text": "In this exercise, we will reproduce an published SEM analysis by Kievit et al. (2014). From their study:\n\nWe focus on four neural properties selected based on the current literature—(see Methods), two involving grey matter volume (GMV; Brodmann Area 10 (BA10) and the Multiple Demand (MD) System), and two involving WMI (the Forceps Minor (FM) and the Anterior Thalamic Radiations (ATR)). Fitting a series of structural equation models, we show that multitasking and fluid intelligence are distinct cognitive abilities that show diverging age-related differences.\n\nIn their study, they assessed two behavioral performance measures. From their study:\n\nWe assess fluid intelligence using the Cattell Culture Fair Test, consisting of pencil-and-paper subtests that yield four summary scores (series completions, odd-one-out, matrices and topology) used in further modelling. […] This consisted of four subtests yielding a sum score each. In contrast to the Cattell test of fluid intelligence, the Hotel test simulates a hotel work environment and measures the ability to distribute performance across multiple tasks, which we will refer to from here on as multitasking.\n\n\n\nAgeing is characterized by declines on a variety of cognitive measures. These declines are often attributed to a general, unitary underlying cause, such as a reduction in executive function owing to atrophy of the prefrontal cortex. However, age-related changes are likely multifactorial, and the relationship between neural changes and cognitive measures is not well-understood. Here we address this in a large (N=567), population-based sample drawn from the Cambridge Centre for Ageing and Neuroscience (Cam-CAN) data. We relate fluid intelligence and multitasking to multiple brain measures, including grey matter in various prefrontal regions and white matter integrity connecting those regions.\n\nOur final goal is to reproduce their final SEM to explain individual differences in the two cognitive facets using the four brain measures of interest:\n\n\n14 Exercise\n\nLoad the dataset “ncomms.dat”, which contains the variances and covariances as reported by Kievit et al. (2014).\nCreate a measurement model for cognition using only the behavioral variables. What model fits better? A model with a single performance factor across all six tests? Or two correlated latent factors, one fluid intelligence factor for the Cattell items and one multitasking factor for the Hotel test items?\nCreate a measurement model for the brain? Does a single factor across gray matter volume and white matter volume represent the observed data well? If not, is it possible to represent the data using two correlated factors? A gray matter volume factor with two indicators and a white matter factor with two indicators? If not, what else can we do?\nFuse both models in one model and use whatever items or factors you chose in your measurement models, such that the brain variables predict behavior. Freely estimate those parameters. What can we learn?\nDiscuss the results (e.g., directionality and size of the effects)\nTest whether the effect of FM-&gt;MT and ATR-&gt;MT is different.\n\n\n\n15 Solution\n\n\n\n\n\n\n\n\nKievit, Rogier A, Simon W Davis, Daniel J Mitchell, Jason R Taylor, John Duncan, and Richard NA Henson. 2014. “Distinct Aspects of Frontal Lobe Structure Mediate Age-Related Differences in Fluid Intelligence and Multitasking.” Nature Communications 5 (1): 5658.",
+    "text": "14 Exercise\nIn this exercise, we will reproduce an published SEM analysis by Kievit et al. (2014). From their study:\nIn their study, they assessed two behavioral performance measures. From their study:\nOur final goal is to reproduce their final SEM to explain individual differences in the two cognitive facets using the four brain measures of interest:",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-braincognition.html#solution",
+    "href": "exercise-braincognition.html#solution",
+    "title": "13  Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume",
+    "section": "14.1 Solution",
+    "text": "14.1 Solution\nHere are some alternative model for the brain variables. First, we model a single factor:\n\nHowever, model fit and explained variances are not satisfying. Let us try a factor model per modality:\n\nHowever, a negative variance is an indicator for an unsatisfying solution. So, we will not estimate any latent factors and instead keep the observed variables.\nHere is a measurement model for the behavioral variables (how does this compare to a single-factor model?):\n\nHere is the final model:\n\n\n\n\n\nKievit, Rogier A, Simon W Davis, Daniel J Mitchell, Jason R Taylor, John Duncan, and Richard NA Henson. 2014. “Distinct Aspects of Frontal Lobe Structure Mediate Age-Related Differences in Fluid Intelligence and Multitasking.” Nature Communications 5 (1): 5658.",
     "crumbs": [
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span>"
     ]

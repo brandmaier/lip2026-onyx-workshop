@@ -251,10 +251,7 @@ window.Quarto = {
   <li><a href="#model-fit-gauge" id="toc-model-fit-gauge" class="nav-link" data-scroll-target="#model-fit-gauge"><span class="header-section-number">5.8</span> Model Fit Gauge</a></li>
   <li><a href="#visualizing-explained-variance" id="toc-visualizing-explained-variance" class="nav-link" data-scroll-target="#visualizing-explained-variance"><span class="header-section-number">5.9</span> Visualizing Explained Variance</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">5.10</span> Exercise</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">6</span> Solution</a>
-  <ul class="collapse">
-  <li><a href="#factor-model" id="toc-factor-model" class="nav-link" data-scroll-target="#factor-model"><span class="header-section-number">6.1</span> Factor Model</a></li>
-  </ul></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">5.11</span> Solution</a></li>
   </ul>
 </nav>
     </div>
@@ -345,10 +342,8 @@ window.Quarto = {
 <li>Given these statistics and the information that interest_in_subject and and enjoyment_of_learningtion tap more into intrinsic_motivation than the others, how could we modify the model?</li>
 </ul>
 </section>
-<section id="solution" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Solution</h1>
-<section id="factor-model" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="factor-model"><span class="header-section-number">6.1</span> Factor Model</h2>
+<section id="solution" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="solution"><span class="header-section-number">5.11</span> Solution</h2>
 <p><img src="screenshots/onyx-screen-academicmotivation-model.png" class="img-fluid"></p>
 <p>Model fit is <span class="math inline">\(\chi^2=21.033\)</span>, RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.</p>
 <p>Applying Boker’s R2 style, this yiels:</p>
@@ -357,7 +352,6 @@ window.Quarto = {
 <p>The large discrepancy in the correlation of enjoyment_of_learning and interest_in_subject may be an indication that these items also capture something different than the other items. In light of a theory (intrinsic vs academic motivation), this can be used to modify the factor model to include a residual correlation (which is akin to a second common source of variance) to the model. By adding another free parameter, model misfit in the present sample is reduced. Note that such model modifications after having seen the data should always be reported as exploratory.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

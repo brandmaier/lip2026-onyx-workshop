@@ -6,7 +6,8 @@ editor:
 
 # Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume
 
-In this exercise, we will reproduce an  published SEM analysis by @kievit2014distinct. From their study:
+In this exercise, we will reproduce an published SEM analysis by
+@kievit2014distinct. From their study:
 
 > We focus on four neural properties selected based on the current
 > literature—(see Methods), two involving grey matter volume (GMV;
@@ -68,16 +69,28 @@ interest:
     predict behavior. Freely estimate those parameters. What can we
     learn?
 5.  Discuss the results (e.g., directionality and size of the effects)
-6.  Test whether the effect of FM->MT and ATR->MT is different.
+6.  Test whether the effect of FM-\>MT and ATR-\>MT is different.
 
+## Solution
 
-# Solution
+Here are some alternative model for the brain variables. First, we model
+a single factor:
 
 ![](screenshots/onyx-cognition-model1.png)
 
+However, model fit and explained variances are not satisfying. Let us
+try a factor model per modality:
+
 ![](screenshots/onyx-cognition-model2.png)
+
+However, a negative variance is an indicator for an unsatisfying
+solution. So, we will not estimate any latent factors and instead keep
+the observed variables.
+
+Here is a measurement model for the behavioral variables (how does this compare to a single-factor model?):
 
 ![](screenshots/onyx-cognition-model1-behavior.png)
 
+Here is the final model:
 
 ![](screenshots/onyx-cognition-fullmodel.png)

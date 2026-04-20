@@ -263,11 +263,11 @@ window.Quarto = {
   <ul>
   <li><a href="#theories" id="toc-theories" class="nav-link active" data-scroll-target="#theories"><span class="header-section-number">12.1</span> Theories</a></li>
   <li><a href="#fast-model-creation" id="toc-fast-model-creation" class="nav-link" data-scroll-target="#fast-model-creation"><span class="header-section-number">12.2</span> Fast Model Creation</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">13</span> Exercises</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">14</span> Solution</a>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">12.3</span> Exercises</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">12.4</span> Solution</a>
   <ul class="collapse">
-  <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison"><span class="header-section-number">14.1</span> Model Comparison</a></li>
-  <li><a href="#extension-to-brain-variables" id="toc-extension-to-brain-variables" class="nav-link" data-scroll-target="#extension-to-brain-variables"><span class="header-section-number">14.2</span> Extension to Brain Variables</a></li>
+  <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison"><span class="header-section-number">12.4.1</span> Model Comparison</a></li>
+  <li><a href="#extension-to-brain-variables" id="toc-extension-to-brain-variables" class="nav-link" data-scroll-target="#extension-to-brain-variables"><span class="header-section-number">12.4.2</span> Extension to Brain Variables</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -333,16 +333,16 @@ SRMR (covariances only)       : 0.142
 CFI (to independent model)    : 0.73</code></pre>
 <p>What other models could explain these data better?</p>
 </section>
-<section id="exercises" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Exercises</h1>
+<section id="exercises" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">12.3</span> Exercises</h2>
 <p>Exercise:</p>
 <p>1) Set up models representing the alternative theories, fit the models with the provided data (camcan.data) as described above and discuss the results.</p>
 <p>2) Inspect parameter estimates (e.g., check for problems like negative variances) and model fit statistics</p>
 <p>3) What model fits best?</p>
 <p>4) How could your final model incorporate predictors of behavior, e.g.&nbsp;grey matter volume estimates of some ROIs?</p>
 </section>
-<section id="solution" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> Solution</h1>
+<section id="solution" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="solution"><span class="header-section-number">12.4</span> Solution</h2>
 <p>This is the common factor model (Theory 1):</p>
 <p><img src="screenshots/onyx-result-memory-theory1.png" class="img-fluid"></p>
 <p>This is explicit and implicit memory (Theory 2):</p>
@@ -350,12 +350,12 @@ CFI (to independent model)    : 0.73</code></pre>
 <p>This is the recollection and fluency factor (Theory 3):</p>
 <p><img src="screenshots/onyx-result-memory-theory3.png" class="img-fluid"> And finally a model of three different factors:</p>
 <p><img src="screenshots/onyx-result-memory-theory4.png" class="img-fluid"></p>
-<section id="model-comparison" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="model-comparison"><span class="header-section-number">14.1</span> Model Comparison</h2>
+<section id="model-comparison" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="model-comparison"><span class="header-section-number">12.4.1</span> Model Comparison</h3>
 <p>For all models, inspect model fit (CFI, RMSEA, residuals) and also investigate the factor loading strengths as well as the explained variances across items.</p>
 </section>
-<section id="extension-to-brain-variables" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="extension-to-brain-variables"><span class="header-section-number">14.2</span> Extension to Brain Variables</h2>
+<section id="extension-to-brain-variables" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="extension-to-brain-variables"><span class="header-section-number">12.4.2</span> Extension to Brain Variables</h3>
 <p>How would a model look like, which has a brain variable, which we would like to use to predict behavior with?</p>
 <p><img src="screenshots/onyx-camcam-brainmodel.png" class="img-fluid"></p>
 

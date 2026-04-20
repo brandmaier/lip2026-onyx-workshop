@@ -232,8 +232,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise"><span class="header-section-number">14</span> Exercise</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">15</span> Solution</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise"><span class="header-section-number">14</span> Exercise</a>
+  <ul class="collapse">
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">14.1</span> Solution</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -283,12 +285,16 @@ div.csl-indent {
 <li>Discuss the results (e.g., directionality and size of the effects)</li>
 <li>Test whether the effect of FM-&gt;MT and ATR-&gt;MT is different.</li>
 </ol>
-</section>
-<section id="solution" class="level1" data-number="15">
-<h1 data-number="15"><span class="header-section-number">15</span> Solution</h1>
+<section id="solution" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">14.1</span> Solution</h2>
+<p>Here are some alternative model for the brain variables. First, we model a single factor:</p>
 <p><img src="screenshots/onyx-cognition-model1.png" class="img-fluid"></p>
+<p>However, model fit and explained variances are not satisfying. Let us try a factor model per modality:</p>
 <p><img src="screenshots/onyx-cognition-model2.png" class="img-fluid"></p>
+<p>However, a negative variance is an indicator for an unsatisfying solution. So, we will not estimate any latent factors and instead keep the observed variables.</p>
+<p>Here is a measurement model for the behavioral variables (how does this compare to a single-factor model?):</p>
 <p><img src="screenshots/onyx-cognition-model1-behavior.png" class="img-fluid"></p>
+<p>Here is the final model:</p>
 <p><img src="screenshots/onyx-cognition-fullmodel.png" class="img-fluid"></p>
 
 
@@ -297,6 +303,7 @@ div.csl-indent {
 Kievit, Rogier A, Simon W Davis, Daniel J Mitchell, Jason R Taylor, John Duncan, and Richard NA Henson. 2014. <span>“Distinct Aspects of Frontal Lobe Structure Mediate Age-Related Differences in Fluid Intelligence and Multitasking.”</span> <em>Nature Communications</em> 5 (1): 5658.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->

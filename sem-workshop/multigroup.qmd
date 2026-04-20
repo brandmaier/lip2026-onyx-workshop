@@ -43,6 +43,6 @@ Note that all parameters with the same name have identity constraints; in partic
 
 -   Copy the SMM model and freely estimate the factor loadings across groups; run a likelihood ratio test between the models as a test of measurement invariance
 
-# Solution  
+## Solution  
 
 TODO
