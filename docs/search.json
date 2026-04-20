@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Structural Equation Modeling with Onyx",
     "section": "",
-    "text": "Preface\nThis is a self-paced workshop for Onyx, a graphical user-interface for structural equation modeling.\n![images/somemodels.png]\nThis workshop is designed for researchers and students who are new to Onyx and already familiar with basic SEM concepts.\nWe assume that you are already familiar with:",
+    "text": "Preface\nThis is a self-paced workshop for Onyx, a graphical user-interface for structural equation modeling.\nThis workshop is designed for researchers and students who are new to Onyx and already familiar with basic SEM concepts.\nWe assume that you are already familiar with:",
     "crumbs": [
       "Preface"
     ]
@@ -114,7 +114,7 @@
     "href": "installation.html#prerequistes",
     "title": "2  What you need before starting",
     "section": "2.2 Prerequistes",
-    "text": "2.2 Prerequistes\nΩnyx requires a JAVA runtime environment. If you haven’t installed JAVA, please download a recent version, for example OpenJDK ().",
+    "text": "2.2 Prerequistes\nΩnyx requires a JAVA runtime environment. If you haven’t installed JAVA, please download a recent version, for example OpenJDK (https://openjdk.org/index.html).",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>What you need before starting</span>"
     ]
@@ -124,7 +124,7 @@
     "href": "installation.html#download",
     "title": "2  What you need before starting",
     "section": "2.3 Download",
-    "text": "2.3 Download\nFor this workshop make sure to install the Developer version / unstable, which contains the latest features:",
+    "text": "2.3 Download\nFor this workshop make sure to install the Developer version / unstable, which contains the latest features:\nhttps://onyx-sem.com/download/",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>What you need before starting</span>"
     ]
@@ -144,7 +144,7 @@
     "href": "basics.html#renaming-parameters",
     "title": "3  Basic Modeling",
     "section": "3.2 Renaming Parameters",
-    "text": "3.2 Renaming Parameters\nIf you free a parameter on a path (representing either a variance, covariance, a regression, or a mean), you can change the name of the parameter by right-clicking on the path and then changing the “Path Name”. By default, these parameters are named based on the adjacent variables but you can choose your own name here.\n\nNote that Onyx has Unicode support, that is, you can directly use unicode characters such as letters from the greek alphabet. Thus, it would even be possible to use emojis as parameter labels even though I do not recommend that:\n\nOnyx further supports a very limited subset of LaTeX commands to render parameter labels. This pseudo LaTeX input is triggered by starting labels with a dollar sign. This pseudo input supports lowercase and uppercase greek letters, as well as subscript and superscripts. Here are some examples that are valid parameter names in Onyx:\n\n\n\nInput\nOutput\n\n\n\n\n\n\\(\\alpha\\)\n\n\n^2\n\\(\\beta^2\\)\n\n\n_{person}\n\\(\\gamma_{person}\\)\n\n\n^2_i\n\\(\\Omega^2_i\\)",
+    "text": "3.2 Renaming Parameters\nIf you free a parameter on a path (representing either a variance, covariance, a regression, or a mean), you can change the name of the parameter by right-clicking on the path and then changing the “Path Name”. By default, these parameters are named based on the adjacent variables but you can choose your own name here.\n\nNote that Onyx has Unicode support, that is, you can directly use unicode characters such as letters from the greek alphabet. Thus, it would even be possible to use emojis as parameter labels even though I do not recommend that:\n\nOnyx further supports a very limited subset of LaTeX commands to render parameter labels. This pseudo LaTeX input is triggered by starting labels with a dollar sign. This pseudo input supports lowercase and uppercase greek letters, as well as subscript and superscripts. Here are some examples that are valid parameter names in Onyx:\n\n\n\nInput\nOutput\n\n\n\n\n\\\\alpha\n\\(\\alpha\\)\n\n\n\\\\beta^2\n\\(\\beta^2\\)\n\n\n\\\\gamma_{person}\n\\(\\gamma_{person}\\)\n\n\n\\\\Omega^2_i\n\\(\\Omega^2_i\\)",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Basic Modeling</span>"
     ]
@@ -452,31 +452,31 @@
   {
     "objectID": "export.html",
     "href": "export.html",
-    "title": "9  export",
+    "title": "9  Exporting Model Syntax",
     "section": "",
     "text": "9.1 Syntax Export\nOnyx supports exports of models to syntax specifications of other languages. This way, Onyx can be used for graphical model specification and other programs can then be used if their more advanced features are needed for estimating models (e.g., other estimators or non-normally distributed variables, etc.). To view model syntax, right-click a model and choose “Show Script” and select a syntax of your choice. Importantly, this includes the widely used R packages OpenMx and lavaan but also commercial software such as Mplus:\nImportantly, the model syntax view remains linked to the model, that is, if the model graph is changed (e.g., by adding or removing variables or paths in the path diagram), the model syntax is updated. Onyx highlights newly added code parts in yellow.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>export</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exporting Model Syntax</span>"
     ]
   },
   {
     "objectID": "export.html#exercise",
     "href": "export.html#exercise",
-    "title": "9  export",
+    "title": "9  Exporting Model Syntax",
     "section": "9.2 Exercise",
-    "text": "9.2 Exercise\n\nCreate a linear latent growth curve model using the linear latent growth curve model wizard (right-click the desktop, select “Create new model -&gt; Create new LGCM”\nLoad the data “lgcm_simulated.csv” and obtain parameter estimates; inspect model fit\nOpen the model syntax view for lavaan\nIf you are familiar with lavaan and R: Copy the lavaan code to an R session; adapt the code to load the data file; estimate the model in lavaan; compare the results between Onyx and lavaan",
+    "text": "9.2 Exercise\n\nCreate a linear latent growth curve model using the linear latent growth curve model wizard (right-click the desktop, select “Create new model -&gt; Create new LGCM”; make sure to estimate a covariance between intercept and slope (click the respective option in the dialog)\nDon’t forget to use some of the visual options to change the appearance of the diagram\nLoad the data “lgcm_simulated.csv” and obtain parameter estimates; inspect model fit\nOpen the model syntax view for lavaan\nIf you are familiar with lavaan and R: Copy the lavaan code to an R session; adapt the code to load the data file; estimate the model in lavaan; compare the results between Onyx and lavaan",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>export</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exporting Model Syntax</span>"
     ]
   },
   {
     "objectID": "export.html#solution",
     "href": "export.html#solution",
-    "title": "9  export",
+    "title": "9  Exporting Model Syntax",
     "section": "9.3 Solution",
-    "text": "9.3 Solution\n\n\n#\n# This model specification was automatically generated by Onyx\n#\nlibrary(lavaan);\nmodelData &lt;- read.table(DATAFILENAME, header = TRUE) ;\n model&lt;-\"\n   ! regressions \n   icept=~1.0*x1\n   icept=~1.0*x2\n   slope=~1.0*x2\n   icept=~1.0*x3\n   slope=~2.0*x3\n   icept=~1.0*x4\n   slope=~3.0*x4\n   icept=~1.0*x5\n   slope=~4.0*x5\n   ! residuals, variances and covariances\n   x1 ~~ e*x1\n   x2 ~~ e*x2\n   x3 ~~ e*x3\n   x4 ~~ e2*x4\n   x5 ~~ e*x5\n   icept ~~ sigma_i*icept\n   slope ~~ sigma_s*slope\n   icept ~~ COV_icept_slope*slope\n   ! means\n   icept ~ const__icept*1\n   slope ~ const__slope*1\n   x1 ~ 0.0*1\n   x2 ~ 0.0*1\n   x3 ~ 0.0*1\n   x4 ~ 0.0*1\n   x5 ~ 0.0*1\n\"\nresult&lt;-lavaan(model, data=modelData, fixed.x=FALSE, missing=\"FIML\")\nsummary(result, fit.measures=TRUE)",
+    "text": "9.3 Solution\nThe path diagram should look like this:\n\nLoad the dataset, select all variables, right-click on the data view and click “send data to model”. Model estimation starts and your parameter estimates and model fit statistics should look like this:\n\n\n#\n# This model specification was automatically generated by Onyx\n#\nlibrary(lavaan);\nmodelData &lt;- read.table(DATAFILENAME, header = TRUE) ;\n model&lt;-\"\n   ! regressions \n   icept=~1.0*x1\n   icept=~1.0*x2\n   slope=~1.0*x2\n   icept=~1.0*x3\n   slope=~2.0*x3\n   icept=~1.0*x4\n   slope=~3.0*x4\n   icept=~1.0*x5\n   slope=~4.0*x5\n   ! residuals, variances and covariances\n   x1 ~~ e*x1\n   x2 ~~ e*x2\n   x3 ~~ e*x3\n   x4 ~~ e*x4\n   x5 ~~ e*x5\n   icept ~~ sigma_i*icept\n   slope ~~ sigma_s*slope\n   icept ~~ COV_icept_slope*slope\n   ! means\n   icept ~ const__icept*1\n   slope ~ const__slope*1\n   x1 ~ 0.0*1\n   x2 ~ 0.0*1\n   x3 ~ 0.0*1\n   x4 ~ 0.0*1\n   x5 ~ 0.0*1\n\"\nresult&lt;-lavaan(model, data=modelData, fixed.x=FALSE, missing=\"FIML\")\nsummary(result, fit.measures=TRUE)\nIn this code, you only need to replace the placeholder “DATAFILENAME” with the path to a data file on your computer. Then, model estimation in lavaan yields:\n\n\nWarning: Paket 'lavaan' wurde unter R Version 4.5.3 erstellt\n\n\nThis is lavaan 0.6-21\nlavaan is FREE software! Please report any bugs.\n\n\nlavaan 0.6-21 ended normally after 52 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                        10\n  Number of equality constraints                     4\n\n  Number of observations                           250\n  Number of missing patterns                         1\n\nModel Test User Model:\n                                                      \n  Test statistic                                21.965\n  Degrees of freedom                                14\n  P-value (Chi-square)                           0.079\n\nModel Test Baseline Model:\n\n  Test statistic                              1374.694\n  Degrees of freedom                                10\n  P-value                                        0.000\n\nUser Model versus Baseline Model:\n\n  Comparative Fit Index (CFI)                    0.994\n  Tucker-Lewis Index (TLI)                       0.996\n                                                      \n  Robust Comparative Fit Index (CFI)             0.994\n  Robust Tucker-Lewis Index (TLI)                0.996\n\nLoglikelihood and Information Criteria:\n\n  Loglikelihood user model (H0)              -3161.723\n  Loglikelihood unrestricted model (H1)      -3150.741\n                                                      \n  Akaike (AIC)                                6335.446\n  Bayesian (BIC)                              6356.575\n  Sample-size adjusted Bayesian (SABIC)       6337.554\n\nRoot Mean Square Error of Approximation:\n\n  RMSEA                                          0.048\n  90 Percent confidence interval - lower         0.000\n  90 Percent confidence interval - upper         0.084\n  P-value H_0: RMSEA &lt;= 0.050                    0.497\n  P-value H_0: RMSEA &gt;= 0.080                    0.076\n                                                      \n  Robust RMSEA                                   0.048\n  90 Percent confidence interval - lower         0.000\n  90 Percent confidence interval - upper         0.084\n  P-value H_0: Robust RMSEA &lt;= 0.050             0.497\n  P-value H_0: Robust RMSEA &gt;= 0.080             0.076\n\nStandardized Root Mean Square Residual:\n\n  SRMR                                           0.014\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Observed\n  Observed information based on                Hessian\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n  icept =~                                            \n    x1                1.000                           \n    x2                1.000                           \n  slope =~                                            \n    x2                1.000                           \n  icept =~                                            \n    x3                1.000                           \n  slope =~                                            \n    x3                2.000                           \n  icept =~                                            \n    x4                1.000                           \n  slope =~                                            \n    x4                3.000                           \n  icept =~                                            \n    x5                1.000                           \n  slope =~                                            \n    x5                4.000                           \n\nCovariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n  icept ~~                                            \n    slope   (COV_)    0.401    0.381    1.052    0.293\n\nIntercepts:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n    icpt (cnst__c)   19.889    0.237   84.022    0.000\n    slop (cnst__s)   -4.999    0.101  -49.371    0.000\n   .x1                0.000                           \n   .x2                0.000                           \n   .x3                0.000                           \n   .x4                0.000                           \n   .x5                0.000                           \n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n   .x1         (e)    3.335    0.172   19.365    0.000\n   .x2         (e)    3.335    0.172   19.365    0.000\n   .x3         (e)    3.335    0.172   19.365    0.000\n   .x4         (e)    3.335    0.172   19.365    0.000\n   .x5         (e)    3.335    0.172   19.365    0.000\n    icept  (sigm_)   12.007    1.257    9.551    0.000\n    slope  (sgm_s)    2.230    0.230    9.699    0.000\n\n\nAs you can see, all parameter estimates and fit statistics are identical.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>export</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exporting Model Syntax</span>"
     ]
   },
   {
@@ -605,6 +605,26 @@
     "title": "12  Exercise: Multiple determinants of lifespan memory differences",
     "section": "12.2 Fast Model Creation",
     "text": "12.2 Fast Model Creation\nThe data are provided in the file camcan.data, which contains the variances and covariances across the nine indicators measured in N=305 persons.\nNote that the fastest way to start modeling is to load the data, select all variables in the loaded dataset and drag them onto the empty model panel. This way, all observed variables are created in the model, together with each a free parameter representing their variance, and they are directly linked to the dataset (for model fitting). Maximum likelihood-estimation directly starts and the values represent the maximum-likelihood estimates of the variances of each variable.\n\nIn order, to create a common factor, double-click on an empty space in the model view. A latent variable (shown as a circle) appears. Change the default name to “Memory”. Now add the factor loadings. These are directed paths from the latent factor to each observed variable and make them freely estimated variables. Feel free to use the layout and graph settings to customize the appearance. Note that a factor model needs an identification constraint to identify the latent scale. To implement this, either fix the latent variance to one or fix one of the loadings to one. In the first case, the latent scale is identified such that it has unit variance; in the second case, it is identified to have the same unit of measurement as the item with the unit factor loading. Your graph should look somewhat like this:\n\nLet us inspect the explained variance in each item. You can do this visually by giving the observed variables a fill color and then select “Customize Variable -&gt; Select Fill Style -&gt; Bokers R2” and each observed variable will be filled according to the level of explained variance. Or, you hover the mouse over a single, unselected observed variable. A popup window will appear, in which you can read off the \\(R^2\\) value as estimate of explained variance. Using either way, we can already see that the priming variables are not well explained by the common factor. Further, we find these goodness-of-fit values:\nRMSEA (classic)               : 0.288 \nSRMR (covariances only)       : 0.142\nCFI (to independent model)    : 0.73\nWhat other models could explain these data better?",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-memory.html#model-comparison",
+    "href": "exercise-memory.html#model-comparison",
+    "title": "12  Exercise: Multiple determinants of lifespan memory differences",
+    "section": "14.1 Model Comparison",
+    "text": "14.1 Model Comparison\nFor all models, inspect model fit (CFI, RMSEA, residuals) and also investigate the factor loading strengths as well as the explained variances across items.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
+    ]
+  },
+  {
+    "objectID": "exercise-memory.html#extension-to-brain-variables",
+    "href": "exercise-memory.html#extension-to-brain-variables",
+    "title": "12  Exercise: Multiple determinants of lifespan memory differences",
+    "section": "14.2 Extension to Brain Variables",
+    "text": "14.2 Extension to Brain Variables\nHow would a model look like, which has a brain variable, which we would like to use to predict behavior with?\n\n\n\n\n\nHenson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina Emery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. “Multiple Determinants of Lifespan Memory Differences.” Scientific Reports 6 (1): 32527.",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Exercise: Multiple determinants of lifespan memory differences</span>"
     ]

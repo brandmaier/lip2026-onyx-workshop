@@ -30,13 +30,13 @@ Note that Onyx has Unicode support, that is, you can directly use unicode charac
 
 Onyx further supports a very limited subset of LaTeX commands to render parameter labels. This pseudo LaTeX input is triggered by starting labels with a dollar sign. This pseudo input supports lowercase and uppercase greek letters, as well as subscript and superscripts. Here are some examples that are valid parameter names in Onyx:
 
-| Input            | Output            |
-|------------------|-------------------|
-| \alpha           | $\alpha$          |
-| \beta\^2         | $\beta^2$         |
-| \gamma\_{person} | $\gamma_{person}$ |
-| \Omega\^2_i      | $\Omega^2_i$      |
-|                  |                   |
+| Input               | Output            |
+|---------------------|-------------------|
+| \\\\alpha           | $\alpha$          |
+| \\\\beta\^2         | $\beta^2$         |
+| \\\\gamma\_{person} | $\gamma_{person}$ |
+| \\\\Omega\^2_i      | $\Omega^2_i$      |
+|                     |                   |
 
 ## Diagram Styles
 
