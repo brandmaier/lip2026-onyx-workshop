@@ -294,7 +294,7 @@ window.Quarto = {
 
 <p>To create a model, either right-click on the empty desktop and select “Create new Model -&gt; Create Empty Model” or double-click on the desktop. This creates an empty model view</p>
 <p><img src="screenshots/onyx-screen-emptymodel.png" class="img-fluid"></p>
-<p>You can now add variables, by either right-clicking on the empty view and selecting “Create Variable”. Then you can either add a latent variable (depicted as a circle), an observed variable (depicted as a rectangle), a constant variable (depicted as a triangle). Beyond standard RAM notation, you can also use XRAM notation, in which you can add a multiplication node that allows you to model products of variables <span class="citation" data-cites="boker2023products">(<a href="references.html#ref-boker2023products" role="doc-biblioref">Boker et al. 2023</a>)</span>. This allows models including latent interactions. As a short-cut, you can simply double-click on an empty space in the model, to create a latent variable or double-click while holding down the SHIFT-key to add an observed variable.</p>
+<p>You can now add variables, by either right-clicking on the empty view and selecting “Create Variable”. Then you can either add a latent variable (depicted as a circle), an observed variable (depicted as a rectangle), a constant variable (depicted as a triangle). Beyond standard RAM notation, you can also use XRAM notation, in which you can add a multiplication node that allows you to model products of variables <span class="citation" data-cites="boker2023products">(<a href="#ref-boker2023products" role="doc-biblioref">Boker et al. 2023</a>)</span>. This allows models including latent interactions. As a short-cut, you can simply double-click on an empty space in the model, to create a latent variable or double-click while holding down the SHIFT-key to add an observed variable.</p>
 <p>To add a path between two variables, press the right mouse button on a variable, hold it down while dragging the path on to the target variable, then release the mouse button. This creates a regression path with a value fixed to “1” between the variables. When you hold down SHIFT while doing so, you create a covariance path. Right-click the path and select “Free Parameter” if you want this path to be freely estimated.</p>
 <p><img src="screenshots/onyx-screen-freeparameter.png" class="img-fluid"></p>
 <p>Try to add a latent and an observed variable and connect them with a path from the latent to the observed variable, and your model should look like this:</p>
@@ -368,7 +368,7 @@ window.Quarto = {
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-boker2023products" class="csl-entry" role="listitem">
 Boker, Steven M, Timo von Oertzen, Joshua N Pritikin, Michael D Hunter, Timothy R Brick, Andreas M Brandmaier, and Michael C Neale. 2023. <span>“Products of Variables in Structural Equation Models.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 30 (5): 708–18.
 </div>

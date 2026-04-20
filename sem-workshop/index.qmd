@@ -2,7 +2,7 @@
 
 This is a self-paced workshop for Onyx, a graphical user-interface for structural equation modeling.
 
-\![images/somemodels.png\]
+![](screenshots/onyx-somemodels.png)
 
 This workshop is designed for researchers and students who are new to Onyx and already familiar with basic SEM concepts.
 
