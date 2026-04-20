@@ -1,12 +1,20 @@
-# Simulate and Plot
+# Simulation and Plotting
 
-::: callout
-Goal: Learn about simulation and plotting of data
-:::
+Onyx offers facilities to simulate data from models and visualize both empirical and simulated data in plots. Both features can be used for model checking. For example, you can check whether data simulated from a model follow a pattern that is similarly expected to arise in your study. Or, you can use simulation and plotting of simulation results to investigate the effect of changes in parameters on model-implied outcomes.
 
-## The dual change score model
+### Simulation
 
-The dual change score model (DCSM) is a powerful framework within structural equation modeling (SEM) for analyzing longitudinal data by explicitly modeling how individuals change over time. Unlike traditional growth models that describe trajectories with fixed slopes, the DCSM decomposes change into two components: a constant (or proportional) change that depends on prior levels of the variable, and an additional dynamic component that captures how change at one time point influences subsequent change. This allows researchers to examine both stability and self-regulating processes within a construct, as well as potential coupling effects between multiple variables over time. By integrating features of latent growth curve models and autoregressive models, the DCSM provides a flexible approach for testing theories about developmental processes, feedback mechanisms, and temporal dependencies in psychological, behavioral, and social data. The model looks like this:
+To simulate data from a model, right-click on the model view, choose "Simulation -\> Start Simulation". This takes the model-implied covariance matrix and means vectors and simulates data from a multivariate normal distribution given these as population covariance matrix and means vector. By default, Onyx simulated 100 observations; the number can be changed in the context menu in "Data Rows"; you can also simulate missing data using a missing completely at random mechanism. By default, the simulated data are fully observed.
+
+![](screenshots/onyx-screen-startsimulation.png)
+
+A simulated dataset will have variables corresponding to each observed variable in the model. By selecting the variables in the (simulated) data view and right-clicking on "Plot Data", you have a choice of different plotting options. The following screenshots illustrates a simple workflow, in which first a bivariate model is specified with a covariance of 0.4 (which happens to be identical to the correlation because both variances are 1.0). Then a dataset is simulated (shown in the middle of the screen); and finally, a scatter plot is generated from the simulated data set (right):
+
+![](screenshots/onyx-screen-simulate-bivariate.png)
+
+## An applied example: The dual change score model
+
+The dual change score model (DCSM) is a powerful framework within structural equation modeling (SEM) for analyzing longitudinal data by explicitly modeling how individuals change over time. Unlike traditional growth models that describe trajectories with fixed slopes, the DCSM decomposes change into two components: a growth-curve type of change ($\beta$), and an additional dynamic component that captures proportional change, ie., how change at one time point influences subsequent change ($\alpha$). Residual error variance ($\sigma^2_{\epsilon}$) captures misfit and measurement error. Individual differences at beginning of the study are captured by a latent intercept $\eta_0$, and the growth curve changes are captured by a latent slope factor ($\eta_S$). This allows researchers to examine both stability and self-regulating processes within a construct, as well as potential coupling effects between multiple variables over time. By integrating features of latent growth curve models and autoregressive models, the DCSM provides a flexible approach for testing theories about developmental processes, feedback mechanisms, and temporal dependencies in psychological, behavioral, and social data. The model looks like this:
 
 ![](screenshots/onyx-screen-saturating-model.png)
 
@@ -32,16 +40,11 @@ Use the DCSM-Wizard (right-click on the empty desktop, then choose "Create new m
 
 ![](screenshots/onyx-screen-wizard-dcsm.png)
 
-## Simulation
+## Simulate Plot
 
-
-## Plot
-
-Next, right-click on the simulated dataset, choose "Plot data" and select "Plot longitudinal data".
-
+Choose "Simulation -\> Start Simulation". Next, right-click on the simulated dataset, choose "Plot data" and select "Plot longitudinal data".
 
 ![](screenshots/onyx-screen-modelplotmenu.png)
-
 
 ## Longitudinal Plot
 
@@ -72,7 +75,6 @@ If no variables are selected in the dataset, the longitudinal plot will be plott
 -   If you set the self-feedback to zero, what are the effects of changing alpha? What if you set different alphas (rename them to alpha1, alpha2,... first) for different time points?
 
 -   By setting a form of constant positive change (alpha) and negative proportional change (beta), can you generate simulated learning curves that reach an asymptote?
-
 
 ## Solution
 

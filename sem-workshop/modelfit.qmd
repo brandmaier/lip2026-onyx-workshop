@@ -57,7 +57,7 @@ There are two new plotting features to obtain visual information about model fit
 
 ## Residual Plots
 
-This opens the standardized residuals plot. This plot show standardized residuals that are slightly different than what is used to compute the SRMR. These standardized residuals are computed such that they also represent misfit in the diagonal of the matrix, that is, the residual variances. This is achieved by standardizing both model-implied covariances and observed covariances with the variances of the observed covariance matrix.
+This opens the standardized residuals plot. This plot shows *absolute standardized residuals* that are slightly different than what is used to compute the SRMR. These standardized residuals are computed such that they also represent misfit in the diagonal of the matrix, that is, the residual variances. This is achieved by standardizing both model-implied covariances and observed covariances with the variances of the observed covariance matrix.
 
 ![](screenshots/onyx-screen-residuals.png)
 

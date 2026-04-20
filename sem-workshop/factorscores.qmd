@@ -40,6 +40,8 @@ The commonly used factor model for these 9 variables consists of three latent va
 
 4.  Plot a scatter plot of the estimated factor scores from the visual and textual factor. What do you see? How does this relate to the latent correlation between the two factors?
 
+5.  Save the estimated data set to a file
+
 # Solution
 
 First, create the latent factor model. It should look like this:

@@ -16,9 +16,8 @@ Then, a little diamond grouping indicator appears on that variable. The value in
 
 ## Latent Mean Differences
 
-The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. 
-As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset.
- 
+The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset.
+
 # Applied Example: Latent Means
 
 Models of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs.
@@ -39,10 +38,24 @@ Note that all parameters with the same name have identity constraints; in partic
 
 -   Use the "Latent Means Model" wizard to create both the SMM and the MIMIC approach model to estimate models of latent mean differences
 
--   Freely estimate the latent variance in the second group of the SMM approach
+-   Freely estimate the latent variance in the second group of the SMM approach7
 
--   Copy the SMM model and freely estimate the factor loadings across groups; run a likelihood ratio test between the models as a test of measurement invariance
+-   Run a model comparison using a likelihood ratio test to test whether the latent variances significantly differ across groups.
 
-## Solution  
+-   What can you learn from the parameter estimates of the model?
 
-TODO
+-   Copy the SMM model and freely estimate the factor loadings across groups (by giving all factor loadings unique names); run a likelihood ratio test between the models as a test of measurement invariance
+
+## Solution
+
+Using the wizard, we create a SMM model with observed variable names matching the data set. Either enter the variable names manually in the wizard; or, leave the generic names x1 to x3 and later drag and drop the variables from the data view on to the observed variables in the model. This will automatically rename and connect the variables in the model to the respective variables in the data set. Clone the model (right-click on the model and select 'Edit -\> Clone model'). Right-click the data view and select "Send Data to Model" to connect all variables of the cloned model with the data set to start estimation. Now, add a model comparison between the two models (press right-mouse button on one model and drag the comparator edge on to the other model):
+
+![](screenshots/onyx-screen-multigroup-solution-lrt.png)
+
+Here, we get a non-significant difference. The added free parameter does not significantly fit better. That is, there is no evidence for a difference in latent variances. As a result, we keep the simpler model (with fixed variance).
+
+Now, clone the model once more and remove the constraint that the factor loadings are identical across groups. To do so, simply give the factor loadings in one model unique names. For example rename $\lambda_1$ to $\lambda_1\_2$ and $\lambda_2$ to $\lambda_2\_2$ and $\lambda_3$ to $\lambda_3\_2$ . Now the model has three more free parameters and estimates the factor loadings separately per group. Using a likelihood ratio test, we can compare both nested models. Under H0, both models fit equally well; under H1, the more complex model fits the data better.
+
+![](screenshots/onyx-screen-modelcomparison-invariance.png)
+
+Here, we find no significant difference in model fit, ie. there is no evidence that the factor loadings should be freely estimated across groups. In other words, there is no evidence for differences in the factor loadings. We conclude for now that weak measurement invariance holds in this model (but note that a significance-based approach is not necessarily the best approach for this decisions; others have recommended to look at effect size metrics for this).
