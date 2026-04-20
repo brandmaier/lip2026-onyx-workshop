@@ -20,7 +20,9 @@ This will create a plot like this:
 
 ![](screenshots/onyx-screen-data-boxplot.png)
 
-Also try out the other two plotting options.
+Also try out the other two plotting options. For example, the longitudinal plot:
+
+![](screenshots/onyx-screen-longplot.png)
 
 You can also hover the mouse over a variable in the data view and a popup window will appear that contains basic statistics. It's a good way to check these statistics to see whether Onyx loaded the data correctly:
 

@@ -87,7 +87,8 @@ However, a negative variance is an indicator for an unsatisfying
 solution. So, we will not estimate any latent factors and instead keep
 the observed variables.
 
-Here is a measurement model for the behavioral variables (how does this compare to a single-factor model?):
+Here is a measurement model for the behavioral variables (how does this
+compare to a single-factor model?):
 
 ![](screenshots/onyx-cognition-model1-behavior.png)
 

@@ -213,8 +213,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#factor-score-estimation-in-onyx" id="toc-factor-score-estimation-in-onyx" class="nav-link active" data-scroll-target="#factor-score-estimation-in-onyx"><span class="header-section-number">8.1</span> Factor-score estimation in Onyx</a></li>
-  <li><a href="#holzinger-swineford" id="toc-holzinger-swineford" class="nav-link" data-scroll-target="#holzinger-swineford"><span class="header-section-number">8.2</span> Holzinger Swineford</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">8.3</span> Exercise</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">8.2</span> Exercise</a>
+  <ul class="collapse">
+  <li><a href="#holzinger-swineford" id="toc-holzinger-swineford" class="nav-link" data-scroll-target="#holzinger-swineford"><span class="header-section-number">8.2.1</span> Holzinger Swineford</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">8.2.2</span> Tasks</a></li>
+  </ul></li>
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">9</span> Solution</a></li>
   </ul>
 </nav>
@@ -242,12 +245,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Factor score estimation is a post-estimation step in SEM that involves deriving individual-level scores on latent variables from the fitted model. Ideally, any kind of inference should be made using the SEM instead on estimated individual-level scores because the estimation introduces estimation error. For example, if one is interested in the correlation of two latent factors, this correlation should be modeled and model-based estimates should be used for the inference. Common approaches include regression (or “Thurstone”) scoring, Bartlett scoring, and empirical Bayes methods, each trading-off bias and efficiency. Importantly, factor scores are not uniquely determined—they depend on the chosen estimation method and model specification—so they should be interpreted as approximations rather than exact measurements of the latent constructs. In applied work, factor scores are often used for secondary analyses, such as predicting outcomes or classifying individuals, but their uncertainty and potential indeterminacy should always be taken into account.</p>
-<p><img src="screenshots/onyx-screen-holzinger-factorscores-plotmenu.png" class="img-fluid"></p>
 <section id="factor-score-estimation-in-onyx" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="factor-score-estimation-in-onyx"><span class="header-section-number">8.1</span> Factor-score estimation in Onyx</h2>
+<p>In Onyx, you can right-click on a fitted model view and choose “Estimation -&gt; Obtain Latent / Missing Scores”. This creates a new dataset, which imputes all missing variables using a maximum-likelihood-based approach; this includes all latent variables, which are treated as completely missing (as they were not observed):</p>
+<p><img src="screenshots/onyx-screen-menu-factorscores.png" class="img-fluid"></p>
+<p>This new dataset can either be saved or be used to create plots.</p>
 </section>
-<section id="holzinger-swineford" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="holzinger-swineford"><span class="header-section-number">8.2</span> Holzinger Swineford</h2>
+<section id="exercise" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">8.2</span> Exercise</h2>
+<p>For the exercise, we will use the Holzinger Swineford dataset.</p>
+<section id="holzinger-swineford" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="holzinger-swineford"><span class="header-section-number">8.2.1</span> Holzinger Swineford</h3>
 <p>From the description provided in the lavaan package:</p>
 <blockquote class="blockquote">
 <p>The classic Holzinger and Swineford (1939) dataset consists of mental ability test scores of seventh- and eighth-grade children from two different schools (Pasteur and Grant-White). In the original dataset (available in the MBESS package), there are scores for 26 tests. However, a smaller subset with 9 variables is more widely used in the literature (for example in Joreskog’s 1969 paper, which also uses the 145 subjects from the Grant-White school only).</p>
@@ -259,8 +267,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>a speed factor measured by three variables: x7, x8 and x9</p></li>
 </ul>
 </section>
-<section id="exercise" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="exercise"><span class="header-section-number">8.3</span> Exercise</h2>
+<section id="tasks" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">8.2.2</span> Tasks</h3>
 <ol type="1">
 <li><p>Load the dataset <code>HolzingerSwineford1939.csv</code></p></li>
 <li><p>Create a latent factor model with the first six observed variables (x1 to x6); allow a correlation of the two latent factors; name the model “VisualTextual”</p></li>
@@ -268,11 +276,14 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Plot a scatter plot of the estimated factor scores from the visual and textual factor. What do you see? How does this relate to the latent correlation between the two factors?</p></li>
 </ol>
 </section>
+</section>
 <section id="solution" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Solution</h1>
 <p>First, create the latent factor model. It should look like this:</p>
 <p><img src="screenshots/onyx-screen-holzinger-twofactors-correlation2.png" class="img-fluid"></p>
-<p>Next, obtain the factor score estimates – this opens a new dataset including the estimated scores as new variables; the names correspond to the names of the latent factors. Then right-click on an empty space in the dataset view, select plot and then scatterplot:</p>
+<p>Next, obtain the factor score estimates – this opens a new dataset including the estimated scores as new variables; the names correspond to the names of the latent factors:</p>
+<p><img src="screenshots/onyx-screen-holzinger-factorscores.png" class="img-fluid"></p>
+<p>Then right-click on an empty space in the dataset view, select plot and then scatterplot:</p>
 <p><img src="screenshots/onyx-screen-holzinger-factorscores-plotmenu.png" class="img-fluid"></p>
 <p>This creates a scatterplot:</p>
 <p><img src="screenshots/onyx-screen-holzinger-factorscoresplot.png" class="img-fluid"></p>
