@@ -4,7 +4,7 @@ To create a model, either right-click on the empty desktop and select "Create ne
 
 ![](screenshots/onyx-screen-emptymodel.png)
 
-You can now add variables, by either right-clicking on the empty view and selecting "Create Variable". Then you can either add a latent variable (depicted as a circle), an observed variable (depicted as a rectangle), a constant variable (depicted as a triangle). Beyond standard RAM notation , you can also add a multiplication node that allows you to model latent interactions. As a short-cut, you can simply double-click on an empty space in the model, to create a latent variable or double-click while holding down the SHIFT-key to add an observed variable.
+You can now add variables, by either right-clicking on the empty view and selecting "Create Variable". Then you can either add a latent variable (depicted as a circle), an observed variable (depicted as a rectangle), a constant variable (depicted as a triangle). Beyond standard RAM notation, you can also use XRAM notation, in which you can add a multiplication node that allows you to model products of variables [@boker2023products]. This allows models including latent interactions. As a short-cut, you can simply double-click on an empty space in the model, to create a latent variable or double-click while holding down the SHIFT-key to add an observed variable.
 
 To add a path between two variables, press the right mouse button on a variable, hold it down while dragging the path on to the target variable, then release the mouse button. This creates a regression path with a value fixed to "1" between the variables. When you hold down SHIFT while doing so, you create a covariance path. Right-click the path and select "Free Parameter" if you want this path to be freely estimated.
 
@@ -48,14 +48,21 @@ Here are three examples of styles:
 
 ![](screenshots/onyx-screen-styles.png)
 
+You can quickly iterate through the available styles in the actively selected model by pressing CTRL+L (or CMD+L on a Mac).
+
 ## Path Styles
 
 By default, Onyx shows path with a value fixed to one without any label. Paths that have a value fixed but different than one are shown with the value as label. Freely estimated parameters are shown with both their label and their value (e.g., "z = 2.87"). You can also choose different path styles by right-clicking on a model, then selecting "Customize Model -\> Change Path Style". This opens the following window in which you can select among several alternative options. In particular, the option "Simplified" may be useful to create figures for manuscripts.
 
 ![](screenshots/onyx-screen-changepathstyle.png)
 
+## Copy & Paste
+
+Onyx supports copy&paste in diagrams. You can select a set of nodes, right-click the mouse and then select "Edit -\> Copy" (or press CTRL+C / CMD+C), which copies all selected nodes and all paths between them to the clipboard. If you select "Edit -\> Paste and Rename" (or press CTRL+V / CMD + V), a copy of these nodes and paths is inserted. Note that all parameter and variable names are automatically renamed to be different from the original variables and paths; otherwise they would be treated as being constrained to identity. If you prefer that choose "Edit -\> Paste" to insert exact copies without renaming. If you want to select the entire diagram to copy, press CTRL+A / CMD+A to select all variables before copying and pasting.
+
 ## Exercises
 
 -   Create a factor model with one latent factors, four observed variables, residual variances for each factor, a latent factor variance, and factor loadings; fix the first factor loading at "1" and let the others be freely estimated; also freely estimate all residual variances; rename the observed variables to "item1", "item2", ...; rename the factor to "factor", rename the factor loadings to lambda1, lambda2, ... but use greek letters.
--   Apply diagram styles and make your own modifications
+-   Apply diagram styles (CTRL+L / CMD + L; press multiple times) and then make your own modifications
 -   Export the diagram as image file
+-   Copy the entire factor model and paste it below. Select the original model and flip it vertically (using the short-cut CTRL+F / CMD+F), such that the latent factors are facing each other; then draw a covariance between the two latent factors and give it a blue color

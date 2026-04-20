@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Goodness of Fit – Structural Equation Modeling with Onyx</title>
+<title>5&nbsp; Model Fitting – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./multigroup.html" rel="next">
-<link href="./basics.html" rel="prev">
+<link href="./loaddata.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modelfit.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Goodness of Fit</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modelfit.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model Fitting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,68 +149,80 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Modeling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./loaddata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading Data and Parameter Estimation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modelfit.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Goodness of Fit</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model Fitting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./multigroup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modelcomparison.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model Comparison</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Model Comparison</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./factorscores.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Factor Scores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Factor Scores</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./export.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">export</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">export</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercise-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The End</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The End</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -229,19 +241,19 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#model-fit" id="toc-model-fit" class="nav-link active" data-scroll-target="#model-fit"><span class="header-section-number">3.1</span> Model Fit</a></li>
-  <li><a href="#model-fit-1" id="toc-model-fit-1" class="nav-link" data-scroll-target="#model-fit-1"><span class="header-section-number">3.2</span> Model Fit</a></li>
-  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">3.3</span> Residuals</a></li>
-  <li><a href="#raw-and-standarized-residuals" id="toc-raw-and-standarized-residuals" class="nav-link" data-scroll-target="#raw-and-standarized-residuals"><span class="header-section-number">3.4</span> Raw and Standarized Residuals</a></li>
-  <li><a href="#model-implied-and-observed-covariances" id="toc-model-implied-and-observed-covariances" class="nav-link" data-scroll-target="#model-implied-and-observed-covariances"><span class="header-section-number">3.5</span> Model-implied and observed covariances</a></li>
-  <li><a href="#model-fit-plots" id="toc-model-fit-plots" class="nav-link" data-scroll-target="#model-fit-plots"><span class="header-section-number">3.6</span> Model Fit Plots</a></li>
-  <li><a href="#residual-plots" id="toc-residual-plots" class="nav-link" data-scroll-target="#residual-plots"><span class="header-section-number">3.7</span> Residual Plots</a></li>
-  <li><a href="#model-fit-gauge" id="toc-model-fit-gauge" class="nav-link" data-scroll-target="#model-fit-gauge"><span class="header-section-number">3.8</span> Model Fit Gauge</a></li>
-  <li><a href="#visualizing-explained-variance" id="toc-visualizing-explained-variance" class="nav-link" data-scroll-target="#visualizing-explained-variance"><span class="header-section-number">3.9</span> Visualizing Explained Variance</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">3.10</span> <img src="screenshots/onyx-screen-academicmotivation-model-boker.png" class="img-fluid">Exercise</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">4</span> Solution</a>
+  <li><a href="#model-fit" id="toc-model-fit" class="nav-link active" data-scroll-target="#model-fit"><span class="header-section-number">5.1</span> Model Fit</a></li>
+  <li><a href="#model-fit-1" id="toc-model-fit-1" class="nav-link" data-scroll-target="#model-fit-1"><span class="header-section-number">5.2</span> Model Fit</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">5.3</span> Residuals</a></li>
+  <li><a href="#raw-and-standarized-residuals" id="toc-raw-and-standarized-residuals" class="nav-link" data-scroll-target="#raw-and-standarized-residuals"><span class="header-section-number">5.4</span> Raw and Standarized Residuals</a></li>
+  <li><a href="#model-implied-and-observed-covariances" id="toc-model-implied-and-observed-covariances" class="nav-link" data-scroll-target="#model-implied-and-observed-covariances"><span class="header-section-number">5.5</span> Model-implied and observed covariances</a></li>
+  <li><a href="#model-fit-plots" id="toc-model-fit-plots" class="nav-link" data-scroll-target="#model-fit-plots"><span class="header-section-number">5.6</span> Model Fit Plots</a></li>
+  <li><a href="#residual-plots" id="toc-residual-plots" class="nav-link" data-scroll-target="#residual-plots"><span class="header-section-number">5.7</span> Residual Plots</a></li>
+  <li><a href="#model-fit-gauge" id="toc-model-fit-gauge" class="nav-link" data-scroll-target="#model-fit-gauge"><span class="header-section-number">5.8</span> Model Fit Gauge</a></li>
+  <li><a href="#visualizing-explained-variance" id="toc-visualizing-explained-variance" class="nav-link" data-scroll-target="#visualizing-explained-variance"><span class="header-section-number">5.9</span> Visualizing Explained Variance</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">5.10</span> Exercise</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">6</span> Solution</a>
   <ul class="collapse">
-  <li><a href="#factor-model" id="toc-factor-model" class="nav-link" data-scroll-target="#factor-model"><span class="header-section-number">4.1</span> Factor Model</a></li>
+  <li><a href="#factor-model" id="toc-factor-model" class="nav-link" data-scroll-target="#factor-model"><span class="header-section-number">6.1</span> Factor Model</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -251,7 +263,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Goodness of Fit</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model Fitting</span></h1>
 </div>
 
 
@@ -268,17 +280,17 @@ window.Quarto = {
 </header>
 
 
-<section id="model-fit" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="model-fit"><span class="header-section-number">3.1</span> Model Fit</h2>
+<section id="model-fit" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="model-fit"><span class="header-section-number">5.1</span> Model Fit</h2>
 <p>In SEM, the fit function to obtain maximum likelihood estimates under multivariate normality of the observations and assuming no missing data is:</p>
 <p><span class="math display">\[F_{\mathrm{ML}} = \log\lvert \boldsymbol{\Sigma}(\theta) \rvert
 + \mathrm{tr}\left( \mathbf{S}\, \boldsymbol{\Sigma}(\theta)^{-1} \right)
-- \log\lvert \mathbf{S} \rvert - p\]</span></p>
+- \log\lvert \mathbf{S} \rvert - p\]</span> where <span class="math inline">\(\Sigma\)</span> is the model-implied covariance matrix and <span class="math inline">\(S\)</span> is the observed covariance matrix. This can be expanded to also include means.</p>
 <p>Assuming <span class="math inline">\(H_0\)</span> that there is no misfit is true, the following test statistic has an asymptotic <span class="math inline">\(\chi^2\)</span> distribution</p>
 <p><span class="math display">\[\chi^2 = (N - 1)\,F_{\mathrm{ML}}\]</span></p>
 </section>
-<section id="model-fit-1" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="model-fit-1"><span class="header-section-number">3.2</span> Model Fit</h2>
+<section id="model-fit-1" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="model-fit-1"><span class="header-section-number">5.2</span> Model Fit</h2>
 <ul>
 <li><p><span class="math inline">\(\chi^2\)</span> is the fundamental model fit measure as discrepancy between model-implied (co)variances and means and observed (co)variances and means</p></li>
 <li><p>Significance test of close fit is usually not recommended as it has very high power; instead we usually favor effect-size-type metrics</p></li>
@@ -286,44 +298,45 @@ window.Quarto = {
 <li><p>RMSEA: estimates how much misfit per degree of freedom your model has in the population. <em>RMSEA asks: “Is the model achieving good fit without overusing parameters?</em></p></li>
 </ul>
 </section>
-<section id="residuals" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="residuals"><span class="header-section-number">3.3</span> Residuals</h2>
+<section id="residuals" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="residuals"><span class="header-section-number">5.3</span> Residuals</h2>
 <p>Residuals represent the difference between what the model predicts and what is actually observed in the data. More specifically, SEM works by reproducing the observed covariance (or correlation) matrix using a model-implied covariance matrix. Residuals are simply the element-wise differences between these two matrices. If the model fits well, these residuals should be small—ideally close to zero—because the model is successfully capturing the relationships among variables.</p>
 <p>Residuals are useful because they provide localized information about model misfit. Global fit indices like chi-square, CFI, or RMSEA tell you whether the model fits overall, but they don’t tell you where it fails. Residuals, in contrast, point to specific pairs of variables where the model does a poor job reproducing the observed relationship. For example, if two indicators have a large positive residual, it means their observed correlation is higher than what the model predicts, suggesting that something is missing, such as a residual correlation or an additional factor.</p>
 </section>
-<section id="raw-and-standarized-residuals" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="raw-and-standarized-residuals"><span class="header-section-number">3.4</span> Raw and Standarized Residuals</h2>
+<section id="raw-and-standarized-residuals" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="raw-and-standarized-residuals"><span class="header-section-number">5.4</span> Raw and Standarized Residuals</h2>
 <p>There are different types of residuals in SEM. Raw residuals are simple differences between observed and implied covariances, while standardized residuals scale these differences by their expected variability, making them easier to interpret across different variable pairs. Standardized residuals are often preferred because they help identify which discrepancies are unusually large relative to sampling variability.</p>
 <p>Importantly, residuals are not just diagnostic tools – they also guide model refinement. Large residuals can suggest theoretically meaningful modifications, such as allowing two indicators to correlate due to shared wording or content (e.g., shared method variance). However, they must be interpreted carefully: adding parameters purely to eliminate residuals can lead to overfitting and models that do not generalize well.</p>
 </section>
-<section id="model-implied-and-observed-covariances" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="model-implied-and-observed-covariances"><span class="header-section-number">3.5</span> Model-implied and observed covariances</h2>
+<section id="model-implied-and-observed-covariances" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="model-implied-and-observed-covariances"><span class="header-section-number">5.5</span> Model-implied and observed covariances</h2>
 <p>A summary measure of the misfit in the residuals is the standardized root mean square residuals, which is:</p>
 <p><span class="math display">\[\mathrm{SRMR} = \sqrt{ \frac{2}{p(p+1)} \sum_{i \le j} \left( r_{ij} - \hat{r}_{ij} \right)^2 }\]</span> where</p>
 <p><span class="math inline">\(r_{ij}\)</span> are the observed correlations <span class="math inline">\(\hat{r_{ij}}\)</span> are the model-implied correlations</p>
 <p>The exact computation differs across programs. Some programs standardize such that the means are included and some don’t. Some programs standardize such that the diagonal elements are included and some don’t. Note that Onyx standardizes the observed covariance matrix and then the model-implied covariance matrix each with their own variances. Thus, Onyx SRMR does not include misfit in the means or the residual variances – just the covariances.</p>
 </section>
-<section id="model-fit-plots" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="model-fit-plots"><span class="header-section-number">3.6</span> Model Fit Plots</h2>
+<section id="model-fit-plots" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="model-fit-plots"><span class="header-section-number">5.6</span> Model Fit Plots</h2>
 <p>There are two new plotting features to obtain visual information about model fit. Right-click on a model and select “Plot model statistics”. Then choose “Plot Standardized Residuals”</p>
 <p><img src="screenshots/onyx-screen-modelplotmenu.png" class="img-fluid"></p>
 </section>
-<section id="residual-plots" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="residual-plots"><span class="header-section-number">3.7</span> Residual Plots</h2>
+<section id="residual-plots" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="residual-plots"><span class="header-section-number">5.7</span> Residual Plots</h2>
 <p>This opens the standardized residuals plot. This plot show standardized residuals that are slightly different than what is used to compute the SRMR. These standardized residuals are computed such that they also represent misfit in the diagonal of the matrix, that is, the residual variances. This is achieved by standardizing both model-implied covariances and observed covariances with the variances of the observed covariance matrix.</p>
 <p><img src="screenshots/onyx-screen-residuals.png" class="img-fluid"></p>
 </section>
-<section id="model-fit-gauge" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="model-fit-gauge"><span class="header-section-number">3.8</span> Model Fit Gauge</h2>
+<section id="model-fit-gauge" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="model-fit-gauge"><span class="header-section-number">5.8</span> Model Fit Gauge</h2>
 <p>A further visualization of model misfit is the RMSEA gauge. This is a gauge that shows the RMSEA and shades some region of the RMSEA according to whether those ranges were proposed as ranges of acceptable or good fit.</p>
 <p><img src="screenshots/onyx-screen-modelfitgauge.png" class="img-fluid"></p>
 </section>
-<section id="visualizing-explained-variance" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="visualizing-explained-variance"><span class="header-section-number">3.9</span> Visualizing Explained Variance</h2>
+<section id="visualizing-explained-variance" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="visualizing-explained-variance"><span class="header-section-number">5.9</span> Visualizing Explained Variance</h2>
 <p>For observed variables, you can select a fill-style that reflects the percentage of explained variance in a variable. Right-click on a variable or a selection of variables, click “Customize Variable”, then “Select Fill Style”, then “Bokers R2”. This applies a fill-style that fills the selected variable only up to the level that corresponds to the variance explained by other variables in the model. The unexplained part is not filled. This gives a good quick overview, for example in factor models, how well an item works. Here is an example in a factor model with five indicators:</p>
+<p><img src="screenshots/onyx-screen-academicmotivation-model-boker.png" class="img-fluid"></p>
 </section>
-<section id="exercise" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="exercise"><span class="header-section-number">3.10</span> <img src="screenshots/onyx-screen-academicmotivation-model-boker.png" class="img-fluid">Exercise</h2>
+<section id="exercise" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="exercise"><span class="header-section-number">5.10</span> Exercise</h2>
 <ul>
 <li>Open the dataset “academicmotivation.csv” in Onyx</li>
 <li>This is a simulated dataset of a common factor of academic motivation that is measured with five indicators: persistence_on_tasks, time_spent_studying, curiosity_about_topics, interest_in_subject, and enjoyment_of_learning</li>
@@ -332,10 +345,10 @@ window.Quarto = {
 <li>Given these statistics and the information that interest_in_subject and and enjoyment_of_learningtion tap more into intrinsic_motivation than the others, how could we modify the model?</li>
 </ul>
 </section>
-<section id="solution" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Solution</h1>
-<section id="factor-model" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="factor-model"><span class="header-section-number">4.1</span> Factor Model</h2>
+<section id="solution" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Solution</h1>
+<section id="factor-model" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="factor-model"><span class="header-section-number">6.1</span> Factor Model</h2>
 <p><img src="screenshots/onyx-screen-academicmotivation-model.png" class="img-fluid"></p>
 <p>Model fit is <span class="math inline">\(\chi^2=21.033\)</span>, RMSEA=0.106, CFI=0.106, SRMR=0.055. RMSEA and CFI are outside regions that are usually deemed acceptable.</p>
 <p>Applying Boker’s R2 style, this yiels:</p>
@@ -767,13 +780,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./basics.html" class="pagination-link" aria-label="Basic Modeling">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Modeling</span></span>
+      <a href="./loaddata.html" class="pagination-link" aria-label="Loading Data and Parameter Estimation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Loading Data and Parameter Estimation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./multigroup.html" class="pagination-link" aria-label="Multi-Group Models">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multi-Group Models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

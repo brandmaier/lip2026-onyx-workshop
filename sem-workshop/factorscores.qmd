@@ -34,7 +34,8 @@ The commonly used factor model for these 9 variables consists of three latent va
 
 First, create the latent factor model. It should look like this:
 
-![](screenshots/onyx-screen-holzinger-twofactors-correlation2.png%20.png)
+![](screenshots/onyx-screen-holzinger-twofactors-correlation2.png)
+
 Next, obtain the factor score estimates -- this opens a new dataset including the estimated scores as new variables; the names correspond to the names of the latent factors. Then right-click on an empty space in the dataset view, select plot and then scatterplot:
 
 ![](screenshots/onyx-screen-holzinger-factorscores-plotmenu.png)

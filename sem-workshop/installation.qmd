@@ -1,0 +1,20 @@
+## What you need before starting
+
+- A working installation of **Onyx** on your computer.
+- A mouse or trackpad that supports right-click actions (many Onyx actions use context menus). We definitely recommend using an external mouse as input device.
+- The workshop data files in `sem-workshop/data/` (included in this repository).
+- Basic familiarity with SEM terms such as latent variables, loadings, residual variances, model fit, and nested model comparison.
+
+## Installation
+
+You can download the most recent version of Ωnyx for all operating systems here (including Windows, Mac OSX, and Unix/Linux here).
+
+## Prerequistes
+
+Ωnyx requires a JAVA runtime environment. If you haven’t installed JAVA, please download a recent version, for example OpenJDK ([](https://openjdk.org/index.html)).
+
+## Download
+
+For this workshop make sure to install the *Developer version / unstable*, which contains the latest features:
+
+[](https://onyx-sem.com/download/)

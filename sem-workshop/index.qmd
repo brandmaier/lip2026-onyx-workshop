@@ -4,6 +4,31 @@ This is a self-paced workshop for Onyx, a graphical user-interface for structura
 
 \![images/somemodels.png\]
 
-We assume that you already familiar with the basics of Structural Equation Modeling.
+This workshop is designed for researchers and students who are new to Onyx and already familiar with basic SEM concepts.
 
+We assume that you are already familiar with:
+
+- latent and observed variables,
+- factor loadings and residual variances,
+- model fit indices such as chi-square, RMSEA, CFI, and SRMR.
+
+## What you will learn
+
+The workshop covers practical Onyx workflows, including:
+
+- creating path models,
+- estimating and evaluating model fit,
+- comparing nested models,
+- working with multigroup models,
+- exporting syntax to other SEM tools.
+
+## Before you begin
+
+Please make sure that:
+
+1. Onyx is installed and opens normally on your machine.
+2. You can load workshop data files from the `sem-workshop/data/` folder.
+3. You are comfortable using right-click context menus (most Onyx actions are menu-driven).
+
+If you are new to Onyx, start with **Introduction** and then **Basic Modeling** before moving on to the other chapte
 The workshop has some introductory chapters that cover basic workflow elements in Onyx, such as basics of model specification, evaluating model fit, or specifying multiple group models.

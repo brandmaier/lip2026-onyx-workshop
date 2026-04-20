@@ -1,8 +1,58 @@
 # Introduction
 
+## What is Onyx?
 
-Onyx's interface is somewhat unusual as it presents the user with an empty desktop. All major interactions in Onyx are via context-menus or left- and right-mouseclicks that provide context-dependent shortcuts.
+Ωnyx is a free software environment for creating and estimating structural equation models (SEM). It provides a graphical user interface that facilitates an intuitive creation of models, and a powerful back end for performing maximum likelihood estimation of parameters. Path diagrams in Ωnyx can be exported to OpenMx, lavaan, and Mplus to allow an easy transition to script-based SEM software. Also, OpenMx scripts can be transformed into a path diagrams in Ωnyx.
 
-This workshop is work-in-progress and has several chapters targeted at readers that are familiar with Structural Equation Modeling and want to learn about how to best use Onyx in their scientific work.
+## Installation
 
-There is no need to follow the order of the modules as they are presented. Pick a topic about which you would like to learn more. The topics contain some basic information, some demonstrations, and practical exercises for you to follow along.
+If you have not worked with Onyx before, make sure to download and install it first. You find some instructions under **Installation**. 
+
+## The Interface
+
+Onyx uses a highly interactive graphical workflow. When you open the program, you begin with an empty desktop and build models step by step. Most actions are available through context menus, right-click drag operations, and keyboard modifiers.
+
+## Start here (first-time users)
+
+If this is your first time using Onyx, follow this order:
+
+ **Basic Modeling** — create variables and paths, free parameters, and style diagrams.
+2. **Model Fit** — inspect fit indices and residual diagnostics.
+3. **Model Comparison** — compare nested models.
+4. **Multi-Group Models** and **Factor Scores** — move to more advanced workflows.
+5. Exercise chapters — apply the workflow to full examples.
+
+## Interaction basics
+
+Onyx interactions depend on where you click and whether modifier keys are pressed.
+
+- **Double-click on empty model space**: create a latent variable.
+- **Shift + double-click on empty model space**: create an observed variable.
+- **Right-click drag from one variable to another**: create a directed path.
+- **Shift + right-click drag**: create a covariance path.
+- **Right-click an object**: open object-specific options.
+
+## A quick first check
+
+Before starting the workshop, try this mini-task:
+
+1. Create an empty model.
+2. Add one latent and one observed variable.
+3. Draw a path from latent to observed.
+4. Free the path parameter.
+
+If this works, your setup is ready and you can proceed with the chapters.
+
+This workshop is still being refined. Chapters include conceptual background, practical demonstrations, and exercises to follow along. There is no need to follow the order of the modules as they are presented. Pick a topic about which you would like to learn more. The topics contain some basic information, some demonstrations, and practical exercises for you to follow along.
+
+## What is expected background knowledge
+
+You will get the most out of this material if you are comfortable with:
+
+- Latent vs. observed variables.
+- Factor loadings and residual variances.
+- Identification constraints.
+- Basic model fit indices (e.g., chi-square, CFI, RMSEA, SRMR).
+
+If these terms are unfamiliar, review a short SEM primer first and then return to this workshop.
+

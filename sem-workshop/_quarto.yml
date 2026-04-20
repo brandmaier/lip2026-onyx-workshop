@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: ../docs
 
 book:
   title: "Structural Equation Modeling with Onyx"
@@ -8,7 +9,9 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - installation.qmd
     - basics.qmd
+    - loaddata.qmd
     - modelfit.qmd
     - multigroup.qmd
     - modelcomparison.qmd

@@ -1,5 +1,5 @@
 ---
-title: "Goodness of Fit"
+title: "Model Fitting"
 format: html
 editor: visual
 ---
@@ -11,6 +11,7 @@ In SEM, the fit function to obtain maximum likelihood estimates under multivaria
 $$F_{\mathrm{ML}} = \log\lvert \boldsymbol{\Sigma}(\theta) \rvert 
 + \mathrm{tr}\left( \mathbf{S}\, \boldsymbol{\Sigma}(\theta)^{-1} \right) 
 - \log\lvert \mathbf{S} \rvert - p$$
+where $\Sigma$ is the model-implied covariance matrix and $S$ is the observed covariance matrix. This can be expanded to also include means.
 
 Assuming $H_0$ that there is no misfit is true, the following test statistic has an asymptotic $\chi^2$ distribution
 
@@ -70,7 +71,9 @@ A further visualization of model misfit is the RMSEA gauge. This is a gauge that
 
 For observed variables, you can select a fill-style that reflects the percentage of explained variance in a variable. Right-click on a variable or a selection of variables, click "Customize Variable", then "Select Fill Style", then "Bokers R2". This applies a fill-style that fills the selected variable only up to the level that corresponds to the variance explained by other variables in the model. The unexplained part is not filled. This gives a good quick overview, for example in factor models, how well an item works. Here is an example in a factor model with five indicators:
 
-## ![](screenshots/onyx-screen-academicmotivation-model-boker.png)Exercise
+![](screenshots/onyx-screen-academicmotivation-model-boker.png)
+
+## Exercise
 
 -   Open the dataset "academicmotivation.csv" in Onyx
 -   This is a simulated dataset of a common factor of academic motivation that is measured with five indicators: persistence_on_tasks, time_spent_studying, curiosity_about_topics, interest_in_subject, and enjoyment_of_learning

@@ -6,7 +6,7 @@ editor:
 
 # Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume
 
-In this exercise, we will reproduce an analysis of . From their study:
+In this exercise, we will reproduce an  published SEM analysis by @kievit2014distinct. From their study:
 
 > We focus on four neural properties selected based on the current
 > literature—(see Methods), two involving grey matter volume (GMV;
@@ -51,11 +51,11 @@ interest:
 # Exercise
 
 1.  Load the dataset "ncomms.dat", which contains the variances and
-    covariances as reported by @kie.
+    covariances as reported by @kievit2014distinct.
 2.  Create a measurement model for cognition using only the behavioral
     variables. What model fits better? A model with a single performance
     factor across all six tests? Or two correlated latent factors, one
-    fluid intelligence factor for the Cattel items and one multitasking
+    fluid intelligence factor for the Cattell items and one multitasking
     factor for the Hotel test items?
 3.  Create a measurement model for the brain? Does a single factor
     across gray matter volume and white matter volume represent the
