@@ -94,4 +94,6 @@ For all models, inspect model fit (CFI, RMSEA, residuals) and also investigate t
 How would a model look like, which has a brain variable, which we would like to use to predict behavior with?
 
 ![](screenshots/onyx-camcam-brainmodel.png)
+## References
+
 

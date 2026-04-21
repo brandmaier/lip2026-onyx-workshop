@@ -95,3 +95,7 @@ compare to a single-factor model?):
 Here is the final model:
 
 ![](screenshots/onyx-cognition-fullmodel.png)
+
+
+## References
+

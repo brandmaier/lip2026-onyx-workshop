@@ -281,6 +281,7 @@ div.csl-indent {
   <li><a href="#solution-in-jasp" id="toc-solution-in-jasp" class="nav-link" data-scroll-target="#solution-in-jasp"><span class="header-section-number">12.4.2</span> Solution in JASP</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">12.4.3</span> Summary</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">12.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -340,7 +341,7 @@ div.csl-indent {
 <h2 data-number="12.3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">12.3</span> Tasks</h2>
 <ol type="1">
 <li><p>Load the dataset Garcia.csv</p></li>
-<li><p>Specify an observed-only ANOVA model with three groups to test whether the anger ratings differed across the experimental (protest) groups.</p></li>
+<li><p>Specify an observed-only ANOVA model with three groups to test whether the sexism ratings differed across the three experimental (protest) groups.</p></li>
 <li><p>Specify a null model, in which there are no mean differences</p></li>
 <li><p>Use model comparison to decide between those models; is there a significant difference between groups?</p></li>
 <li><p>Compare your results to ANOVA results from a different program (e.g., R or JASP); what is the difference?</p></li>
@@ -373,6 +374,11 @@ Residuals 127 78.594 0.61885               </code></pre>
 <h3 data-number="12.4.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">12.4.3</span> Summary</h3>
 <p>R and JASP both perform a classic ANOVA assuming normality within the groups and equality of variances across the groups. They both compute the exact F-statistic.</p>
 <p>In the SEM solution presented here, we also assume normality within groups and equality of variances (even though it is easy to remove this constraint). Onyx computes an asymptotic Chi-Square-statistic. That is, asymptotically the results are the same but may differ in small to moderate sample sizes.</p>
+<p>All three approaches yield a non-significant result, that is, there is no evidence that sexism ratings differed across protest groups.</p>
+</section>
+</section>
+<section id="references" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="references"><span class="header-section-number">12.5</span> References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -380,7 +386,6 @@ Residuals 127 78.594 0.61885               </code></pre>
 Garcia, Donna M, Michael T Schmitt, Nyla R Branscombe, and Naomi Ellemers. 2010. <span>“Women’s Reactions to Ingroup Members Who Protest Discriminatory Treatment: The Importance of Beliefs about Inequality and Response Appropriateness.”</span> <em>European Journal of Social Psychology</em> 40 (5): 733–45.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->

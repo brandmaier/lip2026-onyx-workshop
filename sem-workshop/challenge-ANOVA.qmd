@@ -40,7 +40,7 @@ We use the dataset from the sexism protest study by @garcia2010women. From the d
 
 1.  Load the dataset Garcia.csv
 
-2.  Specify an observed-only ANOVA model with three groups to test whether the anger ratings differed across the experimental (protest) groups.
+2.  Specify an observed-only ANOVA model with three groups to test whether the sexism ratings differed across the three experimental (protest) groups.
 
 3.  Specify a null model, in which there are no mean differences
 
@@ -79,3 +79,7 @@ anova(lm(sexism ~ protest, psych::Garcia))
 R and JASP both perform a classic ANOVA assuming normality within the groups and equality of variances across the groups. They both compute the exact F-statistic.
 
 In the SEM solution presented here, we also assume normality within groups and equality of variances (even though it is easy to remove this constraint). Onyx computes an asymptotic Chi-Square-statistic. That is, asymptotically the results are the same but may differ in small to moderate sample sizes.
+
+All three approaches yield a non-significant result, that is, there is no evidence that sexism ratings differed across protest groups.
+
+## References
