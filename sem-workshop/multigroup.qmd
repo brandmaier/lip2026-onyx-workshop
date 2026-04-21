@@ -14,19 +14,19 @@ Then, a little diamond grouping indicator appears on that variable. The value in
 
 ![](screenshots/onyx-screen-setgroup.png)
 
-## Latent Mean Differences
+## Connecting Grouping Indicators with Variables
 
-The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset.
+The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset. Model estimation can only start if all observed variables and all grouping indicators are connected with variables from a data view. To remove such a connection, right-click on the diamond and select "Unlink Grouping". To remove the entire group indicator, select "Remove Grouping" instead.
 
-# Applied Example: Latent Means
+# Applied Example: Latent Mean Differences
 
-Models of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs.
+Models of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs. The following paragraph is adapted from @brandmaier2025stop:
 
-Figure 1 shows a path diagram representing one possibility to set up a latent mean difference model when there are multiple, noisy measurements of the same underlying latent construct. This model is a MIMIC [multiple-indicators multiple-causes, @hancock2001effect] model, in which we estimate a measurement model of a latent trait $\eta$ across two groups that are encoded via a dummy group indicator. The latent trait is measured through multiple observed indicators (here, $x1$ to $x3$) with indicator-specific residual variance terms, which allows to separate error variance from true-score variance. If correctly specified, this approach allows us to obtain more precise estimates of the latent trait purged of measurement error and unreliability [@deshon1998cautionary]. In this specific instance, the regression path from the dummy-coded group indicator to the latent variable directly represents a standardized mean difference because the scale of the latent variable was fixed to have a variance of one. Note that the MIMIC model assumes that measurement invariance holds, that is, the factor loadings, item intercepts, and item residual variances are assumed to be the same across groups.
+The next figure shows a path diagram representing one possibility to set up a latent mean difference model when there are multiple, noisy measurements of the same underlying latent construct. This model is a MIMIC [multiple-indicators multiple-causes, @hancock2001effect] model, in which we estimate a measurement model of a latent trait $\eta$ across two groups that are encoded via a dummy group indicator. The latent trait is measured through multiple observed indicators (here, $x1$ to $x3$) with indicator-specific residual variance terms, which allows to separate error variance from true-score variance. If correctly specified, this approach allows us to obtain more precise estimates of the latent trait purged of measurement error and unreliability [@deshon1998cautionary]. In this specific instance, the regression path from the dummy-coded group indicator to the latent variable directly represents a standardized mean difference because the scale of the latent variable was fixed to have a variance of one. Note that the MIMIC model assumes that measurement invariance holds, that is, the factor loadings, item intercepts, and item residual variances are assumed to be the same across groups.
 
 ![](screenshots/onyx-screen-multigroup-mimic-result.png)
 
-A more flexible model specification is also possible; using a multiple-group factor model, we can estimate the same factor model in each group separately and empirically test whether measurement invariance holds; then, we can continue to test whether there is a difference in latent factor means across groups. This is also known as the SMM [structured means modeling; @hancock2001effect] approach:
+A more flexible model specification is also possible; using a multiple-group factor model, we can estimate the same factor model in each group separately and empirically test differences across the groups. For example, we can test whether measurement invariance holds (is the measurement model the same across groups and thus: do the latent variables mean the same across groups?); then, we can continue to test whether there is a difference in latent factor means across groups. This is also known as the SMM [structured means modeling; @hancock2001effect] approach:
 
 ![](screenshots/onyx-screen-muligroup-smm-results.png)
 
@@ -44,7 +44,7 @@ Note that all parameters with the same name have identity constraints; in partic
 
 -   What can you learn from the parameter estimates of the model?
 
--   Copy the SMM model and freely estimate the factor loadings across groups (by giving all factor loadings unique names); run a likelihood ratio test between the models as a test of measurement invariance
+-   Copy the SMM model and freely estimate the factor loadings across groups (by giving all factor loadings unique names); run a likelihood ratio test between the models as a heuristic test of weak measurement invariance (note that the classic approach starts with a model, in which all parameters are free across groups and then adds restrictions to different parts of the measurement model)
 
 ## Solution
 

@@ -2,7 +2,7 @@
 bibliography: references.bib
 ---
 
-## Exercise: Multiple determinants of lifespan memory differences
+## Challenge: Multiple determinants of lifespan memory differences
 
 In this exercise, we will reproduce results reported by [@henson2016multiple]. In their study, they speculate on different theories of memory. Here, we use SEM to test different measurement models representing the different theories of memory. Items are 9 memory scores (3 valences and 3 tests, fully crossed). The tests tap into associative memory, item memory, and visual priming. Valences are positive, neutral, negative. The data is based on the reported covariances of the item d' values across the nine tests. @henson2016multiple write in their introduction:
 

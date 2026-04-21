@@ -4,9 +4,9 @@ editor:
     wrap: 72
 ---
 
-# Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume
+# Challenge: Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume
 
-In this exercise, we will reproduce an published SEM analysis by
+In this  challenge, we will reproduce an published SEM analysis by
 @kievit2014distinct. From their study:
 
 > We focus on four neural properties selected based on the current

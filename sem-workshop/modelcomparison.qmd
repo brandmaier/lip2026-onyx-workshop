@@ -56,7 +56,8 @@ First, we load the dataset, we select variables x1 to x6 (e.g., by selecting x1,
 
 Next, we clone the model (using Edit -\> Clone Model) and rename the cloned model. Then we right-click the covariance in the cloned model and select "Delete Path". Then, create a model comparisong edge between the two models. Hover the mouse over the filled circle of the model comparison edge and the result of the model comparison appears:
 
-![![](images/clipboard-4071501077.png)](screenshots/onyx-screen-holzinger-twofactors-modelcomparison.png)
+
+![](screenshots/onyx-screen-holzinger-twofactors-modelcomparison.png)
 
 Here, we obtained a test statistic of 35.58 for the likelihood ratio test with one degree-of-freedom (because a single parameter was removed, ie., set to zero). The p value is \<0.001 and thus, the model with the extra parameter (ie., the covariance) significantly fits better than the model without the covariance.
 

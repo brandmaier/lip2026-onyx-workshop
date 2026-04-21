@@ -24,7 +24,7 @@
     "href": "index.html#before-you-begin",
     "title": "Structural Equation Modeling with Onyx",
     "section": "Before you begin",
-    "text": "Before you begin\nPlease make sure that:\n\nOnyx is installed and opens normally on your machine.\nYou can load workshop data files from the sem-workshop/data/ folder.\nYou are comfortable using right-click context menus (most Onyx actions are menu-driven).\n\nIf you are new to Onyx, start with Introduction and then Basic Modeling before moving on to the other chapte The workshop has some introductory chapters that cover basic workflow elements in Onyx, such as basics of model specification, evaluating model fit, or specifying multiple group models.",
+    "text": "Before you begin\nPlease make sure that:\n\nOnyx is installed and opens normally on your machine.\nYou can load workshop data files from the sem-workshop/data/ folder in the github repository .\nYou are comfortable using right-click context menus (most Onyx actions are menu-driven).\n\nIf you are new to Onyx, start with Introduction and then Basic Modeling before moving on to the other chapters. These cover basic workflow elements in Onyx. Then proceed to the more advanced topics or do some of the challenges.",
     "crumbs": [
       "Preface"
     ]
@@ -687,6 +687,16 @@
     "text": "Boker, Steven M, Timo von Oertzen, Joshua N Pritikin, Michael D Hunter,\nTimothy R Brick, Andreas M Brandmaier, and Michael C Neale. 2023.\n“Products of Variables in Structural Equation Models.”\nStructural Equation Modeling: A Multidisciplinary Journal 30\n(5): 708–18.\n\n\nDeShon, Richard P. 1998. “A Cautionary Note on Measurement Error\nCorrections in Structural Equation Models.” Psychological\nMethods 3 (4): 412–23.\n\n\nHancock, Gregory R. 2001. “Effect Size, Power, and Sample Size\nDetermination for Structured Means Modeling and MIMIC Approaches to\nBetween-Groups Hypothesis Testing of Means on a Single Latent\nConstruct.” Psychometrika 66 (3): 373–88.\n\n\nHenson, Richard N, Karen L Campbell, Simon W Davis, Jason R Taylor, Tina\nEmery, Sharon Erzinclioglu, and Rogier A Kievit. 2016. “Multiple\nDeterminants of Lifespan Memory Differences.” Scientific\nReports 6 (1): 32527.\n\n\nKievit, Rogier A, Simon W Davis, Daniel J Mitchell, Jason R Taylor, John\nDuncan, and Richard NA Henson. 2014. “Distinct Aspects of Frontal\nLobe Structure Mediate Age-Related Differences in Fluid Intelligence and\nMultitasking.” Nature Communications 5 (1): 5658.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "index.html#resources",
+    "href": "index.html#resources",
+    "title": "Structural Equation Modeling with Onyx",
+    "section": "Resources",
+    "text": "Resources\nThe workshop can be found here:\n\nWorkshop Website\nThe resources (data files) can be found here:\n\nData folder",
+    "crumbs": [
+      "Preface"
     ]
   }
 ]
