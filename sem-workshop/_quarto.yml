@@ -19,6 +19,7 @@ book:
     - export.qmd
     - simulation.qmd
     - exercises.qmd
+    - challenge-ANOVA.qmd
     - exercise-memory.qmd
     - exercise-braincognition.qmd
     - summary.qmd

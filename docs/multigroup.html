@@ -218,7 +218,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation and Plotting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -229,20 +229,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./challenge-ANOVA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Challenge: Analysis of Variance in SEM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./exercise-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Challenge: Multiple determinants of lifespan memory differences</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Challenge: Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The End</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The End</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -262,8 +268,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#multi-group-models-in-onyx" id="toc-multi-group-models-in-onyx" class="nav-link active" data-scroll-target="#multi-group-models-in-onyx"><span class="header-section-number">6.1</span> Multi-group models in Onyx</a></li>
-  <li><a href="#latent-mean-differences" id="toc-latent-mean-differences" class="nav-link" data-scroll-target="#latent-mean-differences"><span class="header-section-number">6.2</span> Latent Mean Differences</a></li>
-  <li><a href="#applied-example-latent-means" id="toc-applied-example-latent-means" class="nav-link" data-scroll-target="#applied-example-latent-means"><span class="header-section-number">7</span> Applied Example: Latent Means</a>
+  <li><a href="#connecting-grouping-indicators-with-variables" id="toc-connecting-grouping-indicators-with-variables" class="nav-link" data-scroll-target="#connecting-grouping-indicators-with-variables"><span class="header-section-number">6.2</span> Connecting Grouping Indicators with Variables</a></li>
+  <li><a href="#applied-example-latent-mean-differences" id="toc-applied-example-latent-mean-differences" class="nav-link" data-scroll-target="#applied-example-latent-mean-differences"><span class="header-section-number">7</span> Applied Example: Latent Mean Differences</a>
   <ul class="collapse">
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.1</span> Exercises</a></li>
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">7.2</span> Solution</a></li>
@@ -302,16 +308,16 @@ window.Quarto = {
 <p>Then, a little diamond grouping indicator appears on that variable. The value inside the diamond reflects the group membership. To change group membership, right-click the diamond and change the “Group” value:</p>
 <p><img src="screenshots/onyx-screen-setgroup.png" class="img-fluid"></p>
 </section>
-<section id="latent-mean-differences" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="latent-mean-differences"><span class="header-section-number">6.2</span> Latent Mean Differences</h2>
-<p>The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset.</p>
+<section id="connecting-grouping-indicators-with-variables" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="connecting-grouping-indicators-with-variables"><span class="header-section-number">6.2</span> Connecting Grouping Indicators with Variables</h2>
+<p>The diamonds are variable containers, that is, you can drag a discrete-valued grouping variable from a dataset on to the diamond. As long as the diamond is not filled (white fill color), it is not connected. Once it is connected, it becomes filled (black color), that is, it is now associated with a grouping variable in the dataset. Model estimation can only start if all observed variables and all grouping indicators are connected with variables from a data view. To remove such a connection, right-click on the diamond and select “Unlink Grouping”. To remove the entire group indicator, select “Remove Grouping” instead.</p>
 </section>
-<section id="applied-example-latent-means" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Applied Example: Latent Means</h1>
-<p>Models of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs.</p>
-<p>Figure 1 shows a path diagram representing one possibility to set up a latent mean difference model when there are multiple, noisy measurements of the same underlying latent construct. This model is a MIMIC <span class="citation" data-cites="hancock2001effect">(multiple-indicators multiple-causes, <a href="references.html#ref-hancock2001effect" role="doc-biblioref">Hancock 2001</a>)</span> model, in which we estimate a measurement model of a latent trait <span class="math inline">\(\eta\)</span> across two groups that are encoded via a dummy group indicator. The latent trait is measured through multiple observed indicators (here, <span class="math inline">\(x1\)</span> to <span class="math inline">\(x3\)</span>) with indicator-specific residual variance terms, which allows to separate error variance from true-score variance. If correctly specified, this approach allows us to obtain more precise estimates of the latent trait purged of measurement error and unreliability <span class="citation" data-cites="deshon1998cautionary">(<a href="references.html#ref-deshon1998cautionary" role="doc-biblioref">DeShon 1998</a>)</span>. In this specific instance, the regression path from the dummy-coded group indicator to the latent variable directly represents a standardized mean difference because the scale of the latent variable was fixed to have a variance of one. Note that the MIMIC model assumes that measurement invariance holds, that is, the factor loadings, item intercepts, and item residual variances are assumed to be the same across groups.</p>
+<section id="applied-example-latent-mean-differences" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Applied Example: Latent Mean Differences</h1>
+<p>Models of latent mean differences are like the classical t-test or ANOVA but estimated on latent constructs. The following paragraph is adapted from <span class="citation" data-cites="brandmaier2025stop">Brandmaier (<a href="#ref-brandmaier2025stop" role="doc-biblioref">2026</a>)</span>:</p>
+<p>The next figure shows a path diagram representing one possibility to set up a latent mean difference model when there are multiple, noisy measurements of the same underlying latent construct. This model is a MIMIC <span class="citation" data-cites="hancock2001effect">(multiple-indicators multiple-causes, <a href="#ref-hancock2001effect" role="doc-biblioref">Hancock 2001</a>)</span> model, in which we estimate a measurement model of a latent trait <span class="math inline">\(\eta\)</span> across two groups that are encoded via a dummy group indicator. The latent trait is measured through multiple observed indicators (here, <span class="math inline">\(x1\)</span> to <span class="math inline">\(x3\)</span>) with indicator-specific residual variance terms, which allows to separate error variance from true-score variance. If correctly specified, this approach allows us to obtain more precise estimates of the latent trait purged of measurement error and unreliability <span class="citation" data-cites="deshon1998cautionary">(<a href="#ref-deshon1998cautionary" role="doc-biblioref">DeShon 1998</a>)</span>. In this specific instance, the regression path from the dummy-coded group indicator to the latent variable directly represents a standardized mean difference because the scale of the latent variable was fixed to have a variance of one. Note that the MIMIC model assumes that measurement invariance holds, that is, the factor loadings, item intercepts, and item residual variances are assumed to be the same across groups.</p>
 <p><img src="screenshots/onyx-screen-multigroup-mimic-result.png" class="img-fluid"></p>
-<p>A more flexible model specification is also possible; using a multiple-group factor model, we can estimate the same factor model in each group separately and empirically test whether measurement invariance holds; then, we can continue to test whether there is a difference in latent factor means across groups. This is also known as the SMM [structured means modeling; <span class="citation" data-cites="hancock2001effect">Hancock (<a href="references.html#ref-hancock2001effect" role="doc-biblioref">2001</a>)</span>] approach:</p>
+<p>A more flexible model specification is also possible; using a multiple-group factor model, we can estimate the same factor model in each group separately and empirically test differences across the groups. For example, we can test whether measurement invariance holds (is the measurement model the same across groups and thus: do the latent variables mean the same across groups?); then, we can continue to test whether there is a difference in latent factor means across groups. This is also known as the SMM [structured means modeling; <span class="citation" data-cites="hancock2001effect">Hancock (<a href="#ref-hancock2001effect" role="doc-biblioref">2001</a>)</span>] approach:</p>
 <p><img src="screenshots/onyx-screen-muligroup-smm-results.png" class="img-fluid"></p>
 <p>Note that all parameters with the same name have identity constraints; in particular, this means that parameters with the same name are identical across groups. In the path diagram shown above, all parameters are identical across groups. This implements a very strong assumption of measurement invariance across groups and identity of magnitude of variance (= individual differences at the latent level) across groups. Again, this restricted version of the SMM model is identical to the above dummy-coded MIMIC approach. However, the SMM allows to also freely estimate parameters between groups and perform tests of whether some of the restrictions are supported by the data or not.</p>
 <section id="exercises" class="level2" data-number="7.1">
@@ -319,16 +325,26 @@ window.Quarto = {
 <ul>
 <li><p>Load the dataset “factor_model_memory.csv”</p></li>
 <li><p>Use the “Latent Means Model” wizard to create both the SMM and the MIMIC approach model to estimate models of latent mean differences</p></li>
-<li><p>Freely estimate the latent variance in the second group of the SMM approach</p></li>
-<li><p>Copy the SMM model and freely estimate the factor loadings across groups; run a likelihood ratio test between the models as a test of measurement invariance</p></li>
+<li><p>Freely estimate the latent variance in the second group of the SMM approach7</p></li>
+<li><p>Run a model comparison using a likelihood ratio test to test whether the latent variances significantly differ across groups.</p></li>
+<li><p>What can you learn from the parameter estimates of the model?</p></li>
+<li><p>Copy the SMM model and freely estimate the factor loadings across groups (by giving all factor loadings unique names); run a likelihood ratio test between the models as a heuristic test of weak measurement invariance (note that the classic approach starts with a model, in which all parameters are free across groups and then adds restrictions to different parts of the measurement model)</p></li>
 </ul>
 </section>
 <section id="solution" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="solution"><span class="header-section-number">7.2</span> Solution</h2>
-<p>TODO</p>
+<p>Using the wizard, we create a SMM model with observed variable names matching the data set. Either enter the variable names manually in the wizard; or, leave the generic names x1 to x3 and later drag and drop the variables from the data view on to the observed variables in the model. This will automatically rename and connect the variables in the model to the respective variables in the data set. Clone the model (right-click on the model and select ‘Edit -&gt; Clone model’). Right-click the data view and select “Send Data to Model” to connect all variables of the cloned model with the data set to start estimation. Now, add a model comparison between the two models (press right-mouse button on one model and drag the comparator edge on to the other model):</p>
+<p><img src="screenshots/onyx-screen-multigroup-solution-lrt.png" class="img-fluid"></p>
+<p>Here, we get a non-significant difference. The added free parameter does not significantly fit better. That is, there is no evidence for a difference in latent variances. As a result, we keep the simpler model (with fixed variance).</p>
+<p>Now, clone the model once more and remove the constraint that the factor loadings are identical across groups. To do so, simply give the factor loadings in one model unique names. For example rename <span class="math inline">\(\lambda_1\)</span> to <span class="math inline">\(\lambda_1\_2\)</span> and <span class="math inline">\(\lambda_2\)</span> to <span class="math inline">\(\lambda_2\_2\)</span> and <span class="math inline">\(\lambda_3\)</span> to <span class="math inline">\(\lambda_3\_2\)</span> . Now the model has three more free parameters and estimates the factor loadings separately per group. Using a likelihood ratio test, we can compare both nested models. Under H0, both models fit equally well; under H1, the more complex model fits the data better.</p>
+<p><img src="screenshots/onyx-screen-modelcomparison-invariance.png" class="img-fluid"></p>
+<p>Here, we find no significant difference in model fit, ie. there is no evidence that the factor loadings should be freely estimated across groups. In other words, there is no evidence for differences in the factor loadings. We conclude for now that weak measurement invariance holds in this model (but note that a significance-based approach is not necessarily the best approach for this decisions; others have recommended to look at effect size metrics for this).</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-brandmaier2025stop" class="csl-entry" role="listitem">
+Brandmaier, Andreas M. 2026. <span>“Rethinking Cohen’s d: From Effect Size to Detectability.”</span> <a href="https://doi.org/10.31234/osf.io/n9ta7_v2">https://doi.org/10.31234/osf.io/n9ta7_v2</a>.
+</div>
 <div id="ref-deshon1998cautionary" class="csl-entry" role="listitem">
 DeShon, Richard P. 1998. <span>“A Cautionary Note on Measurement Error Corrections in Structural Equation Models.”</span> <em>Psychological Methods</em> 3 (4): 412–23.
 </div>

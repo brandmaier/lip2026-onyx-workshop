@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Simulate and Plot – Structural Equation Modeling with Onyx</title>
+<title>10&nbsp; Simulation and Plotting – Structural Equation Modeling with Onyx</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation and Plotting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation and Plotting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -180,20 +209,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./challenge-ANOVA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Challenge: Analysis of Variance in SEM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./exercise-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exercise: Multiple determinants of lifespan memory differences</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Challenge: Multiple determinants of lifespan memory differences</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercise-braincognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Challenge: Age-related differences in in fluid intelligence and multitasking and their correlations with gray-matter and white-matter volume</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The End</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">The End</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -212,16 +247,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-dual-change-score-model" id="toc-the-dual-change-score-model" class="nav-link active" data-scroll-target="#the-dual-change-score-model"><span class="header-section-number">10.1</span> The dual change score model</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link active" data-scroll-target="#simulation"><span class="header-section-number">10.0.1</span> Simulation</a></li>
+  <li><a href="#an-applied-example-the-dual-change-score-model" id="toc-an-applied-example-the-dual-change-score-model" class="nav-link" data-scroll-target="#an-applied-example-the-dual-change-score-model"><span class="header-section-number">10.1</span> An applied example: The dual change score model</a></li>
   <li><a href="#simulation-to-understand-model-parameters" id="toc-simulation-to-understand-model-parameters" class="nav-link" data-scroll-target="#simulation-to-understand-model-parameters"><span class="header-section-number">10.2</span> Simulation to Understand Model Parameters</a></li>
   <li><a href="#dual-change-score-model-wizard" id="toc-dual-change-score-model-wizard" class="nav-link" data-scroll-target="#dual-change-score-model-wizard"><span class="header-section-number">10.3</span> Dual Change Score Model Wizard</a></li>
-  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation"><span class="header-section-number">10.4</span> Simulation</a></li>
-  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot"><span class="header-section-number">10.5</span> Plot</a></li>
-  <li><a href="#longitudinal-plot" id="toc-longitudinal-plot" class="nav-link" data-scroll-target="#longitudinal-plot"><span class="header-section-number">10.6</span> Longitudinal Plot</a></li>
-  <li><a href="#customize-the-longitudinal-plot" id="toc-customize-the-longitudinal-plot" class="nav-link" data-scroll-target="#customize-the-longitudinal-plot"><span class="header-section-number">10.7</span> Customize the Longitudinal Plot</a></li>
-  <li><a href="#plot-subsets-of-variables" id="toc-plot-subsets-of-variables" class="nav-link" data-scroll-target="#plot-subsets-of-variables"><span class="header-section-number">10.8</span> Plot subsets of variables</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10.9</span> Exercises</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">10.10</span> Solution</a></li>
+  <li><a href="#simulate-plot" id="toc-simulate-plot" class="nav-link" data-scroll-target="#simulate-plot"><span class="header-section-number">10.4</span> Simulate Plot</a></li>
+  <li><a href="#longitudinal-plot" id="toc-longitudinal-plot" class="nav-link" data-scroll-target="#longitudinal-plot"><span class="header-section-number">10.5</span> Longitudinal Plot</a></li>
+  <li><a href="#customize-the-longitudinal-plot" id="toc-customize-the-longitudinal-plot" class="nav-link" data-scroll-target="#customize-the-longitudinal-plot"><span class="header-section-number">10.6</span> Customize the Longitudinal Plot</a></li>
+  <li><a href="#plot-subsets-of-variables" id="toc-plot-subsets-of-variables" class="nav-link" data-scroll-target="#plot-subsets-of-variables"><span class="header-section-number">10.7</span> Plot subsets of variables</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10.8</span> Exercises</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">10.9</span> Solution</a></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulate and Plot</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation and Plotting</span></h1>
 </div>
 
 
@@ -247,19 +282,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Goal: Learn about simulation and plotting of data</p>
-</div>
-</div>
-</div>
-<section id="the-dual-change-score-model" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="the-dual-change-score-model"><span class="header-section-number">10.1</span> The dual change score model</h2>
-<p>The dual change score model (DCSM) is a powerful framework within structural equation modeling (SEM) for analyzing longitudinal data by explicitly modeling how individuals change over time. Unlike traditional growth models that describe trajectories with fixed slopes, the DCSM decomposes change into two components: a constant (or proportional) change that depends on prior levels of the variable, and an additional dynamic component that captures how change at one time point influences subsequent change. This allows researchers to examine both stability and self-regulating processes within a construct, as well as potential coupling effects between multiple variables over time. By integrating features of latent growth curve models and autoregressive models, the DCSM provides a flexible approach for testing theories about developmental processes, feedback mechanisms, and temporal dependencies in psychological, behavioral, and social data. The model looks like this:</p>
+<p>Onyx offers facilities to simulate data from models and visualize both empirical and simulated data in plots. Both features can be used for model checking. For example, you can check whether data simulated from a model follow a pattern that is similarly expected to arise in your study. Or, you can use simulation and plotting of simulation results to investigate the effect of changes in parameters on model-implied outcomes.</p>
+<section id="simulation" class="level3" data-number="10.0.1">
+<h3 data-number="10.0.1" class="anchored" data-anchor-id="simulation"><span class="header-section-number">10.0.1</span> Simulation</h3>
+<p>To simulate data from a model, right-click on the model view, choose “Simulation -&gt; Start Simulation”. This takes the model-implied covariance matrix and means vectors and simulates data from a multivariate normal distribution given these as population covariance matrix and means vector. By default, Onyx simulated 100 observations; the number can be changed in the context menu in “Data Rows”; you can also simulate missing data using a missing completely at random mechanism. By default, the simulated data are fully observed.</p>
+<p><img src="screenshots/onyx-screen-startsimulation.png" class="img-fluid"></p>
+<p>A simulated dataset will have variables corresponding to each observed variable in the model. By selecting the variables in the (simulated) data view and right-clicking on “Plot Data”, you have a choice of different plotting options. The following screenshots illustrates a simple workflow, in which first a bivariate model is specified with a covariance of 0.4 (which happens to be identical to the correlation because both variances are 1.0). Then a dataset is simulated (shown in the middle of the screen); and finally, a scatter plot is generated from the simulated data set (right):</p>
+<p><img src="screenshots/onyx-screen-simulate-bivariate.png" class="img-fluid"></p>
+</section>
+<section id="an-applied-example-the-dual-change-score-model" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="an-applied-example-the-dual-change-score-model"><span class="header-section-number">10.1</span> An applied example: The dual change score model</h2>
+<p>The dual change score model (DCSM) is a powerful framework within structural equation modeling (SEM) for analyzing longitudinal data by explicitly modeling how individuals change over time. Unlike traditional growth models that describe trajectories with fixed slopes, the DCSM decomposes change into two components: a growth-curve type of change (<span class="math inline">\(\beta\)</span>), and an additional dynamic component that captures proportional change, ie., how change at one time point influences subsequent change (<span class="math inline">\(\alpha\)</span>). Residual error variance (<span class="math inline">\(\sigma^2_{\epsilon}\)</span>) captures misfit and measurement error. Individual differences at beginning of the study are captured by a latent intercept <span class="math inline">\(\eta_0\)</span>, and the growth curve changes are captured by a latent slope factor (<span class="math inline">\(\eta_S\)</span>). This allows researchers to examine both stability and self-regulating processes within a construct, as well as potential coupling effects between multiple variables over time. By integrating features of latent growth curve models and autoregressive models, the DCSM provides a flexible approach for testing theories about developmental processes, feedback mechanisms, and temporal dependencies in psychological, behavioral, and social data. The model looks like this:</p>
 <p><img src="screenshots/onyx-screen-saturating-model.png" class="img-fluid"></p>
 </section>
 <section id="simulation-to-understand-model-parameters" class="level2" data-number="10.2">
@@ -279,30 +312,27 @@ ul.task-list li input[type="checkbox"] {
 <p>Use the DCSM-Wizard (right-click on the empty desktop, then choose “Create new model” and then select “Create new DCSM”) to create a dual change score model. Keep all values at their defaults. This creates a model with five time points and the observed time points will be called x1, x2, …, x5.</p>
 <p><img src="screenshots/onyx-screen-wizard-dcsm.png" class="img-fluid"></p>
 </section>
-<section id="simulation" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="simulation"><span class="header-section-number">10.4</span> Simulation</h2>
-</section>
-<section id="plot" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="plot"><span class="header-section-number">10.5</span> Plot</h2>
-<p>Next, right-click on the simulated dataset, choose “Plot data” and select “Plot longitudinal data”.</p>
+<section id="simulate-plot" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="simulate-plot"><span class="header-section-number">10.4</span> Simulate Plot</h2>
+<p>Choose “Simulation -&gt; Start Simulation”. Next, right-click on the simulated dataset, choose “Plot data” and select “Plot longitudinal data”.</p>
 <p><img src="screenshots/onyx-screen-modelplotmenu.png" class="img-fluid"></p>
 </section>
-<section id="longitudinal-plot" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="longitudinal-plot"><span class="header-section-number">10.6</span> Longitudinal Plot</h2>
+<section id="longitudinal-plot" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="longitudinal-plot"><span class="header-section-number">10.5</span> Longitudinal Plot</h2>
 <p><img src="screenshots/onyx-screen-plotlongitudinal.png" class="img-fluid"></p>
 </section>
-<section id="customize-the-longitudinal-plot" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="customize-the-longitudinal-plot"><span class="header-section-number">10.7</span> Customize the Longitudinal Plot</h2>
+<section id="customize-the-longitudinal-plot" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="customize-the-longitudinal-plot"><span class="header-section-number">10.6</span> Customize the Longitudinal Plot</h2>
 <p>Right-click on the longitudinal plot window. This will show some basic plot settings. Try out different ways to customize the plot. By default, the line color is selected as “COLORED_PER_OBSERVATION” such that each observation gets a different color. Alternatively, you can set the color to “USER DEFINED” and then pick a line color. You can also change the line thickness, and the axes labels</p>
 <p><img src="screenshots/onyx-screen-longitudinalplot-settings.png" class="img-fluid"></p>
 <p>Click “close and apply” to apply the settings and close the dialog window. Right-click again and choose “save PNG” to save the graph as image file.</p>
 </section>
-<section id="plot-subsets-of-variables" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="plot-subsets-of-variables"><span class="header-section-number">10.8</span> Plot subsets of variables</h2>
+<section id="plot-subsets-of-variables" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="plot-subsets-of-variables"><span class="header-section-number">10.7</span> Plot subsets of variables</h2>
 <p>If no variables are selected in the dataset, the longitudinal plot will be plotted across all variables in the dataset (in the order, in which they appear in the dataset). If you want to plot only across a subset of variables, select those variables in the variable list (e.g., by holding CTRL or CMD down and select the respective variables) and then click “Plot Data -&gt; Plot longitudinal data”.</p>
 </section>
-<section id="exercises" class="level2" data-number="10.9">
-<h2 data-number="10.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10.9</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10.8</span> Exercises</h2>
 <ul>
 <li><p>Create a dual change score model using the wizard</p></li>
 <li><p>Simulate Data and plot the data (longitudinal plot)</p></li>
@@ -312,8 +342,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>By setting a form of constant positive change (alpha) and negative proportional change (beta), can you generate simulated learning curves that reach an asymptote?</p></li>
 </ul>
 </section>
-<section id="solution" class="level2" data-number="10.10">
-<h2 data-number="10.10" class="anchored" data-anchor-id="solution"><span class="header-section-number">10.10</span> Solution</h2>
+<section id="solution" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="solution"><span class="header-section-number">10.9</span> Solution</h2>
 <p>The self-feedback term beta implies a form of proportional growth if values are positive because change then depends on previous level. This by itself can reflect an exponential growth function. In combination with constant growth rates (alpha &gt; 0), negative proportional change can be used to model change that flattens after a while. Here is one possible solution:</p>
 <p><img src="screenshots/onyx-screen-saturating-model.png" class="img-fluid"></p>
 <p>And these are some simulated trajectories from the model (N=100):</p>
