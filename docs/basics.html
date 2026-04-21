@@ -267,12 +267,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#changing-visuals" id="toc-changing-visuals" class="nav-link active" data-scroll-target="#changing-visuals"><span class="header-section-number">3.1</span> Changing Visuals</a></li>
-  <li><a href="#renaming-parameters" id="toc-renaming-parameters" class="nav-link" data-scroll-target="#renaming-parameters"><span class="header-section-number">3.2</span> Renaming Parameters</a></li>
-  <li><a href="#diagram-styles" id="toc-diagram-styles" class="nav-link" data-scroll-target="#diagram-styles"><span class="header-section-number">3.3</span> Diagram Styles</a></li>
-  <li><a href="#path-styles" id="toc-path-styles" class="nav-link" data-scroll-target="#path-styles"><span class="header-section-number">3.4</span> Path Styles</a></li>
-  <li><a href="#copy-paste" id="toc-copy-paste" class="nav-link" data-scroll-target="#copy-paste"><span class="header-section-number">3.5</span> Copy &amp; Paste</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.6</span> Exercises</a></li>
+  <li><a href="#means" id="toc-means" class="nav-link active" data-scroll-target="#means"><span class="header-section-number">3.1</span> Means</a></li>
+  <li><a href="#changing-visuals" id="toc-changing-visuals" class="nav-link" data-scroll-target="#changing-visuals"><span class="header-section-number">3.2</span> Changing Visuals</a></li>
+  <li><a href="#renaming-parameters" id="toc-renaming-parameters" class="nav-link" data-scroll-target="#renaming-parameters"><span class="header-section-number">3.3</span> Renaming Parameters</a></li>
+  <li><a href="#diagram-styles" id="toc-diagram-styles" class="nav-link" data-scroll-target="#diagram-styles"><span class="header-section-number">3.4</span> Diagram Styles</a></li>
+  <li><a href="#path-styles" id="toc-path-styles" class="nav-link" data-scroll-target="#path-styles"><span class="header-section-number">3.5</span> Path Styles</a></li>
+  <li><a href="#copy-paste" id="toc-copy-paste" class="nav-link" data-scroll-target="#copy-paste"><span class="header-section-number">3.6</span> Copy &amp; Paste</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.7</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -305,12 +306,16 @@ window.Quarto = {
 <p><img src="screenshots/onyx-screen-freeparameter.png" class="img-fluid"></p>
 <p>Try to add a latent and an observed variable and connect them with a path from the latent to the observed variable, and your model should look like this:</p>
 <p><img src="screenshots/onyx-screen-simplemodel.png" class="img-fluid"></p>
-<section id="changing-visuals" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="changing-visuals"><span class="header-section-number">3.1</span> Changing Visuals</h2>
+<section id="means" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="means"><span class="header-section-number">3.1</span> Means</h2>
+<p>As long as no means are modeled explicitly, Onyx only models the variances and covariances of a dataset. Means are modeled by adding constant values to the path diagram (shown as triangles with value “1”). A path from a constant value to a variable represents the mean of that variable. Once a mean triangle is added to the path diagram, Onyx switches to explicit mean modeling which incorporates mean parameters for all variables.</p>
+</section>
+<section id="changing-visuals" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="changing-visuals"><span class="header-section-number">3.2</span> Changing Visuals</h2>
 <p>Onyx has a variety of options to adjust the appearance of the graph. Right-click on a node and choose “Customize Variable” to explore various options to adjust font size, line colors, fill colors, etc. The same is possible if you choose “Customize Path” when you right-click on a path.</p>
 </section>
-<section id="renaming-parameters" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="renaming-parameters"><span class="header-section-number">3.2</span> Renaming Parameters</h2>
+<section id="renaming-parameters" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="renaming-parameters"><span class="header-section-number">3.3</span> Renaming Parameters</h2>
 <p>If you free a parameter on a path (representing either a variance, covariance, a regression, or a mean), you can change the name of the parameter by right-clicking on the path and then changing the “Path Name”. By default, these parameters are named based on the adjacent variables but you can choose your own name here.</p>
 <p><img src="screenshots/onyx-screen-nameandstartingvalue.png" class="img-fluid"></p>
 <p>Note that Onyx has Unicode support, that is, you can directly use unicode characters such as letters from the greek alphabet. Thus, it would even be possible to use emojis as parameter labels even though I do not recommend that:</p>
@@ -347,25 +352,25 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="diagram-styles" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="diagram-styles"><span class="header-section-number">3.3</span> Diagram Styles</h2>
+<section id="diagram-styles" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="diagram-styles"><span class="header-section-number">3.4</span> Diagram Styles</h2>
 <p>Onyx ships some pre-made styles for your graphs. Choose “Customize Model -&gt; Apply Diagram Style” and then choose from the available choices. Certainly, not all of them are useful for scientific communication but you may want to start with Modern or Modern/Lightblue. Further, you may want to choose “Keep Style on Edit”, which continues to automatically apply the chosen style to newly added variables or paths in the diagram (otherwise, they are added using the default style).</p>
 <p><img src="screenshots/onyx-screen-diagramstyle.png" class="img-fluid"></p>
 <p>Here are three examples of styles:</p>
 <p><img src="screenshots/onyx-screen-styles.png" class="img-fluid"></p>
 <p>You can quickly iterate through the available styles in the actively selected model by pressing CTRL+L (or CMD+L on a Mac).</p>
 </section>
-<section id="path-styles" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="path-styles"><span class="header-section-number">3.4</span> Path Styles</h2>
+<section id="path-styles" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="path-styles"><span class="header-section-number">3.5</span> Path Styles</h2>
 <p>By default, Onyx shows path with a value fixed to one without any label. Paths that have a value fixed but different than one are shown with the value as label. Freely estimated parameters are shown with both their label and their value (e.g., “z = 2.87”). You can also choose different path styles by right-clicking on a model, then selecting “Customize Model -&gt; Change Path Style”. This opens the following window in which you can select among several alternative options. In particular, the option “Simplified” may be useful to create figures for manuscripts.</p>
 <p><img src="screenshots/onyx-screen-changepathstyle.png" class="img-fluid"></p>
 </section>
-<section id="copy-paste" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="copy-paste"><span class="header-section-number">3.5</span> Copy &amp; Paste</h2>
+<section id="copy-paste" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="copy-paste"><span class="header-section-number">3.6</span> Copy &amp; Paste</h2>
 <p>Onyx supports copy&amp;paste in diagrams. You can select a set of nodes, right-click the mouse and then select “Edit -&gt; Copy” (or press CTRL+C / CMD+C), which copies all selected nodes and all paths between them to the clipboard. If you select “Edit -&gt; Paste and Rename” (or press CTRL+V / CMD + V), a copy of these nodes and paths is inserted. Note that all parameter and variable names are automatically renamed to be different from the original variables and paths; otherwise they would be treated as being constrained to identity. If you prefer that choose “Edit -&gt; Paste” to insert exact copies without renaming. If you want to select the entire diagram to copy, press CTRL+A / CMD+A to select all variables before copying and pasting.</p>
 </section>
-<section id="exercises" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.6</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.7</span> Exercises</h2>
 <ul>
 <li>Create a factor model with one latent factors, four observed variables, residual variances for each factor, a latent factor variance, and factor loadings; fix the first factor loading at “1” and let the others be freely estimated; also freely estimate all residual variances; rename the observed variables to “item1”, “item2”, …; rename the factor to “factor”, rename the factor loadings to lambda1, lambda2, … but use greek letters.</li>
 <li>Apply diagram styles (CTRL+L / CMD + L; press multiple times) and then make your own modifications</li>

@@ -14,6 +14,10 @@ Try to add a latent and an observed variable and connect them with a path from t
 
 ![](screenshots/onyx-screen-simplemodel.png)
 
+## Means
+
+As long as no means are modeled explicitly, Onyx only models the variances and covariances of a dataset. Means are modeled by adding constant values to the path diagram (shown as triangles with value "1"). A path from a constant value to a variable represents the mean of that variable. Once a mean triangle is added to the path diagram, Onyx switches to explicit mean modeling which incorporates mean parameters for all variables.
+
 ## Changing Visuals
 
 Onyx has a variety of options to adjust the appearance of the graph. Right-click on a node and choose "Customize Variable" to explore various options to adjust font size, line colors, fill colors, etc. The same is possible if you choose "Customize Path" when you right-click on a path.
