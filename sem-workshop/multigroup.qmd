@@ -59,3 +59,5 @@ Now, clone the model once more and remove the constraint that the factor loading
 ![](screenshots/onyx-screen-modelcomparison-invariance.png)
 
 Here, we find no significant difference in model fit, ie. there is no evidence that the factor loadings should be freely estimated across groups. In other words, there is no evidence for differences in the factor loadings. We conclude for now that weak measurement invariance holds in this model (but note that a significance-based approach is not necessarily the best approach for this decisions; others have recommended to look at effect size metrics for this).
+
+## References

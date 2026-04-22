@@ -256,6 +256,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In Onyx, you can right-click on a fitted model view and choose “Estimation -&gt; Obtain Latent / Missing Scores”. This creates a new dataset, which imputes all missing variables using a maximum-likelihood-based approach; this includes all latent variables, which are treated as completely missing (as they were not observed):</p>
 <p><img src="screenshots/onyx-screen-menu-factorscores.png" class="img-fluid"></p>
 <p>This new dataset can either be saved or be used to create plots.</p>
+<p>The scores are computed as <em>regression factor</em> scores (also known as conditional mean scores). These are computed as expectation of a given missing value given the observed scores. This is also know as conditional mean imputation under a multivariate normal model.</p>
 </section>
 <section id="exercise" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">8.2</span> Exercise</h2>

@@ -67,7 +67,7 @@ write.csv(dat, file = "data/Garcia.csv")
 
 ```{r eval=TRUE, echo=TRUE}
 
-anova(lm(sexism ~ protest, psych::Garcia))
+summary(aov(sexism ~ factor(protest), psych::Garcia))
 ```
 
 ### Solution in JASP
@@ -81,5 +81,18 @@ R and JASP both perform a classic ANOVA assuming normality within the groups and
 In the SEM solution presented here, we also assume normality within groups and equality of variances (even though it is easy to remove this constraint). Onyx computes an asymptotic Chi-Square-statistic. That is, asymptotically the results are the same but may differ in small to moderate sample sizes.
 
 All three approaches yield a non-significant result, that is, there is no evidence that sexism ratings differed across protest groups.
+
+```{r echo=FALSE}
+mod<-lavaan::lavaan(model="sexism~~c(var,var,var)*sexism; sexism~1", data=dat,group="protest")
+modh0<-lavaan::lavaan(model="sexism~~c(var,var,var)*sexism; sexism~c(m,m,m)*1", data=dat,group="protest")
+
+lavaan::parTable(mod)
+lavaan::parTable(modh0)
+
+lavaan::fitMeasures(mod)
+lavaan::fitMeasures(modh0)
+
+lavaan::lavTestLRT(mod, modh0)
+```
 
 ## References

@@ -273,6 +273,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.1</span> Exercises</a></li>
   <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">7.2</span> Solution</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7.3</span> References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -339,6 +340,9 @@ window.Quarto = {
 <p>Now, clone the model once more and remove the constraint that the factor loadings are identical across groups. To do so, simply give the factor loadings in one model unique names. For example rename <span class="math inline">\(\lambda_1\)</span> to <span class="math inline">\(\lambda_1\_2\)</span> and <span class="math inline">\(\lambda_2\)</span> to <span class="math inline">\(\lambda_2\_2\)</span> and <span class="math inline">\(\lambda_3\)</span> to <span class="math inline">\(\lambda_3\_2\)</span> . Now the model has three more free parameters and estimates the factor loadings separately per group. Using a likelihood ratio test, we can compare both nested models. Under H0, both models fit equally well; under H1, the more complex model fits the data better.</p>
 <p><img src="screenshots/onyx-screen-modelcomparison-invariance.png" class="img-fluid"></p>
 <p>Here, we find no significant difference in model fit, ie. there is no evidence that the factor loadings should be freely estimated across groups. In other words, there is no evidence for differences in the factor loadings. We conclude for now that weak measurement invariance holds in this model (but note that a significance-based approach is not necessarily the best approach for this decisions; others have recommended to look at effect size metrics for this).</p>
+</section>
+<section id="references" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="references"><span class="header-section-number">7.3</span> References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

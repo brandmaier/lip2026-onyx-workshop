@@ -355,14 +355,11 @@ div.csl-indent {
 <section id="solution-in-r" class="level3" data-number="12.4.1">
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="solution-in-r"><span class="header-section-number">12.4.1</span> Solution in R</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">lm</span>(sexism <span class="sc">~</span> protest, psych<span class="sc">::</span>Garcia))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(sexism <span class="sc">~</span> <span class="fu">factor</span>(protest), psych<span class="sc">::</span>Garcia))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Analysis of Variance Table
-
-Response: sexism
-           Df Sum Sq Mean Sq F value Pr(&gt;F)
-protest     1  0.034 0.03437  0.0555 0.8141
-Residuals 127 78.594 0.61885               </code></pre>
+<pre><code>                 Df Sum Sq Mean Sq F value Pr(&gt;F)
+factor(protest)   2   1.08  0.5382   0.874   0.42
+Residuals       126  77.55  0.6155               </code></pre>
 </div>
 </div>
 </section>
@@ -375,6 +372,128 @@ Residuals 127 78.594 0.61885               </code></pre>
 <p>R and JASP both perform a classic ANOVA assuming normality within the groups and equality of variances across the groups. They both compute the exact F-statistic.</p>
 <p>In the SEM solution presented here, we also assume normality within groups and equality of variances (even though it is easy to remove this constraint). Onyx computes an asymptotic Chi-Square-statistic. That is, asymptotically the results are the same but may differ in small to moderate sample sizes.</p>
 <p>All three approaches yield a non-significant result, that is, there is no evidence that sexism ratings differed across protest groups.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  id    lhs op    rhs user block group free ustart exo label plabel start   est
+1  1 sexism ~~ sexism    1     1     1    1     NA   0   var   .p1. 0.328 0.601
+2  2 sexism ~1           1     1     1    2     NA   0         .p2. 5.037 5.037
+3  3 sexism ~~ sexism    1     2     2    3     NA   0   var   .p3. 0.287 0.601
+4  4 sexism ~1           1     2     2    4     NA   0         .p4. 5.071 5.071
+5  5 sexism ~~ sexism    1     3     3    5     NA   0   var   .p5. 0.285 0.601
+6  6 sexism ~1           1     3     3    6     NA   0         .p6. 5.245 5.245
+7  7   .p1. ==   .p3.    2     0     0    0     NA   0              0.000 0.000
+8  8   .p1. ==   .p5.    2     0     0    0     NA   0              0.000 0.000
+     se
+1 0.075
+2 0.116
+3 0.075
+4 0.121
+5 0.075
+6 0.118
+7 0.000
+8 0.000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   id    lhs op    rhs user block group free ustart exo label plabel start
+1   1 sexism ~~ sexism    1     1     1    1     NA   0   var   .p1. 0.328
+2   2 sexism ~1           1     1     1    2     NA   0     m   .p2. 5.037
+3   3 sexism ~~ sexism    1     2     2    3     NA   0   var   .p3. 0.287
+4   4 sexism ~1           1     2     2    4     NA   0     m   .p4. 5.071
+5   5 sexism ~~ sexism    1     3     3    5     NA   0   var   .p5. 0.285
+6   6 sexism ~1           1     3     3    6     NA   0     m   .p6. 5.245
+7   7   .p1. ==   .p3.    2     0     0    0     NA   0              0.000
+8   8   .p1. ==   .p5.    2     0     0    0     NA   0              0.000
+9   9   .p2. ==   .p4.    2     0     0    0     NA   0              0.000
+10 10   .p2. ==   .p6.    2     0     0    0     NA   0              0.000
+     est    se
+1  0.610 0.076
+2  5.117 0.069
+3  0.610 0.076
+4  5.117 0.069
+5  0.610 0.076
+6  5.117 0.069
+7  0.000 0.000
+8  0.000 0.000
+9  0.000 0.000
+10 0.000 0.000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 npar                  fmin                 chisq 
+                4.000                 0.001                 0.284 
+                   df                pvalue        baseline.chisq 
+                2.000                 0.868                 0.000 
+          baseline.df       baseline.pvalue                   cfi 
+                0.000                    NA                 1.000 
+                  tli                  nnfi                   rfi 
+                1.000                 1.000                    NA 
+                  nfi                  pnfi                   ifi 
+                   NA                    NA                 1.000 
+                  rni                  logl     unrestricted.logl 
+                   NA              -150.221              -150.079 
+                  aic                   bic                ntotal 
+              308.442               319.882               129.000 
+                 bic2                 rmsea        rmsea.ci.lower 
+              307.231                 0.000                 0.000 
+       rmsea.ci.upper        rmsea.ci.level          rmsea.pvalue 
+                0.156                 0.900                 0.880 
+       rmsea.close.h0 rmsea.notclose.pvalue     rmsea.notclose.h0 
+                0.050                 0.102                 0.080 
+                  rmr            rmr_nomean                  srmr 
+                0.027                 0.038                 0.045 
+         srmr_bentler   srmr_bentler_nomean                  crmr 
+                0.045                 0.063                 0.000 
+          crmr_nomean            srmr_mplus     srmr_mplus_nomean 
+                  NaN                 0.154                 0.063 
+                cn_05                 cn_01                   gfi 
+             2724.629              4187.881                 1.000 
+                 agfi                  pgfi                   mfi 
+                1.000                 0.333                 1.007 
+                 ecvi 
+                0.064 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 npar                  fmin                 chisq 
+                2.000                 0.008                 2.062 
+                   df                pvalue        baseline.chisq 
+                4.000                 0.724                 0.000 
+          baseline.df       baseline.pvalue                   cfi 
+                0.000                    NA                 1.000 
+                  tli                  nnfi                   rfi 
+                1.000                 1.000                    NA 
+                  nfi                  pnfi                   ifi 
+                   NA                    NA                 1.000 
+                  rni                  logl     unrestricted.logl 
+                   NA              -151.110              -150.079 
+                  aic                   bic                ntotal 
+              306.220               311.940               129.000 
+                 bic2                 rmsea        rmsea.ci.lower 
+              305.615                 0.000                 0.000 
+       rmsea.ci.upper        rmsea.ci.level          rmsea.pvalue 
+                0.167                 0.900                 0.762 
+       rmsea.close.h0 rmsea.notclose.pvalue     rmsea.notclose.h0 
+                0.050                 0.188                 0.080 
+                  rmr            rmr_nomean                  srmr 
+                0.067                 0.041                 0.093 
+         srmr_bentler   srmr_bentler_nomean                  crmr 
+                0.093                 0.068                 0.110 
+          crmr_nomean            srmr_mplus     srmr_mplus_nomean 
+                  NaN                 0.214                 0.068 
+                cn_05                 cn_01                   gfi 
+              594.607               831.667                 1.000 
+                 agfi                  pgfi                   mfi 
+                0.999                 0.666                 1.008 
+                 ecvi 
+                0.047 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Chi-Squared Difference Test
+
+      Df    AIC    BIC  Chisq Chisq diff RMSEA Df diff Pr(&gt;Chisq)
+mod    2 308.44 319.88 0.2838                                    
+modh0  4 306.22 311.94 2.0618      1.778     0       2     0.4111</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="references" class="level2" data-number="12.5">

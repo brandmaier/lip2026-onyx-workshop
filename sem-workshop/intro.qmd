@@ -6,40 +6,44 @@
 
 ## Installation
 
-If you have not worked with Onyx before, make sure to download and install it first. You find some instructions under **Installation**. 
+If you have not worked with Ωnyx before, make sure to download and install it first. You find some instructions under **Installation**.
 
 ## The Interface
 
-Onyx uses a highly interactive graphical workflow. When you open the program, you begin with an empty desktop and build models step by step. Most actions are available through context menus, right-click drag operations, and keyboard modifiers.
+Ωnyx uses a highly interactive graphical workflow. When you open the program, you begin with an empty desktop and build models step by step. Most actions are available through context menus, right-click drag operations, and keyboard modifiers.
 
 ## Start here (first-time users)
 
-If this is your first time using Onyx, follow this order:
+If this is your first time using Ωnyx, follow this order:
 
- **Basic Modeling** — create variables and paths, free parameters, and style diagrams.
-2. **Model Fit** — inspect fit indices and residual diagnostics.
-3. **Model Comparison** — compare nested models.
-4. **Multi-Group Models** and **Factor Scores** — move to more advanced workflows.
-5. Exercise chapters — apply the workflow to full examples.
+1.  **Basic Modeling** — create variables and paths, free parameters, and style diagrams.
+
+2.  **Model Fit** — inspect fit indices and residual diagnostics.
+
+3.  **Model Comparison** — compare nested models.
+
+4.  **Multi-Group Models** and **Factor Scores** — move to more advanced workflows.
+
+5.  **Exercises / Challenges** — apply the workflow to full examples.
 
 ## Interaction basics
 
 Onyx interactions depend on where you click and whether modifier keys are pressed.
 
-- **Double-click on empty model space**: create a latent variable.
-- **Shift + double-click on empty model space**: create an observed variable.
-- **Right-click drag from one variable to another**: create a directed path.
-- **Shift + right-click drag**: create a covariance path.
-- **Right-click an object**: open object-specific options.
+-   **Double-click on empty model space**: create a latent variable.
+-   **Shift + double-click on empty model space**: create an observed variable.
+-   **Right-click drag from one variable to another**: create a directed path.
+-   **Shift + right-click drag**: create a covariance path.
+-   **Right-click an object**: open object-specific options.
 
 ## A quick first check
 
-Before starting the workshop, try this mini-task:
+Before starting the workshop, you may want to try this mini-task (or directly start with chapter Basic Modeling to learn about this):
 
-1. Create an empty model.
-2. Add one latent and one observed variable.
-3. Draw a path from latent to observed.
-4. Free the path parameter.
+1.  Create an empty model.
+2.  Add one latent and one observed variable.
+3.  Draw a path from latent to observed.
+4.  Free the path parameter.
 
 If this works, your setup is ready and you can proceed with the chapters.
 
@@ -49,10 +53,9 @@ This workshop is still being refined. Chapters include conceptual background, pr
 
 You will get the most out of this material if you are comfortable with:
 
-- Latent vs. observed variables.
-- Factor loadings and residual variances.
-- Identification constraints.
-- Basic model fit indices (e.g., chi-square, CFI, RMSEA, SRMR).
+-   Latent vs. observed variables.
+-   Factor loadings and residual variances.
+-   Identification constraints.
+-   Basic model fit indices (e.g., chi-square, CFI, RMSEA, SRMR).
 
 If these terms are unfamiliar, review a short SEM primer first and then return to this workshop.
-

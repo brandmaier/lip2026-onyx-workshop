@@ -10,6 +10,7 @@ In Onyx, you can right-click on a fitted model view and choose "Estimation -> Ob
 
 This new dataset can either be saved or be used to create plots.
 
+The scores are computed as *regression factor* scores (also known as conditional mean scores). These are computed as expectation of a given missing value given the observed scores. This is also know as conditional mean imputation under a multivariate normal model.
 
 
 ## Exercise

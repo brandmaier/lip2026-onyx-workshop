@@ -17,8 +17,7 @@ In this  challenge, we will reproduce an published SEM analysis by
 > show that multitasking and fluid intelligence are distinct cognitive
 > abilities that show diverging age-related differences.
 
-In their study, they assessed two behavioral performance measures. From
-their study:
+In their study, they assessed two behavioral performance measures. From their study description:
 
 > We assess fluid intelligence using the Cattell Culture Fair Test,
 > consisting of pencil-and-paper subtests that yield four summary scores
@@ -29,7 +28,10 @@ their study:
 > ability to distribute performance across multiple tasks, which we will
 > refer to from here on as multitasking.
 
+This is their illustration of the behavioral tasks:
+
 ![](screenshots/kievit-paper-tasks.png)
+Again, quoting from @kievit2014distinct:
 
 > Ageing is characterized by declines on a variety of cognitive
 > measures. These declines are often attributed to a general, unitary
@@ -48,32 +50,24 @@ differences in the two cognitive facets using the four brain measures of
 interest:
 
 ![](screenshots/kievit-mimic-model.png)
+From their path diagram, we can see that they decided to model the six behavioral variables using two latent variables "Fluid Intelligence" and "Multitasking". The did not model any latent brain factors and used the observed brain scores (GM and WM) as predictors of the latent behavioral variables. 
 
 # Exercise
 
 1.  Load the dataset "ncomms.dat", which contains the variances and
     covariances as reported by @kievit2014distinct.
-2.  Create a measurement model for cognition using only the behavioral
-    variables. What model fits better? A model with a single performance
-    factor across all six tests? Or two correlated latent factors, one
-    fluid intelligence factor for the Cattell items and one multitasking
-    factor for the Hotel test items?
-3.  Create a measurement model for the brain? Does a single factor
+2.  Create a measurement model for cognition using only the behavioral variables. What model fits better? A model with a single performance    factor across all six tests? Or two correlated latent factors, one  fluid intelligence factor for the Cattell items and one multitasking    factor for the Hotel test items? Inspect model fit measures and check whether solutions are admissible (e.g., no negative variances)
+3.  Create a measurement model for the brain. Does a single factor
     across gray matter volume and white matter volume represent the
     observed data well? If not, is it possible to represent the data
-    using two correlated factors? A gray matter volume factor with two
-    indicators and a white matter factor with two indicators? If not,
-    what else can we do?
-4.  Fuse both models in one model and use whatever items or factors you
-    chose in your measurement models, such that the brain variables
-    predict behavior. Freely estimate those parameters. What can we
-    learn?
+    using two correlated factors? A gray matter volume factor with two    indicators and a white matter factor with two indicators? If not,    what else can we do?
+4.  Fuse both models in one model and use whatever items or factors you    chose in your measurement models, such that the brain variables  predict behavior. Freely estimate those parameters. What can we    learn?
 5.  Discuss the results (e.g., directionality and size of the effects)
 6.  Test whether the effect of FM-\>MT and ATR-\>MT is different.
 
 ## Solution
 
-Here are some alternative model for the brain variables. First, we model
+Here are some alternative models for the brain variables. First, we model
 a single factor:
 
 ![](screenshots/onyx-cognition-model1.png)
@@ -83,18 +77,18 @@ try a factor model per modality:
 
 ![](screenshots/onyx-cognition-model2.png)
 
-However, a negative variance is an indicator for an unsatisfying
+Anegative variance is an indicator for an unsatisfying
 solution. So, we will not estimate any latent factors and instead keep
 the observed variables.
 
-Here is a measurement model for the behavioral variables (how does this
-compare to a single-factor model?):
+Here is a measurement model for the behavioral variables (how does this compare to a single-factor model?):
 
 ![](screenshots/onyx-cognition-model1-behavior.png)
 
-Here is the final model:
+Here is the final model relating the brain scores to the behavioral latent variables:
 
 ![](screenshots/onyx-cognition-fullmodel.png)
+
 
 
 ## References

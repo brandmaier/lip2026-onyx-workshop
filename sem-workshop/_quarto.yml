@@ -5,7 +5,7 @@ project:
 book:
   title: "Structural Equation Modeling with Onyx"
   author: "Andreas Brandmaier"
-  date: "16.4.2026"
+  date: "16/4/2026"
   chapters:
     - index.qmd
     - intro.qmd

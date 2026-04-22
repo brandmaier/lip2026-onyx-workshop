@@ -64,6 +64,10 @@ By default, Onyx shows path with a value fixed to one without any label. Paths t
 
 Onyx supports copy&paste in diagrams. You can select a set of nodes, right-click the mouse and then select "Edit -\> Copy" (or press CTRL+C / CMD+C), which copies all selected nodes and all paths between them to the clipboard. If you select "Edit -\> Paste and Rename" (or press CTRL+V / CMD + V), a copy of these nodes and paths is inserted. Note that all parameter and variable names are automatically renamed to be different from the original variables and paths; otherwise they would be treated as being constrained to identity. If you prefer that choose "Edit -\> Paste" to insert exact copies without renaming. If you want to select the entire diagram to copy, press CTRL+A / CMD+A to select all variables before copying and pasting.
 
+## Wizards
+
+Onyx ships a small set of wizards to create standard models. These dialogs help you to create, for example, simple factor models, linear latent growth curve models, or dual change score models. Right-click the empty desktop and select "Create new model" to find a selection of the wizards. By selecting one of the wizards, a dialog will open that allows you customize some basic settings of the model (e.g., parameter names or other properties).
+
 ## Exercises
 
 -   Create a factor model with one latent factors, four observed variables, residual variances for each factor, a latent factor variance, and factor loadings; fix the first factor loading at "1" and let the others be freely estimated; also freely estimate all residual variances; rename the observed variables to "item1", "item2", ...; rename the factor to "factor", rename the factor loadings to lambda1, lambda2, ... but use greek letters.

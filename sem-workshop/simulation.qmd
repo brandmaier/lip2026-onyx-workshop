@@ -2,7 +2,7 @@
 
 Onyx offers facilities to simulate data from models and visualize both empirical and simulated data in plots. Both features can be used for model checking. For example, you can check whether data simulated from a model follow a pattern that is similarly expected to arise in your study. Or, you can use simulation and plotting of simulation results to investigate the effect of changes in parameters on model-implied outcomes.
 
-### Simulation
+## Simulation
 
 To simulate data from a model, right-click on the model view, choose "Simulation -\> Start Simulation". This takes the model-implied covariance matrix and means vectors and simulates data from a multivariate normal distribution given these as population covariance matrix and means vector. By default, Onyx simulated 100 observations; the number can be changed in the context menu in "Data Rows"; you can also simulate missing data using a missing completely at random mechanism. By default, the simulated data are fully observed.
 
